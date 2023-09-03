@@ -1,0 +1,2426 @@
+[
+  {
+    "code": "AF",
+    "name": "Afghanistan",
+    "nativeName": "افغانستان",
+    "capital": "Kabul",
+    "continent": "Asia",
+    "region": "Southern Asia",
+    "population": 26023100,
+    "area": 652230
+  },
+  {
+    "code": "AX",
+    "name": "Åland Islands",
+    "nativeName": "Åland",
+    "capital": "Mariehamn",
+    "continent": "Europe",
+    "region": "Northern Europe",
+    "population": 28875,
+    "area": 1580
+  },
+  {
+    "code": "AL",
+    "name": "Albania",
+    "nativeName": "Shqipëria",
+    "capital": "Tirana",
+    "continent": "Europe",
+    "region": "Southern Europe",
+    "population": 2893005,
+    "area": 28748
+  },
+  {
+    "code": "DZ",
+    "name": "Algeria",
+    "nativeName": "الجزائر",
+    "capital": "Algiers",
+    "continent": "Africa",
+    "region": "Northern Africa",
+    "population": 39500000,
+    "area": 2381741
+  },
+  {
+    "code": "AS",
+    "name": "American Samoa",
+    "nativeName": "American Samoa",
+    "capital": "Pago Pago",
+    "continent": "Oceania",
+    "region": "Polynesia",
+    "population": 55519,
+    "area": 199
+  },
+  {
+    "code": "AD",
+    "name": "Andorra",
+    "nativeName": "Andorra",
+    "capital": "Andorra la Vella",
+    "continent": "Europe",
+    "region": "Southern Europe",
+    "population": 76949,
+    "area": 468
+  },
+  {
+    "code": "AO",
+    "name": "Angola",
+    "nativeName": "Angola",
+    "capital": "Luanda",
+    "continent": "Africa",
+    "region": "Middle Africa",
+    "population": 24383301,
+    "area": 1246700
+  },
+  {
+    "code": "AI",
+    "name": "Anguilla",
+    "nativeName": "Anguilla",
+    "capital": "The Valley",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 13452,
+    "area": 91
+  },
+  {
+    "code": "AG",
+    "name": "Antigua and Barbuda",
+    "nativeName": "Antigua and Barbuda",
+    "capital": "Saint John's",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 86295,
+    "area": 442
+  },
+  {
+    "code": "AR",
+    "name": "Argentina",
+    "nativeName": "Argentina",
+    "capital": "Buenos Aires",
+    "continent": "Americas",
+    "region": "South America",
+    "population": 43131966,
+    "area": 2780400
+  },
+  {
+    "code": "AM",
+    "name": "Armenia",
+    "nativeName": "Հայաստան",
+    "capital": "Yerevan",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 3006800,
+    "area": 29743
+  },
+  {
+    "code": "AW",
+    "name": "Aruba",
+    "nativeName": "Aruba",
+    "capital": "Oranjestad",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 107394,
+    "area": 180
+  },
+  {
+    "code": "AU",
+    "name": "Australia",
+    "nativeName": "Australia",
+    "capital": "Canberra",
+    "continent": "Oceania",
+    "region": "Australia and New Zealand",
+    "population": 23868800,
+    "area": 7692024
+  },
+  {
+    "code": "AT",
+    "name": "Austria",
+    "nativeName": "Österreich",
+    "capital": "Vienna",
+    "continent": "Europe",
+    "region": "Western Europe",
+    "population": 8602112,
+    "area": 83871
+  },
+  {
+    "code": "AZ",
+    "name": "Azerbaijan",
+    "nativeName": "Azərbaycan",
+    "capital": "Baku",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 9636300,
+    "area": 86600
+  },
+  {
+    "code": "BS",
+    "name": "The Bahamas",
+    "nativeName": "Bahamas",
+    "capital": "Nassau",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 368390,
+    "area": 13943
+  },
+  {
+    "code": "BH",
+    "name": "Bahrain",
+    "nativeName": "‏البحرين",
+    "capital": "Manama",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 1359800,
+    "area": 765
+  },
+  {
+    "code": "BD",
+    "name": "Bangladesh",
+    "nativeName": "Bangladesh",
+    "capital": "Dhaka",
+    "continent": "Asia",
+    "region": "Southern Asia",
+    "population": 158875000,
+    "area": 147570
+  },
+  {
+    "code": "BB",
+    "name": "Barbados",
+    "nativeName": "Barbados",
+    "capital": "Bridgetown",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 285000,
+    "area": 430
+  },
+  {
+    "code": "BY",
+    "name": "Belarus",
+    "nativeName": "Белару́сь",
+    "capital": "Minsk",
+    "continent": "Europe",
+    "region": "Eastern Europe",
+    "population": 9485300,
+    "area": 207600
+  },
+  {
+    "code": "BE",
+    "name": "Belgium",
+    "nativeName": "België",
+    "capital": "Brussels",
+    "continent": "Europe",
+    "region": "Western Europe",
+    "population": 11248330,
+    "area": 30528
+  },
+  {
+    "code": "BZ",
+    "name": "Belize",
+    "nativeName": "Belize",
+    "capital": "Belmopan",
+    "continent": "Americas",
+    "region": "Central America",
+    "population": 368310,
+    "area": 22966
+  },
+  {
+    "code": "BJ",
+    "name": "Benin",
+    "nativeName": "Bénin",
+    "capital": "Porto-Novo",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 10315244,
+    "area": 112622
+  },
+  {
+    "code": "BM",
+    "name": "Bermuda",
+    "nativeName": "Bermuda",
+    "capital": "Hamilton",
+    "continent": "Americas",
+    "region": "Northern America",
+    "population": 64237,
+    "area": 54
+  },
+  {
+    "code": "BT",
+    "name": "Bhutan",
+    "nativeName": "ʼbrug-yul",
+    "capital": "Thimphu",
+    "continent": "Asia",
+    "region": "Southern Asia",
+    "population": 763920,
+    "area": 38394
+  },
+  {
+    "code": "BO",
+    "name": "Bolivia",
+    "nativeName": "Bolivia",
+    "capital": "Sucre",
+    "continent": "Americas",
+    "region": "South America",
+    "population": 11410651,
+    "area": 1098581
+  },
+  {
+    "code": "BQ",
+    "name": "Bonaire",
+    "nativeName": "Bonaire",
+    "capital": "Kralendijk",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 17408,
+    "area": 294
+  },
+  {
+    "code": "BA",
+    "name": "Bosnia and Herzegovina",
+    "nativeName": "Bosna i Hercegovina",
+    "capital": "Sarajevo",
+    "continent": "Europe",
+    "region": "Southern Europe",
+    "population": 3791622,
+    "area": 51209
+  },
+  {
+    "code": "BW",
+    "name": "Botswana",
+    "nativeName": "Botswana",
+    "capital": "Gaborone",
+    "continent": "Africa",
+    "region": "Southern Africa",
+    "population": 2070984,
+    "area": 582000
+  },
+  {
+    "code": "BR",
+    "name": "Brazil",
+    "nativeName": "Brasil",
+    "capital": "Brasília",
+    "continent": "Americas",
+    "region": "South America",
+    "population": 204772000,
+    "area": 8515767
+  },
+  {
+    "code": "IO",
+    "name": "British Indian Ocean Territory",
+    "nativeName": "British Indian Ocean Territory",
+    "capital": "Diego Garcia",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 3000,
+    "area": 60
+  },
+  {
+    "code": "VG",
+    "name": "British Virgin Islands",
+    "nativeName": "British Virgin Islands",
+    "capital": "Road Town",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 28054,
+    "area": 151
+  },
+  {
+    "code": "BN",
+    "name": "Brunei",
+    "nativeName": "Negara Brunei Darussalam",
+    "capital": "Bandar Seri Begawan",
+    "continent": "Asia",
+    "region": "South-Eastern Asia",
+    "population": 393372,
+    "area": 5765
+  },
+  {
+    "code": "BG",
+    "name": "Bulgaria",
+    "nativeName": "България",
+    "capital": "Sofia",
+    "continent": "Europe",
+    "region": "Eastern Europe",
+    "population": 7202198,
+    "area": 110879
+  },
+  {
+    "code": "BF",
+    "name": "Burkina Faso",
+    "nativeName": "Burkina Faso",
+    "capital": "Ouagadougou",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 18450494,
+    "area": 272967
+  },
+  {
+    "code": "BI",
+    "name": "Burundi",
+    "nativeName": "Burundi",
+    "capital": "Bujumbura",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 9823827,
+    "area": 27834
+  },
+  {
+    "code": "KH",
+    "name": "Cambodia",
+    "nativeName": "Kâmpŭchéa",
+    "capital": "Phnom Penh",
+    "continent": "Asia",
+    "region": "South-Eastern Asia",
+    "population": 15405157,
+    "area": 181035
+  },
+  {
+    "code": "CM",
+    "name": "Cameroon",
+    "nativeName": "Cameroon",
+    "capital": "Yaoundé",
+    "continent": "Africa",
+    "region": "Middle Africa",
+    "population": 23344000,
+    "area": 475442
+  },
+  {
+    "code": "CA",
+    "name": "Canada",
+    "nativeName": "Canada",
+    "capital": "Ottawa",
+    "continent": "Americas",
+    "region": "Northern America",
+    "population": 35749600,
+    "area": 9984670
+  },
+  {
+    "code": "CV",
+    "name": "Cape Verde",
+    "nativeName": "Cabo Verde",
+    "capital": "Praia",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 524833,
+    "area": 4033
+  },
+  {
+    "code": "KY",
+    "name": "Cayman Islands",
+    "nativeName": "Cayman Islands",
+    "capital": "George Town",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 58238,
+    "area": 264
+  },
+  {
+    "code": "CF",
+    "name": "Central African Republic",
+    "nativeName": "Ködörösêse tî Bêafrîka",
+    "capital": "Bangui",
+    "continent": "Africa",
+    "region": "Middle Africa",
+    "population": 4900000,
+    "area": 622984
+  },
+  {
+    "code": "TD",
+    "name": "Chad",
+    "nativeName": "Tchad",
+    "capital": "N'Djamena",
+    "continent": "Africa",
+    "region": "Middle Africa",
+    "population": 14037000,
+    "area": 1284000
+  },
+  {
+    "code": "CL",
+    "name": "Chile",
+    "nativeName": "Chile",
+    "capital": "Santiago",
+    "continent": "Americas",
+    "region": "South America",
+    "population": 18006407,
+    "area": 756102
+  },
+  {
+    "code": "CN",
+    "name": "China",
+    "nativeName": "中国",
+    "capital": "Beijing",
+    "continent": "Asia",
+    "region": "Eastern Asia",
+    "population": 1371590000,
+    "area": 9640011
+  },
+  {
+    "code": "CX",
+    "name": "Christmas Island",
+    "nativeName": "Christmas Island",
+    "capital": "Flying Fish Cove",
+    "continent": "Oceania",
+    "region": "Australia and New Zealand",
+    "population": 2072,
+    "area": 135
+  },
+  {
+    "code": "CC",
+    "name": "Cocos (Keeling) Islands",
+    "nativeName": "Cocos (Keeling) Islands",
+    "capital": "West Island",
+    "continent": "Oceania",
+    "region": "Australia and New Zealand",
+    "population": 550,
+    "area": 14
+  },
+  {
+    "code": "CO",
+    "name": "Colombia",
+    "nativeName": "Colombia",
+    "capital": "Bogotá",
+    "continent": "Americas",
+    "region": "South America",
+    "population": 48266600,
+    "area": 1141748
+  },
+  {
+    "code": "KM",
+    "name": "Comoros",
+    "nativeName": "Komori",
+    "capital": "Moroni",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 784745,
+    "area": 1862
+  },
+  {
+    "code": "CG",
+    "name": "Republic of the Congo",
+    "nativeName": "République du Congo",
+    "capital": "Brazzaville",
+    "continent": "Africa",
+    "region": "Middle Africa",
+    "population": 4620000,
+    "area": 342000
+  },
+  {
+    "code": "CD",
+    "name": "Democratic Republic of the Congo",
+    "nativeName": "République démocratique du Congo",
+    "capital": "Kinshasa",
+    "continent": "Africa",
+    "region": "Middle Africa",
+    "population": 77267000,
+    "area": 2344858
+  },
+  {
+    "code": "CK",
+    "name": "Cook Islands",
+    "nativeName": "Cook Islands",
+    "capital": "Avarua",
+    "continent": "Oceania",
+    "region": "Polynesia",
+    "population": 14974,
+    "area": 236
+  },
+  {
+    "code": "CR",
+    "name": "Costa Rica",
+    "nativeName": "Costa Rica",
+    "capital": "San José",
+    "continent": "Americas",
+    "region": "Central America",
+    "population": 4773130,
+    "area": 51100
+  },
+  {
+    "code": "HR",
+    "name": "Croatia",
+    "nativeName": "Hrvatska",
+    "capital": "Zagreb",
+    "continent": "Europe",
+    "region": "Southern Europe",
+    "population": 4246800,
+    "area": 56594
+  },
+  {
+    "code": "CU",
+    "name": "Cuba",
+    "nativeName": "Cuba",
+    "capital": "Havana",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 11238317,
+    "area": 109884
+  },
+  {
+    "code": "CW",
+    "name": "Curaçao",
+    "nativeName": "Curaçao",
+    "capital": "Willemstad",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 154843,
+    "area": 444
+  },
+  {
+    "code": "CY",
+    "name": "Cyprus",
+    "nativeName": "Κύπρος",
+    "capital": "Nicosia",
+    "continent": "Europe",
+    "region": "Southern Europe",
+    "population": 858000,
+    "area": 9251
+  },
+  {
+    "code": "CZ",
+    "name": "Czech Republic",
+    "nativeName": "Česká republika",
+    "capital": "Prague",
+    "continent": "Europe",
+    "region": "Eastern Europe",
+    "population": 10537818,
+    "area": 78865
+  },
+  {
+    "code": "DK",
+    "name": "Denmark",
+    "nativeName": "Danmark",
+    "capital": "Copenhagen",
+    "continent": "Europe",
+    "region": "Northern Europe",
+    "population": 5678348,
+    "area": 43094
+  },
+  {
+    "code": "DJ",
+    "name": "Djibouti",
+    "nativeName": "Djibouti",
+    "capital": "Djibouti",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 888000,
+    "area": 23200
+  },
+  {
+    "code": "DM",
+    "name": "Dominica",
+    "nativeName": "Dominica",
+    "capital": "Roseau",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 71293,
+    "area": 751
+  },
+  {
+    "code": "DO",
+    "name": "Dominican Republic",
+    "nativeName": "República Dominicana",
+    "capital": "Santo Domingo",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 10528000,
+    "area": 48671
+  },
+  {
+    "code": "EC",
+    "name": "Ecuador",
+    "nativeName": "Ecuador",
+    "capital": "Quito",
+    "continent": "Americas",
+    "region": "South America",
+    "population": 16027500,
+    "area": 276841
+  },
+  {
+    "code": "EG",
+    "name": "Egypt",
+    "nativeName": "مصر‎",
+    "capital": "Cairo",
+    "continent": "Africa",
+    "region": "Northern Africa",
+    "population": 89335600,
+    "area": 1002450
+  },
+  {
+    "code": "SV",
+    "name": "El Salvador",
+    "nativeName": "El Salvador",
+    "capital": "San Salvador",
+    "continent": "Americas",
+    "region": "Central America",
+    "population": 6401240,
+    "area": 21041
+  },
+  {
+    "code": "GQ",
+    "name": "Equatorial Guinea",
+    "nativeName": "Guinea Ecuatorial",
+    "capital": "Malabo",
+    "continent": "Africa",
+    "region": "Middle Africa",
+    "population": 1430000,
+    "area": 28051
+  },
+  {
+    "code": "ER",
+    "name": "Eritrea",
+    "nativeName": "ኤርትራ",
+    "capital": "Asmara",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 5228000,
+    "area": 117600
+  },
+  {
+    "code": "EE",
+    "name": "Estonia",
+    "nativeName": "Eesti",
+    "capital": "Tallinn",
+    "continent": "Europe",
+    "region": "Northern Europe",
+    "population": 1313271,
+    "area": 45227
+  },
+  {
+    "code": "ET",
+    "name": "Ethiopia",
+    "nativeName": "ኢትዮጵያ",
+    "capital": "Addis Ababa",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 90076012,
+    "area": 1104300
+  },
+  {
+    "code": "FK",
+    "name": "Falkland Islands",
+    "nativeName": "Falkland Islands",
+    "capital": "Stanley",
+    "continent": "Americas",
+    "region": "South America",
+    "population": 3000,
+    "area": 12173
+  },
+  {
+    "code": "FO",
+    "name": "Faroe Islands",
+    "nativeName": "Føroyar",
+    "capital": "Tórshavn",
+    "continent": "Europe",
+    "region": "Northern Europe",
+    "population": 48846,
+    "area": 1393
+  },
+  {
+    "code": "FJ",
+    "name": "Fiji",
+    "nativeName": "Fiji",
+    "capital": "Suva",
+    "continent": "Oceania",
+    "region": "Melanesia",
+    "population": 859178,
+    "area": 18272
+  },
+  {
+    "code": "FI",
+    "name": "Finland",
+    "nativeName": "Suomi",
+    "capital": "Helsinki",
+    "continent": "Europe",
+    "region": "Northern Europe",
+    "population": 5485215,
+    "area": 338424
+  },
+  {
+    "code": "FR",
+    "name": "France",
+    "nativeName": "France",
+    "capital": "Paris",
+    "continent": "Europe",
+    "region": "Western Europe",
+    "population": 66186000,
+    "area": 640679
+  },
+  {
+    "code": "GF",
+    "name": "French Guiana",
+    "nativeName": "Guyane française",
+    "capital": "Cayenne",
+    "continent": "Americas",
+    "region": "South America",
+    "area": 83534,
+    "population": 239648
+  },
+  {
+    "code": "PF",
+    "name": "French Polynesia",
+    "nativeName": "Polynésie française",
+    "capital": "Papeetē",
+    "continent": "Oceania",
+    "region": "Polynesia",
+    "population": 268270,
+    "area": 4167
+  },
+  {
+    "code": "GA",
+    "name": "Gabon",
+    "nativeName": "Gabon",
+    "capital": "Libreville",
+    "continent": "Africa",
+    "region": "Middle Africa",
+    "population": 1725000,
+    "area": 267668
+  },
+  {
+    "code": "GM",
+    "name": "The Gambia",
+    "nativeName": "Gambia",
+    "capital": "Banjul",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 1882450,
+    "area": 11295
+  },
+  {
+    "code": "GE",
+    "name": "Georgia",
+    "nativeName": "საქართველო",
+    "capital": "Tbilisi",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 3729500,
+    "area": 69700
+  },
+  {
+    "code": "DE",
+    "name": "Germany",
+    "nativeName": "Deutschland",
+    "capital": "Berlin",
+    "continent": "Europe",
+    "region": "Western Europe",
+    "population": 81083600,
+    "area": 357114
+  },
+  {
+    "code": "GH",
+    "name": "Ghana",
+    "nativeName": "Ghana",
+    "capital": "Accra",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 27043093,
+    "area": 238533
+  },
+  {
+    "code": "GI",
+    "name": "Gibraltar",
+    "nativeName": "Gibraltar",
+    "capital": "Gibraltar",
+    "continent": "Europe",
+    "region": "Southern Europe",
+    "population": 32734,
+    "area": 6
+  },
+  {
+    "code": "GR",
+    "name": "Greece",
+    "nativeName": "Ελλάδα",
+    "capital": "Athens",
+    "continent": "Europe",
+    "region": "Southern Europe",
+    "population": 10846979,
+    "area": 131990
+  },
+  {
+    "code": "GL",
+    "name": "Greenland",
+    "nativeName": "Kalaallit Nunaat",
+    "capital": "Nuuk",
+    "continent": "Americas",
+    "region": "Northern America",
+    "population": 56114,
+    "area": 2166086
+  },
+  {
+    "code": "GD",
+    "name": "Grenada",
+    "nativeName": "Grenada",
+    "capital": "St. George's",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 103328,
+    "area": 344
+  },
+  {
+    "code": "GP",
+    "name": "Guadeloupe",
+    "nativeName": "Guadeloupe",
+    "capital": "Basse-Terre",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "area": 1628,
+    "population": 403750
+  },
+  {
+    "code": "GU",
+    "name": "Guam",
+    "nativeName": "Guam",
+    "capital": "Hagåtña",
+    "continent": "Oceania",
+    "region": "Micronesia",
+    "population": 159358,
+    "area": 549
+  },
+  {
+    "code": "GT",
+    "name": "Guatemala",
+    "nativeName": "Guatemala",
+    "capital": "Guatemala City",
+    "continent": "Americas",
+    "region": "Central America",
+    "population": 16176133,
+    "area": 108889
+  },
+  {
+    "code": "GG",
+    "name": "Guernsey",
+    "nativeName": "Guernsey",
+    "capital": "St. Peter Port",
+    "continent": "Europe",
+    "region": "Northern Europe",
+    "population": 65150,
+    "area": 78
+  },
+  {
+    "code": "GN",
+    "name": "Guinea",
+    "nativeName": "Guinée",
+    "capital": "Conakry",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 10628972,
+    "area": 245857
+  },
+  {
+    "code": "GW",
+    "name": "Guinea-Bissau",
+    "nativeName": "Guiné-Bissau",
+    "capital": "Bissau",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 1844000,
+    "area": 36125
+  },
+  {
+    "code": "GY",
+    "name": "Guyana",
+    "nativeName": "Guyana",
+    "capital": "Georgetown",
+    "continent": "Americas",
+    "region": "South America",
+    "population": 746900,
+    "area": 214969
+  },
+  {
+    "code": "HT",
+    "name": "Haiti",
+    "nativeName": "Haïti",
+    "capital": "Port-au-Prince",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 10911819,
+    "area": 27750
+  },
+  {
+    "code": "HN",
+    "name": "Honduras",
+    "nativeName": "Honduras",
+    "capital": "Tegucigalpa",
+    "continent": "Americas",
+    "region": "Central America",
+    "population": 8725111,
+    "area": 112492
+  },
+  {
+    "code": "HK",
+    "name": "Hong Kong",
+    "nativeName": "香港",
+    "capital": "City of Victoria",
+    "continent": "Asia",
+    "region": "Eastern Asia",
+    "population": 7298600,
+    "area": 1104
+  },
+  {
+    "code": "HU",
+    "name": "Hungary",
+    "nativeName": "Magyarország",
+    "capital": "Budapest",
+    "continent": "Europe",
+    "region": "Eastern Europe",
+    "population": 9849000,
+    "area": 93028
+  },
+  {
+    "code": "IS",
+    "name": "Iceland",
+    "nativeName": "Ísland",
+    "capital": "Reykjavik",
+    "continent": "Europe",
+    "region": "Northern Europe",
+    "population": 330610,
+    "area": 103000
+  },
+  {
+    "code": "IN",
+    "name": "India",
+    "nativeName": "भारत",
+    "capital": "New Delhi",
+    "continent": "Asia",
+    "region": "Southern Asia",
+    "population": 1275840000,
+    "area": 3287590
+  },
+  {
+    "code": "ID",
+    "name": "Indonesia",
+    "nativeName": "Indonesia",
+    "capital": "Jakarta",
+    "continent": "Asia",
+    "region": "South-Eastern Asia",
+    "population": 255461700,
+    "area": 1904569
+  },
+  {
+    "code": "CI",
+    "name": "Ivory Coast",
+    "nativeName": "Côte d'Ivoire",
+    "capital": "Yamoussoukro",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 22671331,
+    "area": 322463
+  },
+  {
+    "code": "IR",
+    "name": "Iran",
+    "nativeName": "Irān",
+    "capital": "Tehran",
+    "continent": "Asia",
+    "region": "Southern Asia",
+    "population": 78572500,
+    "area": 1648195
+  },
+  {
+    "code": "IQ",
+    "name": "Iraq",
+    "nativeName": "العراق",
+    "capital": "Baghdad",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 36004552,
+    "area": 438317
+  },
+  {
+    "code": "IE",
+    "name": "Republic of Ireland",
+    "nativeName": "Éire",
+    "capital": "Dublin",
+    "continent": "Europe",
+    "region": "Northern Europe",
+    "population": 6378000,
+    "area": 70273
+  },
+  {
+    "code": "IM",
+    "name": "Isle of Man",
+    "nativeName": "Isle of Man",
+    "capital": "Douglas",
+    "continent": "Europe",
+    "region": "Northern Europe",
+    "population": 84497,
+    "area": 572
+  },
+  {
+    "code": "IL",
+    "name": "Occupied Palastine",
+    "nativeName": "فلسطين",
+    "capital": "Jerusalem",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 8371600,
+    "area": 20770
+  },
+  {
+    "code": "IT",
+    "name": "Italy",
+    "nativeName": "Italia",
+    "capital": "Rome",
+    "continent": "Europe",
+    "region": "Southern Europe",
+    "population": 60753794,
+    "area": 301336
+  },
+  {
+    "code": "JM",
+    "name": "Jamaica",
+    "nativeName": "Jamaica",
+    "capital": "Kingston",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 2717991,
+    "area": 10991
+  },
+  {
+    "code": "JP",
+    "name": "Japan",
+    "nativeName": "日本",
+    "capital": "Tokyo",
+    "continent": "Asia",
+    "region": "Eastern Asia",
+    "population": 126865000,
+    "area": 377930
+  },
+  {
+    "code": "JE",
+    "name": "Jersey",
+    "nativeName": "Jersey",
+    "capital": "Saint Helier",
+    "continent": "Europe",
+    "region": "Northern Europe",
+    "population": 99000,
+    "area": 116
+  },
+  {
+    "code": "JO",
+    "name": "Jordan",
+    "nativeName": "الأردن",
+    "capital": "Amman",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 6767600,
+    "area": 89342
+  },
+  {
+    "code": "KZ",
+    "name": "Kazakhstan",
+    "nativeName": "Қазақстан",
+    "capital": "Astana",
+    "continent": "Asia",
+    "region": "Central Asia",
+    "population": 17541200,
+    "area": 2724900
+  },
+  {
+    "code": "KE",
+    "name": "Kenya",
+    "nativeName": "Kenya",
+    "capital": "Nairobi",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 46050000,
+    "area": 580367
+  },
+  {
+    "code": "KI",
+    "name": "Kiribati",
+    "nativeName": "Kiribati",
+    "capital": "South Tarawa",
+    "continent": "Oceania",
+    "region": "Micronesia",
+    "population": 106461,
+    "area": 811
+  },
+  {
+    "code": "KW",
+    "name": "Kuwait",
+    "nativeName": "الكويت",
+    "capital": "Kuwait City",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 3268431,
+    "area": 17818
+  },
+  {
+    "code": "KG",
+    "name": "Kyrgyzstan",
+    "nativeName": "Кыргызстан",
+    "capital": "Bishkek",
+    "continent": "Asia",
+    "region": "Central Asia",
+    "population": 5944400,
+    "area": 199951
+  },
+  {
+    "code": "LA",
+    "name": "Laos",
+    "nativeName": "ສປປລາວ",
+    "capital": "Vientiane",
+    "continent": "Asia",
+    "region": "South-Eastern Asia",
+    "population": 6802000,
+    "area": 236800
+  },
+  {
+    "code": "LV",
+    "name": "Latvia",
+    "nativeName": "Latvija",
+    "capital": "Riga",
+    "continent": "Europe",
+    "region": "Northern Europe",
+    "population": 1980700,
+    "area": 64559
+  },
+  {
+    "code": "LB",
+    "name": "Lebanon",
+    "nativeName": "لبنان",
+    "capital": "Beirut",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 4104000,
+    "area": 10452
+  },
+  {
+    "code": "LS",
+    "name": "Lesotho",
+    "nativeName": "Lesotho",
+    "capital": "Maseru",
+    "continent": "Africa",
+    "region": "Southern Africa",
+    "population": 2135000,
+    "area": 30355
+  },
+  {
+    "code": "LR",
+    "name": "Liberia",
+    "nativeName": "Liberia",
+    "capital": "Monrovia",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 4503000,
+    "area": 111369
+  },
+  {
+    "code": "LY",
+    "name": "Libya",
+    "nativeName": "‏ليبيا",
+    "capital": "Tripoli",
+    "continent": "Africa",
+    "region": "Northern Africa",
+    "population": 6278000,
+    "area": 1759540
+  },
+  {
+    "code": "LI",
+    "name": "Liechtenstein",
+    "nativeName": "Liechtenstein",
+    "capital": "Vaduz",
+    "continent": "Europe",
+    "region": "Western Europe",
+    "population": 37370,
+    "area": 160
+  },
+  {
+    "code": "LT",
+    "name": "Lithuania",
+    "nativeName": "Lietuva",
+    "capital": "Vilnius",
+    "continent": "Europe",
+    "region": "Northern Europe",
+    "population": 2900787,
+    "area": 65300
+  },
+  {
+    "code": "LU",
+    "name": "Luxembourg",
+    "nativeName": "Luxembourg",
+    "capital": "Luxembourg",
+    "continent": "Europe",
+    "region": "Western Europe",
+    "population": 562958,
+    "area": 2586
+  },
+  {
+    "code": "MO",
+    "name": "Macau",
+    "nativeName": "澳門",
+    "capital": "",
+    "continent": "Asia",
+    "region": "Eastern Asia",
+    "population": 642900,
+    "area": 30
+  },
+  {
+    "code": "MK",
+    "name": "Republic of Macedonia",
+    "nativeName": "Македонија",
+    "capital": "Skopje",
+    "continent": "Europe",
+    "region": "Southern Europe",
+    "population": 2058539,
+    "area": 25713
+  },
+  {
+    "code": "MG",
+    "name": "Madagascar",
+    "nativeName": "Madagasikara",
+    "capital": "Antananarivo",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 22434363,
+    "area": 587041
+  },
+  {
+    "code": "MW",
+    "name": "Malawi",
+    "nativeName": "Malawi",
+    "capital": "Lilongwe",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 16310431,
+    "area": 118484
+  },
+  {
+    "code": "MY",
+    "name": "Malaysia",
+    "nativeName": "Malaysia",
+    "capital": "Kuala Lumpur",
+    "continent": "Asia",
+    "region": "South-Eastern Asia",
+    "population": 30678800,
+    "area": 330803
+  },
+  {
+    "code": "MV",
+    "name": "Maldives",
+    "nativeName": "Maldives",
+    "capital": "Malé",
+    "continent": "Asia",
+    "region": "Southern Asia",
+    "population": 341256,
+    "area": 300
+  },
+  {
+    "code": "ML",
+    "name": "Mali",
+    "nativeName": "Mali",
+    "capital": "Bamako",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 17600000,
+    "area": 1240192
+  },
+  {
+    "code": "MT",
+    "name": "Malta",
+    "nativeName": "Malta",
+    "capital": "Valletta",
+    "continent": "Europe",
+    "region": "Southern Europe",
+    "population": 445426,
+    "area": 316
+  },
+  {
+    "code": "MH",
+    "name": "Marshall Islands",
+    "nativeName": "M̧ajeļ",
+    "capital": "Majuro",
+    "continent": "Oceania",
+    "region": "Micronesia",
+    "population": 56086,
+    "area": 181
+  },
+  {
+    "code": "MQ",
+    "name": "Martinique",
+    "nativeName": "Martinique",
+    "capital": "Fort-de-France",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "area": 1128,
+    "population": 381326
+  },
+  {
+    "code": "MR",
+    "name": "Mauritania",
+    "nativeName": "موريتانيا",
+    "capital": "Nouakchott",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 3631775,
+    "area": 1030700
+  },
+  {
+    "code": "MU",
+    "name": "Mauritius",
+    "nativeName": "Maurice",
+    "capital": "Port Louis",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 1261208,
+    "area": 2040
+  },
+  {
+    "code": "YT",
+    "name": "Mayotte",
+    "nativeName": "Mayotte",
+    "capital": "Mamoudzou",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 212645
+  },
+  {
+    "code": "MX",
+    "name": "Mexico",
+    "nativeName": "México",
+    "capital": "Mexico City",
+    "continent": "Americas",
+    "region": "Central America",
+    "population": 121740000,
+    "area": 1964375
+  },
+  {
+    "code": "FM",
+    "name": "Federated States of Micronesia",
+    "nativeName": "Micronesia",
+    "capital": "Palikir",
+    "continent": "Oceania",
+    "region": "Micronesia",
+    "population": 101351,
+    "area": 702
+  },
+  {
+    "code": "MD",
+    "name": "Moldova",
+    "nativeName": "Moldova",
+    "capital": "Chișinău",
+    "continent": "Europe",
+    "region": "Eastern Europe",
+    "population": 3555200,
+    "area": 33846
+  },
+  {
+    "code": "MC",
+    "name": "Monaco",
+    "nativeName": "Monaco",
+    "capital": "Monaco",
+    "continent": "Europe",
+    "region": "Western Europe",
+    "population": 37800,
+    "area": 2
+  },
+  {
+    "code": "MN",
+    "name": "Mongolia",
+    "nativeName": "Монгол улс",
+    "capital": "Ulan Bator",
+    "continent": "Asia",
+    "region": "Eastern Asia",
+    "population": 3031099,
+    "area": 1564110
+  },
+  {
+    "code": "ME",
+    "name": "Montenegro",
+    "nativeName": "Црна Гора",
+    "capital": "Podgorica",
+    "continent": "Europe",
+    "region": "Southern Europe",
+    "population": 621207,
+    "area": 13812
+  },
+  {
+    "code": "MS",
+    "name": "Montserrat",
+    "nativeName": "Montserrat",
+    "capital": "Plymouth",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 4922,
+    "area": 102
+  },
+  {
+    "code": "MA",
+    "name": "Morocco",
+    "nativeName": "المغرب",
+    "capital": "Rabat",
+    "continent": "Africa",
+    "region": "Northern Africa",
+    "population": 33337529,
+    "area": 446550
+  },
+  {
+    "code": "MZ",
+    "name": "Mozambique",
+    "nativeName": "Moçambique",
+    "capital": "Maputo",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 25727911,
+    "area": 801590
+  },
+  {
+    "code": "MM",
+    "name": "Myanmar",
+    "nativeName": "Myanma",
+    "capital": "Naypyidaw",
+    "continent": "Asia",
+    "region": "South-Eastern Asia",
+    "population": 53897000,
+    "area": 676578
+  },
+  {
+    "code": "NA",
+    "name": "Namibia",
+    "nativeName": "Namibia",
+    "capital": "Windhoek",
+    "continent": "Africa",
+    "region": "Southern Africa",
+    "population": 2280700,
+    "area": 825615
+  },
+  {
+    "code": "NR",
+    "name": "Nauru",
+    "nativeName": "Nauru",
+    "capital": "Yaren",
+    "continent": "Oceania",
+    "region": "Micronesia",
+    "population": 10084,
+    "area": 21
+  },
+  {
+    "code": "NP",
+    "name": "Nepal",
+    "nativeName": "नपल",
+    "capital": "Kathmandu",
+    "continent": "Asia",
+    "region": "Southern Asia",
+    "population": 28037904,
+    "area": 147181
+  },
+  {
+    "code": "NL",
+    "name": "Netherlands",
+    "nativeName": "Nederland",
+    "capital": "Amsterdam",
+    "continent": "Europe",
+    "region": "Western Europe",
+    "population": 16916000,
+    "area": 41850
+  },
+  {
+    "code": "NC",
+    "name": "New Caledonia",
+    "nativeName": "Nouvelle-Calédonie",
+    "capital": "Nouméa",
+    "continent": "Oceania",
+    "region": "Melanesia",
+    "population": 268767,
+    "area": 18575
+  },
+  {
+    "code": "NZ",
+    "name": "New Zealand",
+    "nativeName": "New Zealand",
+    "capital": "Wellington",
+    "continent": "Oceania",
+    "region": "Australia and New Zealand",
+    "population": 4609440,
+    "area": 270467
+  },
+  {
+    "code": "NI",
+    "name": "Nicaragua",
+    "nativeName": "Nicaragua",
+    "capital": "Managua",
+    "continent": "Americas",
+    "region": "Central America",
+    "population": 6198154,
+    "area": 130373
+  },
+  {
+    "code": "NE",
+    "name": "Niger",
+    "nativeName": "Niger",
+    "capital": "Niamey",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 19899000,
+    "area": 1267000
+  },
+  {
+    "code": "NG",
+    "name": "Nigeria",
+    "nativeName": "Nigeria",
+    "capital": "Abuja",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 182202000,
+    "area": 923768
+  },
+  {
+    "code": "NU",
+    "name": "Niue",
+    "nativeName": "Niuē",
+    "capital": "Alofi",
+    "continent": "Oceania",
+    "region": "Polynesia",
+    "population": 1613,
+    "area": 260
+  },
+  {
+    "code": "NF",
+    "name": "Norfolk Island",
+    "nativeName": "Norfolk Island",
+    "capital": "Kingston",
+    "continent": "Oceania",
+    "region": "Australia and New Zealand",
+    "population": 2302,
+    "area": 36
+  },
+  {
+    "code": "KP",
+    "name": "North Korea",
+    "nativeName": "북한",
+    "capital": "Pyongyang",
+    "continent": "Asia",
+    "region": "Eastern Asia",
+    "population": 25155000,
+    "area": 120538
+  },
+  {
+    "code": "MP",
+    "name": "Northern Mariana Islands",
+    "nativeName": "Northern Mariana Islands",
+    "capital": "Saipan",
+    "continent": "Oceania",
+    "region": "Micronesia",
+    "population": 53883,
+    "area": 464
+  },
+  {
+    "code": "NO",
+    "name": "Norway",
+    "nativeName": "Norge",
+    "capital": "Oslo",
+    "continent": "Europe",
+    "region": "Northern Europe",
+    "population": 5176998,
+    "area": 323802
+  },
+  {
+    "code": "OM",
+    "name": "Oman",
+    "nativeName": "عمان",
+    "capital": "Muscat",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 4185440,
+    "area": 309500
+  },
+  {
+    "code": "PK",
+    "name": "Pakistan",
+    "nativeName": "Pakistan",
+    "capital": "Islamabad",
+    "continent": "Asia",
+    "region": "Southern Asia",
+    "population": 190668000,
+    "area": 881912
+  },
+  {
+    "code": "PW",
+    "name": "Palau",
+    "nativeName": "Palau",
+    "capital": "Ngerulmud",
+    "continent": "Oceania",
+    "region": "Micronesia",
+    "population": 20901,
+    "area": 459
+  },
+  {
+    "code": "PS",
+    "name": "Palestine",
+    "nativeName": "فلسطين",
+    "capital": "Ramallah",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 4682467
+  },
+  {
+    "code": "PA",
+    "name": "Panama",
+    "nativeName": "Panamá",
+    "capital": "Panama City",
+    "continent": "Americas",
+    "region": "Central America",
+    "population": 3764166,
+    "area": 75417
+  },
+  {
+    "code": "PG",
+    "name": "Papua New Guinea",
+    "nativeName": "Papua Niugini",
+    "capital": "Port Moresby",
+    "continent": "Oceania",
+    "region": "Melanesia",
+    "population": 7398500,
+    "area": 462840
+  },
+  {
+    "code": "PY",
+    "name": "Paraguay",
+    "nativeName": "Paraguay",
+    "capital": "Asunción",
+    "continent": "Americas",
+    "region": "South America",
+    "population": 7003406,
+    "area": 406752
+  },
+  {
+    "code": "PE",
+    "name": "Peru",
+    "nativeName": "Perú",
+    "capital": "Lima",
+    "continent": "Americas",
+    "region": "South America",
+    "population": 31151643,
+    "area": 1285216
+  },
+  {
+    "code": "PH",
+    "name": "Philippines",
+    "nativeName": "Pilipinas",
+    "capital": "Manila",
+    "continent": "Asia",
+    "region": "South-Eastern Asia",
+    "population": 101920000,
+    "area": 342353
+  },
+  {
+    "code": "PN",
+    "name": "Pitcairn Islands",
+    "nativeName": "Pitcairn Islands",
+    "capital": "Adamstown",
+    "continent": "Oceania",
+    "region": "Polynesia",
+    "population": 56,
+    "area": 47
+  },
+  {
+    "code": "PL",
+    "name": "Poland",
+    "nativeName": "Polska",
+    "capital": "Warsaw",
+    "continent": "Europe",
+    "region": "Eastern Europe",
+    "population": 38484000,
+    "area": 312679
+  },
+  {
+    "code": "PT",
+    "name": "Portugal",
+    "nativeName": "Portugal",
+    "capital": "Lisbon",
+    "continent": "Europe",
+    "region": "Southern Europe",
+    "population": 10374822,
+    "area": 92090
+  },
+  {
+    "code": "PR",
+    "name": "Puerto Rico",
+    "nativeName": "Puerto Rico",
+    "capital": "San Juan",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 3548397,
+    "area": 8870
+  },
+  {
+    "code": "QA",
+    "name": "Qatar",
+    "nativeName": "قطر",
+    "capital": "Doha",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 2120129,
+    "area": 11586
+  },
+  {
+    "code": "XK",
+    "name": "Republic of Kosovo",
+    "nativeName": "Republika e Kosovës",
+    "capital": "Pristina",
+    "continent": "Europe",
+    "region": "Eastern Europe",
+    "population": 1733842,
+    "area": 10908
+  },
+  {
+    "code": "RE",
+    "name": "Réunion",
+    "nativeName": "La Réunion",
+    "capital": "Saint-Denis",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 840974
+  },
+  {
+    "code": "RO",
+    "name": "Romania",
+    "nativeName": "România",
+    "capital": "Bucharest",
+    "continent": "Europe",
+    "region": "Eastern Europe",
+    "population": 19942642,
+    "area": 238391
+  },
+  {
+    "code": "RU",
+    "name": "Russia",
+    "nativeName": "Россия",
+    "capital": "Moscow",
+    "continent": "Europe",
+    "region": "Eastern Europe",
+    "population": 146556330,
+    "area": 17124442
+  },
+  {
+    "code": "RW",
+    "name": "Rwanda",
+    "nativeName": "Rwanda",
+    "capital": "Kigali",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 11262564,
+    "area": 26338
+  },
+  {
+    "code": "BL",
+    "name": "Saint Barthélemy",
+    "nativeName": "Saint-Barthélemy",
+    "capital": "Gustavia",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 9269,
+    "area": 21
+  },
+  {
+    "code": "SH",
+    "name": "Saint Helena",
+    "nativeName": "Saint Helena",
+    "capital": "Jamestown",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 4255
+  },
+  {
+    "code": "KN",
+    "name": "Saint Kitts and Nevis",
+    "nativeName": "Saint Kitts and Nevis",
+    "capital": "Basseterre",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 56000,
+    "area": 261
+  },
+  {
+    "code": "LC",
+    "name": "Saint Lucia",
+    "nativeName": "Saint Lucia",
+    "capital": "Castries",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 185000,
+    "area": 616
+  },
+  {
+    "code": "MF",
+    "name": "Saint Martin",
+    "nativeName": "Saint-Martin",
+    "capital": "Marigot",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 36979,
+    "area": 53
+  },
+  {
+    "code": "PM",
+    "name": "Saint Pierre and Miquelon",
+    "nativeName": "Saint-Pierre-et-Miquelon",
+    "capital": "Saint-Pierre",
+    "continent": "Americas",
+    "region": "Northern America",
+    "population": 6069,
+    "area": 242
+  },
+  {
+    "code": "VC",
+    "name": "Saint Vincent and the Grenadines",
+    "nativeName": "Saint Vincent and the Grenadines",
+    "capital": "Kingstown",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 109991,
+    "area": 389
+  },
+  {
+    "code": "WS",
+    "name": "Samoa",
+    "nativeName": "Samoa",
+    "capital": "Apia",
+    "continent": "Oceania",
+    "region": "Polynesia",
+    "population": 187820,
+    "area": 2842
+  },
+  {
+    "code": "SM",
+    "name": "San Marino",
+    "nativeName": "San Marino",
+    "capital": "City of San Marino",
+    "continent": "Europe",
+    "region": "Southern Europe",
+    "population": 32831,
+    "area": 61
+  },
+  {
+    "code": "ST",
+    "name": "São Tomé and Príncipe",
+    "nativeName": "São Tomé e Príncipe",
+    "capital": "São Tomé",
+    "continent": "Africa",
+    "region": "Middle Africa",
+    "population": 187356,
+    "area": 964
+  },
+  {
+    "code": "SA",
+    "name": "Saudi Arabia",
+    "nativeName": "العربية السعودية",
+    "capital": "Riyadh",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 31521418,
+    "area": 2149690
+  },
+  {
+    "code": "SN",
+    "name": "Senegal",
+    "nativeName": "Sénégal",
+    "capital": "Dakar",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 13508715,
+    "area": 196722
+  },
+  {
+    "code": "RS",
+    "name": "Serbia",
+    "nativeName": "Србија",
+    "capital": "Belgrade",
+    "continent": "Europe",
+    "region": "Southern Europe",
+    "population": 7114393,
+    "area": 88361
+  },
+  {
+    "code": "SC",
+    "name": "Seychelles",
+    "nativeName": "Seychelles",
+    "capital": "Victoria",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 89949,
+    "area": 452
+  },
+  {
+    "code": "SL",
+    "name": "Sierra Leone",
+    "nativeName": "Sierra Leone",
+    "capital": "Freetown",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 6453000,
+    "area": 71740
+  },
+  {
+    "code": "SG",
+    "name": "Singapore",
+    "nativeName": "Singapore",
+    "capital": "Singapore",
+    "continent": "Asia",
+    "region": "South-Eastern Asia",
+    "population": 5469700,
+    "area": 710
+  },
+  {
+    "code": "SX",
+    "name": "Sint Maarten",
+    "nativeName": "Sint Maarten",
+    "capital": "Philipsburg",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 37429,
+    "area": 34
+  },
+  {
+    "code": "SK",
+    "name": "Slovakia",
+    "nativeName": "Slovensko",
+    "capital": "Bratislava",
+    "continent": "Europe",
+    "region": "Eastern Europe",
+    "population": 5421349,
+    "area": 49037
+  },
+  {
+    "code": "SI",
+    "name": "Slovenia",
+    "nativeName": "Slovenija",
+    "capital": "Ljubljana",
+    "continent": "Europe",
+    "region": "Southern Europe",
+    "population": 2067683,
+    "area": 20273
+  },
+  {
+    "code": "SB",
+    "name": "Solomon Islands",
+    "nativeName": "Solomon Islands",
+    "capital": "Honiara",
+    "continent": "Oceania",
+    "region": "Melanesia",
+    "population": 581344,
+    "area": 28896
+  },
+  {
+    "code": "SO",
+    "name": "Somalia",
+    "nativeName": "Soomaaliya",
+    "capital": "Mogadishu",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 10787000,
+    "area": 637657
+  },
+  {
+    "code": "ZA",
+    "name": "South Africa",
+    "nativeName": "South Africa",
+    "capital": "Pretoria",
+    "continent": "Africa",
+    "region": "Southern Africa",
+    "population": 54956900,
+    "area": 1221037
+  },
+  {
+    "code": "GS",
+    "name": "South Georgia",
+    "nativeName": "South Georgia",
+    "capital": "King Edward Point",
+    "continent": "Americas",
+    "region": "South America",
+    "population": 30
+  },
+  {
+    "code": "KR",
+    "name": "South Korea",
+    "nativeName": "대한민국",
+    "capital": "Seoul",
+    "continent": "Asia",
+    "region": "Eastern Asia",
+    "population": 51448183,
+    "area": 100210
+  },
+  {
+    "code": "SS",
+    "name": "South Sudan",
+    "nativeName": "South Sudan",
+    "capital": "Juba",
+    "continent": "Africa",
+    "region": "Middle Africa",
+    "population": 11892934,
+    "area": 619745
+  },
+  {
+    "code": "ES",
+    "name": "Spain",
+    "nativeName": "España",
+    "capital": "Madrid",
+    "continent": "Europe",
+    "region": "Southern Europe",
+    "population": 46439864,
+    "area": 505992
+  },
+  {
+    "code": "LK",
+    "name": "Sri Lanka",
+    "nativeName": "śrī laṃkāva",
+    "capital": "Colombo",
+    "continent": "Asia",
+    "region": "Southern Asia",
+    "population": 20675000,
+    "area": 65610
+  },
+  {
+    "code": "SD",
+    "name": "Sudan",
+    "nativeName": "السودان",
+    "capital": "Khartoum",
+    "continent": "Africa",
+    "region": "Northern Africa",
+    "population": 38435252,
+    "area": 1886068
+  },
+  {
+    "code": "SR",
+    "name": "Suriname",
+    "nativeName": "Suriname",
+    "capital": "Paramaribo",
+    "continent": "Americas",
+    "region": "South America",
+    "population": 534189,
+    "area": 163820
+  },
+  {
+    "code": "SJ",
+    "name": "Svalbard and Jan Mayen",
+    "nativeName": "Svalbard og Jan Mayen",
+    "capital": "Longyearbyen",
+    "continent": "Europe",
+    "region": "Northern Europe",
+    "population": 2562
+  },
+  {
+    "code": "SZ",
+    "name": "Swaziland",
+    "nativeName": "Swaziland",
+    "capital": "Lobamba",
+    "continent": "Africa",
+    "region": "Southern Africa",
+    "population": 1119375,
+    "area": 17364
+  },
+  {
+    "code": "SE",
+    "name": "Sweden",
+    "nativeName": "Sverige",
+    "capital": "Stockholm",
+    "continent": "Europe",
+    "region": "Northern Europe",
+    "population": 9793172,
+    "area": 450295
+  },
+  {
+    "code": "CH",
+    "name": "Switzerland",
+    "nativeName": "Schweiz",
+    "capital": "Bern",
+    "continent": "Europe",
+    "region": "Western Europe",
+    "population": 8256000,
+    "area": 41284
+  },
+  {
+    "code": "SY",
+    "name": "Syria",
+    "nativeName": "سوريا",
+    "capital": "Damascus",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 23339517,
+    "area": 185180
+  },
+  {
+    "code": "TW",
+    "name": "Taiwan",
+    "nativeName": "臺灣",
+    "capital": "Taipei",
+    "continent": "Asia",
+    "region": "Eastern Asia",
+    "population": 23461708,
+    "area": 36193
+  },
+  {
+    "code": "TJ",
+    "name": "Tajikistan",
+    "nativeName": "Тоҷикистон",
+    "capital": "Dushanbe",
+    "continent": "Asia",
+    "region": "Central Asia",
+    "population": 8354000,
+    "area": 143100
+  },
+  {
+    "code": "TZ",
+    "name": "Tanzania",
+    "nativeName": "Tanzania",
+    "capital": "Dodoma",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 53470000,
+    "area": 945087
+  },
+  {
+    "code": "TH",
+    "name": "Thailand",
+    "nativeName": "ประเทศไทย",
+    "capital": "Bangkok",
+    "continent": "Asia",
+    "region": "South-Eastern Asia",
+    "population": 65104000,
+    "area": 513120
+  },
+  {
+    "code": "TL",
+    "name": "East Timor",
+    "nativeName": "Timor-Leste",
+    "capital": "Dili",
+    "continent": "Asia",
+    "region": "South-Eastern Asia",
+    "population": 1212107,
+    "area": 14874
+  },
+  {
+    "code": "TG",
+    "name": "Togo",
+    "nativeName": "Togo",
+    "capital": "Lomé",
+    "continent": "Africa",
+    "region": "Western Africa",
+    "population": 7305000,
+    "area": 56785
+  },
+  {
+    "code": "TK",
+    "name": "Tokelau",
+    "nativeName": "Tokelau",
+    "capital": "Fakaofo",
+    "continent": "Oceania",
+    "region": "Polynesia",
+    "population": 1411,
+    "area": 12
+  },
+  {
+    "code": "TO",
+    "name": "Tonga",
+    "nativeName": "Tonga",
+    "capital": "Nuku'alofa",
+    "continent": "Oceania",
+    "region": "Polynesia",
+    "population": 103252,
+    "area": 747
+  },
+  {
+    "code": "TT",
+    "name": "Trinidad and Tobago",
+    "nativeName": "Trinidad and Tobago",
+    "capital": "Port of Spain",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 1340557,
+    "area": 5130
+  },
+  {
+    "code": "TN",
+    "name": "Tunisia",
+    "nativeName": "تونس",
+    "capital": "Tunis",
+    "continent": "Africa",
+    "region": "Northern Africa",
+    "population": 10982754,
+    "area": 163610
+  },
+  {
+    "code": "TR",
+    "name": "Turkey",
+    "nativeName": "Türkiye",
+    "capital": "Ankara",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 77695904,
+    "area": 783562
+  },
+  {
+    "code": "TM",
+    "name": "Turkmenistan",
+    "nativeName": "Türkmenistan",
+    "capital": "Ashgabat",
+    "continent": "Asia",
+    "region": "Central Asia",
+    "population": 4751120,
+    "area": 488100
+  },
+  {
+    "code": "TC",
+    "name": "Turks and Caicos Islands",
+    "nativeName": "Turks and Caicos Islands",
+    "capital": "Cockburn Town",
+    "continent": "Americas",
+    "region": "Caribbean",
+    "population": 31458,
+    "area": 948
+  },
+  {
+    "code": "TV",
+    "name": "Tuvalu",
+    "nativeName": "Tuvalu",
+    "capital": "Funafuti",
+    "continent": "Oceania",
+    "region": "Polynesia",
+    "population": 10640,
+    "area": 26
+  },
+  {
+    "code": "UG",
+    "name": "Uganda",
+    "nativeName": "Uganda",
+    "capital": "Kampala",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 34856813,
+    "area": 241550
+  },
+  {
+    "code": "UA",
+    "name": "Ukraine",
+    "nativeName": "Україна",
+    "capital": "Kiev",
+    "continent": "Europe",
+    "region": "Eastern Europe",
+    "population": 42836922,
+    "area": 603700
+  },
+  {
+    "code": "AE",
+    "name": "United Arab Emirates",
+    "nativeName": "دولة الإمارات العربية المتحدة",
+    "capital": "Abu Dhabi",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 9157000,
+    "area": 83600
+  },
+  {
+    "code": "GB",
+    "name": "United Kingdom",
+    "nativeName": "United Kingdom",
+    "capital": "London",
+    "continent": "Europe",
+    "region": "Northern Europe",
+    "population": 64800000,
+    "area": 242900
+  },
+  {
+    "code": "US",
+    "name": "United States",
+    "nativeName": "United States",
+    "capital": "Washington D.C.",
+    "continent": "Americas",
+    "region": "Northern America",
+    "population": 321645000,
+    "area": 9629091
+  },
+  {
+    "code": "UY",
+    "name": "Uruguay",
+    "nativeName": "Uruguay",
+    "capital": "Montevideo",
+    "continent": "Americas",
+    "region": "South America",
+    "population": 3415866,
+    "area": 181034
+  },
+  {
+    "code": "UZ",
+    "name": "Uzbekistan",
+    "nativeName": "O‘zbekiston",
+    "capital": "Tashkent",
+    "continent": "Asia",
+    "region": "Central Asia",
+    "population": 31022500,
+    "area": 447400
+  },
+  {
+    "code": "VU",
+    "name": "Vanuatu",
+    "nativeName": "Vanuatu",
+    "capital": "Port Vila",
+    "continent": "Oceania",
+    "region": "Melanesia",
+    "population": 264652,
+    "area": 12189
+  },
+  {
+    "code": "VE",
+    "name": "Venezuela",
+    "nativeName": "Venezuela",
+    "capital": "Caracas",
+    "continent": "Americas",
+    "region": "South America",
+    "population": 30620404,
+    "area": 916445
+  },
+  {
+    "code": "VN",
+    "name": "Vietnam",
+    "nativeName": "Việt Nam",
+    "capital": "Hanoi",
+    "continent": "Asia",
+    "region": "South-Eastern Asia",
+    "population": 91812000,
+    "area": 331212
+  },
+  {
+    "code": "WF",
+    "name": "Wallis and Futuna",
+    "nativeName": "Wallis et Futuna",
+    "capital": "Mata-Utu",
+    "continent": "Oceania",
+    "region": "Polynesia",
+    "population": 13135,
+    "area": 142
+  },
+  {
+    "code": "EH",
+    "name": "Western Sahara",
+    "nativeName": "الصحراء الغربية",
+    "capital": "El Aaiún",
+    "continent": "Africa",
+    "region": "Northern Africa",
+    "population": 510713,
+    "area": 266000
+  },
+  {
+    "code": "YE",
+    "name": "Yemen",
+    "nativeName": "اليَمَن",
+    "capital": "Sana'a",
+    "continent": "Asia",
+    "region": "Western Asia",
+    "population": 25956000,
+    "area": 527968
+  },
+  {
+    "code": "ZM",
+    "name": "Zambia",
+    "nativeName": "Zambia",
+    "capital": "Lusaka",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 15473905,
+    "area": 752612
+  },
+  {
+    "code": "ZW",
+    "name": "Zimbabwe",
+    "nativeName": "Zimbabwe",
+    "capital": "Harare",
+    "continent": "Africa",
+    "region": "Eastern Africa",
+    "population": 13061239,
+    "area": 390757
+  }
+]
