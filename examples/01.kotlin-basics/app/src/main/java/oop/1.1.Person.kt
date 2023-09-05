@@ -1,6 +1,11 @@
 package oop
 
-fun String.isPhoneNum() = length == 7 && all { it.isDigit() }
+import android.os.Build
+import androidx.annotation.RequiresApi
+import java.time.LocalDate
+import java.time.Period
+
+fun String.isPhoneNum() = length == 8 && all { it.isDigit() }
 /*
     - By default, all classes in kotlin are 'final'.
     Therefore, to allow extending a class it must be marked as 'open'
@@ -10,23 +15,32 @@ fun String.isPhoneNum() = length == 7 && all { it.isDigit() }
     - If a class is 'final' then declaring properties or methods as 'open' has no effect.
  */
 // You can set default values for properties, if necessary
+@RequiresApi(Build.VERSION_CODES.O)
 open class Person(var firstName: String,
-                  val lastName: String, val age: Int) {
+                  val lastName: String, val dob: LocalDate
+) {
 
-    var id : Int = 0
+    val id : Int //= (1..100).shuffled().first()
     var mobile : String = ""
+        set(value) {
+            if (field.isPhoneNum())
+                field = value
+            else
+                throw IllegalArgumentException("$value is an invalid phone number")
+        }
 
     // Secondary constructor must call the primary constructor with "this".
     constructor(firstName: String,
                 lastName: String,
-                age: Int, mobile: String) : this(firstName, lastName, age) {
+                dob: LocalDate, mobile: String) : this(firstName, lastName, dob) {
 
-        if (mobile.isPhoneNum())
             this.mobile = mobile
     }
 
-    val fullName: String
-         get() = "$firstName $lastName"
+    val fullName get() = "$firstName $lastName"
+
+    val age
+        get() = Period.between(dob, LocalDate.now()).years
 
     fun isUnderAge() = age < 18
 

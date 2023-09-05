@@ -1,6 +1,7 @@
 package variables
 
 fun main() {
+
     // slash slash line comment
 
     /*

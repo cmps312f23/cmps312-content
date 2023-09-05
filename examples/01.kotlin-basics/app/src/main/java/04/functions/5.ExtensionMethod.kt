@@ -7,7 +7,7 @@ fun Int.isEven() = this % 2 == 0
 
 fun Char.isLatinUppercase() = this in 'A'..'Z'
 
-fun String.lastChar() = this[this.length - 1]
+fun String.lastChar() = this[length - 1]
 val String.lastChar get() = get(length - 1)
 
 fun String.print() = println(this)

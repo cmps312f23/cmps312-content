@@ -1,4 +1,9 @@
 package oop
+
+import android.os.Build
+import androidx.annotation.RequiresApi
+import java.time.LocalDate
+
 /*
     - To inherit from a class, write the name of the base class after a colon.
     - There are two things to keep in mind when inheriting:
@@ -10,11 +15,12 @@ package oop
 
 class Address(val street: String = "", val city: String = "")
 
+@RequiresApi(Build.VERSION_CODES.O)
 class Student(firstName: String,
               lastName: String,
-              age: Int,
+              dob: LocalDate,
               val gpa: Double
-) : Person(firstName, lastName, age) {
+) : Person(firstName, lastName, dob) {
 
     var address = Address()
 
@@ -33,6 +39,7 @@ class Student(firstName: String,
     companion object {
         val university = "Qatar University"
         val city = "Doha"
-        fun getCountry() = "Qatar"
+        val country = "Qatar"
+        fun getCurrentYear() = LocalDate.now().year
     }
 }
