@@ -8,16 +8,21 @@ import java.time.format.DateTimeFormatter
 //Interface does not have an implementation
 //Interface can be implemented by different classes
 interface Payable {
+    val defaulAmount : Int
     fun getPayText(): String
     fun getPayAmount(): Double
 }
 
 class Employee (val firstname: String, val lastname:String, val salary: Double) : Payable {
-    override fun getPayText() = "$firstname $lastname"
-    override fun getPayAmount() = salary
+    override val defaulAmount: Int
+        get() = 1000
+     override fun getPayText() = "$firstname $lastname, pay them $salary"
+     override fun getPayAmount() = salary
 }
 
 class Invoice(val invoiceDate: LocalDate, val totalAmount: Double) : Payable {
+    override val defaulAmount: Int
+        get() = 0
     //@TargetApi(Build.VERSION_CODES.O)
     @RequiresApi(Build.VERSION_CODES.O)
     override fun getPayText(): String {
@@ -30,7 +35,7 @@ class Invoice(val invoiceDate: LocalDate, val totalAmount: Double) : Payable {
 
 @RequiresApi(Build.VERSION_CODES.O)
 fun main() {
-    val payables = listOf<Payable>(
+    val payables = listOf(
         Employee("Ali", "Faleh", 1000.5),
         Employee("Sara", "Saleh", 1500.5),
         Invoice(LocalDate.now(), 5000.0)

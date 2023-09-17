@@ -43,3 +43,11 @@ class Student(firstName: String,
         fun getCurrentYear() = LocalDate.now().year
     }
 }
+
+object UniversityInfo {
+    val university = "Qatar University"
+    val city = "Doha"
+    val country = "Qatar"
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun getCurrentYear() = LocalDate.now().year
+}

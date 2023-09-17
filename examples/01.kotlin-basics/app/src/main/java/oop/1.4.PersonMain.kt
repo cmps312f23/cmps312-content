@@ -25,9 +25,24 @@ fun main() {
     println("> isUnderAge: ${student1.isUnderAge()}")
     println("> student1.toString(): $student1")
 
+    //UniversityInfo.city
+
     println("Studies at ${Student.university} in ${Student.city} ${Student.country}. " +
             "Current year: ${Student.getCurrentYear()} ")
 
     val faculty1 = Faculty("Abbes", "Ibn Firnas", LocalDate.parse("1980-03-20"), "C07-130");
     println("\n> faculty1.toString(): $faculty1")
+
+    val quMembers = listOf(student1, faculty1)
+    quMembers.forEach {
+        println(it)
+
+        if (it is Student) {
+            println(it.gpa)
+        }
+
+        if (it is Faculty) {
+             it.office
+        }
+    }
 }

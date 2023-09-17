@@ -4,29 +4,32 @@ import kotlin.math.pow
 
 abstract class Shape {
     abstract fun area() : Double
-    open val name: String
+    open val name
         get() = "Shape"
 }
 
 class Rectangle(val width: Double, val height: Double) : Shape() {
+    val isSquare
+        get() = width == height
+
     override fun area() = width * height
 
-    override val name: String
-        get() = "Rectangle"
+   /* override val name
+        get() = if (isSquare) "Square" else "Rectangle" */
 }
 
 class Circle(val radius: Double) : Shape() {
     override fun area() = Math.PI * radius.pow(2)
 
-    override val name: String
+    override val name
         get() = "Circle"
 }
 
 fun main() {
-    val shapes = mutableListOf<Shape>()
-    shapes.add( Circle(3.5) )
-    shapes.add( Circle(5.0) )
-    shapes.add( Rectangle (3.5, 5.0) )
+    val shapes = listOf(
+        Circle(3.5) ,
+        Circle(5.0),
+        Rectangle (3.5, 5.0))
 
     println("> Processing shapes polymorphically")
     shapes.forEach {
