@@ -1,0 +1,623 @@
+[
+  {
+    "packageId": 1,
+    "author": "t1@test.com",
+    "category": "Places",
+    "description": "A list of 6 places that we can find in town",
+    "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/2538/2538872.svg",
+    "language": "English",
+    "lastUpdatedDate": "2020/09/17",
+    "level": "Beginner",
+    "title": "Places In Town",
+    "version": 2,
+    "words": [
+      {
+        "text": "Mall",
+        "definitions": [
+          {
+            "text": "Place to go shopping",
+            "source": "Merriam-Webster"
+          }
+        ],
+        "sentences": [
+          {
+            "text": "I bought a new bag from the mall",
+            "resources": [
+              {
+                "title": "Mall of Qatar",
+                "url": "https://gulfbusiness.com/wp-content/uploads/2016/12/Mall-of-Qatar.jpg",
+                "type": "Photo"
+              },
+              {
+                "title": "Mall of Qatar Tour",
+                "url": "https://github.com/erradi/erradi.github.io/blob/master/Mall-of-Qatar-Tour.mp4?raw=true",
+                "type": "Video"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "text": "School",
+        "definitions": [
+          {
+            "text": "Place to learn",
+            "source": "Wikipedia"
+          },
+          {
+            "text": "Place where kids receive their education",
+            "source": "Oxford Dictionary"
+          }
+        ],
+        "sentences": [
+          {
+            "text": "My son goes to Doha British School",
+            "resources": [
+              {
+                "title": "Doha British School",
+                "url": "https://www.dohabritishschool.com/dbs-ainkhaled/public/uploads/pages/1568797241.jpg",
+                "type": "Photo"
+              },
+              {
+                "title": "Learn and have fun",
+                "url": "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
+                "type": "Video"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Park",
+        "definitions": [
+          {
+            "text": "Place to play and have fun",
+            "source": "Collins English Dictionary"
+          },
+          {
+            "text": "Small natural areas in the middle of the town",
+            "source": "The Chambers Dictionary"
+          }
+        ],
+        "sentences": [
+          {
+            "text": "We are playing at the park",
+            "resources": [
+              {
+                "title": "Aspire Park",
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Aspire_Park%2C_Doha_-_panoramio_%281%29.jpg/440px-Aspire_Park%2C_Doha_-_panoramio_%281%29.jpg",
+                "type": "Photo"
+              },
+              {
+                "title": "Al Khor Family Park",
+                "url": "https://www.iloveqatar.net/public/images/local/_760x500_clip_center-center_none/EQprMssWsAA9FWx.jpg",
+                "type": "Photo"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Hospital",
+        "definitions": [
+          {
+            "text": "Place where sick people go to get cured",
+            "source": "The Urban Dictionary"
+          },
+          {
+            "text": "Place where doctors treat patients",
+            "source": "The Hacker’s Dictionary"
+          }
+        ],
+        "sentences": [
+          {
+            "text": "I am sick, so I will go to the hospital",
+            "resources": [
+              {
+                "title": "Hamad Hospital",
+                "url": "https://thepeninsulaqatar.com/uploads/2017/06/20/post_main_cover_fit//9cecf42be0f4dcfa2b6f7e0d78e2ac8cb3b91c7c.jpg",
+                "type": "Photo"
+              },
+              {
+                "title": "Sidra Medical and Research Center",
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Construction_of_Sidra_Medical_and_Research_Center_in_2014.jpg/440px-Construction_of_Sidra_Medical_and_Research_Center_in_2014.jpg",
+                "type": "Photo"
+              },
+              {
+                "title": "Sidra Medical and Research Center Tour",
+                "url": "https://erradi.github.io/Sidra-Medicine.mp4",
+                "type": "Video"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Coffee shop",
+        "definitions": [
+          {
+            "text": "Place to buy coffee and small meals",
+            "source": "Wikipedia"
+          }
+        ],
+        "sentences": [
+          {
+            "text": "I want to buy a coffee from the coffee shop",
+            "resources": [
+              {
+                "title": "Starbucks Coffee",
+                "url": "https://ezdanmall.qa/al-gharaffa/wp-content/uploads/sites/2/2018/08/STARBUCKS-COFFEE.jpg",
+                "type": "Photo"
+              },
+              {
+                "title": "Delicious Coffee",
+                "url": "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
+                "type": "Video"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Dentist",
+        "definitions": [
+          {
+            "text": "Place to go to cure pain in your teeth",
+            "source": "QU Dictionary"
+          }
+        ],
+        "sentences": [
+          {
+            "text": "I will go to the dentist because I have a toothache",
+            "resources": [
+              {
+                "title": "Dentist",
+                "url": "https://www.qu.edu.qa/static_file/qu/colleges/dentistry/showarea/10.jpg",
+                "type": "Photo"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "text": "University",
+        "definitions": [
+          {
+            "text": "Place to get higher education",
+            "source": "QU Dictionary"
+          }
+        ],
+        "sentences": [
+          {
+            "text": "I will study Medicine at Qatar university",
+            "resources": [
+              {
+                "title": "Qatar university",
+                "url": "https://www.qu.edu.qa/static_file/qu/research/images/about%208.jpg",
+                "type": "Photo"
+              },
+              {
+                "title": "Qatar University Website",
+                "url": "https://www.qu.edu.qa/",
+                "type": "Website"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "packageId": 2,
+    "author": "t2@test.com",
+    "category": "Places",
+    "description": "Continuing on the previous package, here is a list of 6 more places that we can find in town",
+    "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1838/1838458.svg",
+    "language": "English",
+    "lastUpdatedDate": "2019/02/09",
+    "level": "Beginner",
+    "title": "Places In Town 2",
+    "version": 1,
+    "words": [
+      {
+        "text": "Grocery store",
+        "definitions": [
+          {
+            "text": "Place to buy grocery items",
+            "source": "Dictionary"
+          }
+        ],
+        "sentences": [
+          {
+            "text": "I will buy vegetables at the grocery store",
+            "resources": [
+              {
+                "title": "Grocery store",
+                "url": "https://www.expatica.com/app/uploads/sites/2/2014/05/spain-grocery.jpg",
+                "type": "Photo"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Garage",
+        "definitions": [
+          {
+            "text": "Place to get your car fixed when it is not working properly",
+            "source": "Dictionary"
+          }
+        ],
+        "sentences": [
+          {
+            "text": "Adam will take the broken car to the garage",
+            "resources": [
+              {
+                "title": "Garage",
+                "url": "https://www.chrislovesjulia.com/wp-content/uploads/2020/06/061A4057.jpg",
+                "type": "Photo"
+              },
+              {
+                "title": "Garage video",
+                "url": "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
+                "type": "Video"
+              }
+            ]
+          }
+        ]},
+      {
+        "text": "Restaurant",
+        "definitions": [
+          {
+            "text": "Place to buy a meal and eat it",
+            "source": "Dictionary"
+          },
+          {
+            "text": "Place to eat",
+            "source": "Dictionary2"
+          }
+        ],
+        "sentences": [
+          {
+            "text": "We will go to the restaurant for dinner",
+            "resources": [
+              {
+                "title": "Restaurant",
+                "url": "https://www.ikea.com/images/ikea-restaurant-0745426d2a11d5a15d9c4fdf85ce4de4.jpg?f=xxxl",
+                "type": "Photo"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Police station",
+        "definitions": [
+          {
+            "text": "Place where police men work",
+            "source": "Dictionary"
+          }
+        ],
+        "sentences": [
+          {
+            "text": "My father works at the police station",
+            "resources": [
+              {
+                "title": "Police station",
+                "url": "https://media.istockphoto.com/vectors/the-police-car-opposite-the-of-the-police-station-vector-id886490230?b=1&k=6&m=886490230&s=612x612&w=0&h=dAqfQLecS0NH-Px6uQlOnGXXxhThHvW93ri4go--Cac=",
+                "type": "Photo"
+              },
+              {
+                "title": "Police station video",
+                "url": "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
+                "type": "Video"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Post office",
+        "definitions": [
+          {
+            "text": "Place that is responsible of delivering items that you want to send to someone",
+            "source": "Dictionary"
+          }
+        ],
+        "sentences": [
+          {
+            "text": "She took the letter to the post office",
+            "resources": [
+              {
+                "title": "Post office",
+                "url": "https://en.pimg.jp/008/349/586/1/8349586.jpg",
+                "type": "Photo"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Library",
+        "definitions": [
+          {
+            "text": "Place to borrow books",
+            "source": "Dictionary"
+          },
+          {
+            "text": "Place to study and read books",
+            "source": "Dictionary2"
+          }
+        ],
+        "sentences": [
+          {
+            "text": "I will borrow a book from the library",
+            "resources": [
+              {
+                "title": "Library",
+                "url": "https://www.mathaf.org.qa/images/research/library-620-1.jpg",
+                "type": "Photo"
+              },
+              {
+                "title": "Library Website",
+                "url": "https://www.qnl.qa/en",
+                "type": "Website"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "packageId": 3,
+    "author": "t3@test.com",
+    "category": "Food",
+    "description": "Fruit Vocabulary Word List",
+    "iconUrl": "https://cdn.icon-icons.com/icons2/1832/PNG/512/iconfinderfoodandrestaurantorganicveganhealthyfooddietvegetarianbananafoodapplefruit4394827-115907_115874.png",
+    "language": "English",
+    "lastUpdatedDate": "2020-27-9",
+    "level": "Easy",
+    "title": "Fruits Package",
+    "version": 3,
+    "words":
+    [
+      {
+        "text": "Strawberry",
+        "definitions":
+        [
+          {
+            "text": "A small juicy red fruit that has small brown seeds on its surface, or the plant with white flowers on which this fruit grows",
+            "source":"Cambridge Dictionary"
+          },
+          {
+            "text": "A sweet soft red fruit with a seed-studded surface",
+            "source":"OXFORD Dictionary"
+          }
+        ],
+        "sentences":
+        [
+          {
+            "text": "We sat in the garden hulling Strawberries",
+            "resources":
+            [
+              {
+                "url": "https://ak.picdn.net/shutterstock/videos/4235933/preview/stock-footage-stalks-being-removed-from-strawberries.webm",
+                "title": "Hulling Strawberries",
+                "type":"Video"
+              }
+            ]
+          },
+          {
+            "text": "Strawberries color is red",
+            "resources":
+            [
+              {
+                "url": "https://image.shutterstock.com/image-vector/vector-illustration-strawberry-fruit-flat-600w-1653837160.jpg",
+                "title": "Strawberry",
+                "type":"Photo"
+              },
+              {
+                "url": "https://cdn.videvo.net/videvo_files/video/premium/video0252/small_watermarked/4000-4_07508_preview.webm",
+                "title": "Fresh strawberries",
+                "type":"Video"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Apple",
+        "definitions":
+        [
+          {
+            "text": "the round fruit of a tree of the rose family, which typically has thin green or red skin and crisp flesh",
+            "source":"Cambridge Dictionary"
+          },
+          {
+            "text": "the tree bearing apples, with hard pale timber that is used in carpentry and to smoke food",
+            "source":"OXFORD Dictionary"
+          }
+        ],
+        "sentences":
+        [
+          {
+            "text": "We sat in the garden hulling Apples",
+            "resources":
+            [
+              {
+                "url": "https://ak.picdn.net/shutterstock/videos/4235933/preview/stock-footage-stalks-being-removed-from-strawberries.webm",
+                "title": "Hulling Apples",
+                "type":"Video"
+              }
+            ]
+          },
+          {
+            "text": "Apples color is Green",
+            "resources":
+            [
+              {
+                "url": "https://image.shutterstock.com/image-vector/vector-illustration-strawberry-fruit-flat-600w-1653837160.jpg",
+                "title": "Apple",
+                "type":"Photo"
+              },
+              {
+                "url": "https://cdn.videvo.net/videvo_files/video/premium/video0252/small_watermarked/4000-4_07508_preview.webm",
+                "title": "Fresh Apples",
+                "type":"Video"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Grapes",
+        "definitions":
+        [
+          {
+            "text": "A berry (typically green, purple, or black) growing in clusters on a grapevine, eaten as fruit",
+            "source":"OXFORD Dictionary"
+          },
+          {
+            "text": "A small, round, purple or pale green fruit that you can eat",
+            "source":"Cambridge Dictionary"
+          }
+
+        ],
+        "sentences":
+        [
+          {
+            "text": "She pulled another grape off the bunch and popped it into her mouth",
+            "resources":
+            [
+              {
+                "url": "https://ak.picdn.net/shutterstock/videos/1060460383/preview/stock-footage-child-eat-sweet-grape-little-girl-vegetarian-is-eating-white-grapes-from-plate-sitting-home-at.webm",
+                "title": "Eating Grapes",
+                "type":"Video"
+              },
+              {
+                "url": "https://ak.picdn.net/shutterstock/videos/1055039492/preview/stock-footage-aerial-view-grape-field-vineyard-rows-vineyard-plantation-grapevines-and-plant-rows.webm",
+                "title": "Grapes Farms",
+                "type":"Video"
+              }
+            ]
+          },
+          {
+            "text": "The Mediterranean climate is good for growing citrus fruits and grapes",
+            "resources":
+            [
+              {
+                "url": "https://ak.picdn.net/shutterstock/videos/1055039492/preview/stock-footage-aerial-view-grape-field-vineyard-rows-vineyard-plantation-grapevines-and-plant-rows.webm",
+                "title": "Grapes Farms",
+                "type":"Video"
+              },
+              {
+                "url": "https://image.shutterstock.com/image-photo/fresh-grapes-isolated-on-white-600w-1477567895.jpg",
+                "title": "Grapes",
+                "type":"Photo"
+              },
+              {
+                "url": "https://image.shutterstock.com/image-vector/bunch-red-pink-grapes-juice-600w-1795583716.jpg",
+                "title": "Red Grapes",
+                "type":"Photo"
+              },
+              {
+                "url": "https://cdn.videvo.net/videvo_files/video/free/2015-08/small_watermarked/redgrapes_preview.webm",
+                "title": "Macro Red Grapes",
+                "type":"Video"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "packageId": 4,
+    "author": "t2@test.com",
+    "category": "Health",
+    "description": "Health domain terminology",
+    "language": "English",
+    "lastUpdatedDate": "2020-10-9",
+    "level": "Average",
+    "title": "Corona Package",
+    "version": 2,
+    "words": [
+      {
+        "text": "Corona Virus",
+        "definitions": [
+          {
+            "text": "A group of RNA viruses that cause diseases in mammals and birds",
+            "source": "Wikipedia"
+          }
+        ],
+        "sentences": [
+          {
+            "text": "Precautionary measures",
+            "resources": [
+              {
+                "url": "https://www.flaticon.com/svg/static/icons/svg/3596/3596032.svg",
+                "title": "COVID19 protection",
+                "type": "Photo"
+              }
+            ]
+          },
+          {
+            "text": "Coronavirus is continuing its spread across the world",
+            "resources": [
+              {
+                "url": "https://www.flaticon.com/svg/static/icons/svg/2790/2790740.svg",
+                "title": "Covid19 spreading",
+                "type": "Photo"
+              },
+              {
+                "url": "https://v.ftcdn.net/03/78/85/13/700_F_378851397_QzZElSE57apQuLLqJrpJvSROX23988IP_ST.mp4",
+                "title": "Pearl Qatar Island",
+                "type": "Video"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "text": "COVID-19",
+        "definitions": [
+          {
+            "text": "A group of RNA viruses that cause diseases in mammals and birds",
+            "source": "Wikipedia"
+          }
+        ],
+        "sentences": [
+          {
+            "text": "Precautionary measures",
+            "resources": [
+              {
+                "url": "https://www.flaticon.com/svg/static/icons/svg/3596/3596032.svg",
+                "title": "COVID19 protection",
+                "type": "Photo"
+              }
+            ]
+          },
+          {
+            "text": "Coronavirus is continuing its spread across the world",
+            "resources": [
+              {
+                "url": "https://www.flaticon.com/svg/static/icons/svg/2790/2790740.svg",
+                "title": "Covid19 spreading",
+                "type": "Photo"
+              },
+              {
+                "url": "https://v.ftcdn.net/03/78/85/13/700_F_378851397_QzZElSE57apQuLLqJrpJvSROX23988IP_ST.mp4",
+                "title": "Pearl Qatar Island",
+                "type": "Video"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
