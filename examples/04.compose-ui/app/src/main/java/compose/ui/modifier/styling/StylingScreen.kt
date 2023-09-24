@@ -7,6 +7,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
@@ -32,12 +33,12 @@ fun TextWidthPadding() {
         modifier =
         Modifier
             .padding(16.dp) // Outer padding (margin)
-            .background(color = Color.Yellow) //background color
             .border(
-                width = 2.dp,
-                color = Color.Gray
+                width = 3.dp,
+                color = Color.Red
             ) // Add a border
-            .padding(8.dp) // Inner padding
+            .background(color = Color.Green) //background color
+            .padding(20.dp) // Inner padding
     )
 }
 
@@ -51,8 +52,8 @@ fun WidthAndHeightModifier() {
         modifier = Modifier
             .padding(10.dp) // Outer padding (margin)
             .background(Color.Blue)
-            .width(200.dp)
-            .height(50.dp)
+            .width(250.dp)
+            .height(100.dp)
             //.size(width = 250.dp, height = 100.dp) //Alternative way
     )
 }
@@ -104,6 +105,16 @@ fun RotateModifier() {
     )
 }
 
+@Composable
+fun AlignTextModifier() {
+    Box(modifier = Modifier.fillMaxSize()) {
+        Text(modifier = Modifier.align(Alignment.BottomEnd),text = "Aligned to bottom end")
+        Text(modifier = Modifier.align(Alignment.BottomStart),text = "Aligned to bottom start")
+        Text(modifier = Modifier.align(Alignment.CenterStart),text = "Aligned to start center ")
+        Text(modifier = Modifier.align(Alignment.TopCenter),text = "Aligned to top center ")
+    }
+}
+
 @Preview
 @Composable
 fun TextWidthPaddingPreview() {
@@ -120,6 +131,12 @@ fun WidthAndHeightModifierPreview() {
 @Composable
 fun FillHeightModifierPreview() {
     FillHeightModifier()
+}
+
+@Preview
+@Composable
+fun AlignTextModifierPreview() {
+    AlignTextModifier()
 }
 
 @Preview

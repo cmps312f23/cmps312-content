@@ -10,13 +10,20 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import compose.ui.state.ClickCounter
+import compose.ui.state.ClicksCounterScreen
+import compose.ui.state.WelcomeScreen
 import compose.ui.ui.theme.ComposeUITheme
 
 class FirstActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ComposeUITheme {
+            WelcomeScreen()
+            //ClicksCounterScreen()
+            //HelloWorld(name = "CMPS 312 Team")
+
+/*            ComposeUITheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -24,9 +31,20 @@ class FirstActivity : ComponentActivity() {
                 ) {
                     Greeting("Android")
                 }
-            }
+            }*/
         }
     }
+}
+
+@Composable
+fun HelloWorld(name: String) =
+    Text("Hello $name from Compose!")
+
+
+@Preview(showBackground = true)
+@Composable
+fun HelloWorldPreview() {
+    HelloWorld("CMPS 312 Team")
 }
 
 @Composable

@@ -1,5 +1,6 @@
 package compose.ui.state
 
+import android.graphics.Color.argb
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -20,7 +21,7 @@ import compose.ui.R
 
 fun getRandomColor() : Int {
     val rgbValues = (0..255).shuffled().take(4)
-    return android.graphics.Color.argb(rgbValues[0], rgbValues[1], rgbValues[2], rgbValues[3])
+    return argb(rgbValues[0], rgbValues[1], rgbValues[2], rgbValues[3])
 }
 
 @Composable
@@ -30,8 +31,7 @@ fun WelcomeScreen() {
     // the caller to make a composable stateless
     var name by remember { mutableStateOf("Android") }
     Column(
-        modifier = Modifier.fillMaxWidth()
-                           .verticalScroll(rememberScrollState()),
+        modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
