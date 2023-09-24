@@ -7,9 +7,12 @@ fun main() {
         println(it * 2)
         it * 2
     }
-        .find { it == 4 }
+        .find { it == 5 }
 
-    println("$result found")
+    if (result == null)
+        println("Not found")
+    else
+        println("$result found")
 
 
     println("\nOutput using a sequence")
@@ -17,6 +20,7 @@ fun main() {
     result= numsSequence.map {
         println(it * 2)
         it * 2
+
     }
         .find { it == 4 }
     println("$result found")
