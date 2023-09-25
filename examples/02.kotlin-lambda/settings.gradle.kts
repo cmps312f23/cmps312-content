@@ -5,4 +5,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "Kotlin-Basics"
+rootProject.name = "Kotlin-Lambda"
