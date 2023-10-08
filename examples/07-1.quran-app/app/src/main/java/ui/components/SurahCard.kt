@@ -1,4 +1,4 @@
-package ui.quran
+package ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
@@ -23,9 +23,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import compose.nav.R
 import model.Surah
+import ui.common.displayMessage
 import ui.common.lightGreen
 import ui.common.lightYellow
-import ui.screens.displayMessage
 import ui.theme.AppTheme
 
 @Composable

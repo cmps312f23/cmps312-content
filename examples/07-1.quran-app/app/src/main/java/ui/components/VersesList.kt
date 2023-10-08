@@ -1,6 +1,5 @@
-package ui.quran
+package ui.components
 
-import androidx.activity.ComponentActivity
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,7 +21,6 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -32,18 +30,17 @@ import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import model.Surah
 import ui.common.lightYellow
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun VersesScreen(surahId: Int, onNavigateBack: () -> Unit) {
+fun VersesList(surah: Surah?, onNavigateBack: () -> Unit) {
     /* Get an instance of the shared viewModel
     Make the activity the store owner of the viewModel
     to ensure that the same viewModel instance is used for all destinations
     */
-    val surahViewModel = viewModel<SurahViewModel>(viewModelStoreOwner = LocalContext.current as ComponentActivity)
-    val surah = surahViewModel.getSurah(surahId)
+
 
     val verses = buildAnnotatedString {
         surah?.verses?.forEach { verse ->

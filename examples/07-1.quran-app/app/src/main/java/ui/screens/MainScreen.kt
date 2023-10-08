@@ -1,4 +1,4 @@
-package ui.quran
+package ui.screens
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -12,12 +12,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import ui.common.*
-import ui.quran.components.nav.AppNavigator
-import ui.quran.components.nav.BottomNavBar
-import ui.screens.Screen
+import ui.components.nav.AppNavigator
+import ui.components.nav.BottomNavBar
+import ui.theme.AppTheme
 
 @Composable
-fun QuranMainScreen() {
+fun MainScreen() {
     //remember navController so it does not get recreated on recomposition
     val navController = rememberNavController()
     // For debugging - display the current route everytime the route changes
@@ -43,7 +43,7 @@ fun TopBar() {
     TopAppBar(
         title = {
             Text(
-                text = "Quran App",
+                text = "القرآن الكريم",
                 modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.Center
             )
@@ -53,6 +53,8 @@ fun TopBar() {
 
 @Preview
 @Composable
-fun QuranMainScreenPreview() {
-    QuranMainScreen()
+fun MainScreenPreview() {
+    AppTheme {
+        MainScreen()
+    }
 }

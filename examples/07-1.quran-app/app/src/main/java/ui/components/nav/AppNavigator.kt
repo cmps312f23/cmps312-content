@@ -1,5 +1,6 @@
-package ui.quran.components.nav
+package ui.components.nav
 
+import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
@@ -11,13 +12,12 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import compose.nav.ui.screens.StatsScreen
 import ui.common.displayMessage
-import ui.quran.SurahScreen
-import ui.quran.SurahViewModel
-import ui.quran.VersesScreen
+import ui.components.SurahList
+import ui.components.VersesList
 import ui.screens.Screen
-import ui.screens.SearchScreen
-import ui.screens.SettingsScreen
+import ui.viewmodel.SurahViewModel
 
 /**
  * It receives navcontroller to navigate between screens,
@@ -48,7 +48,7 @@ fun AppNavigator(
             /* Load the SurahScreen and when a surah is click then navigate to the verses
             screen and pass the select surahId as a parameter */
             // verses/2
-            SurahScreen(onSelectSurah = { surahId ->
+            SurahList(surahViewModel, onSelectSurah = { surahId ->
                 navController.navigate("${Screen.Verses.route}/$surahId")
             })
         }
@@ -59,18 +59,16 @@ fun AppNavigator(
         ) { backStackEntry ->
             // Extract the Nav arguments from the Nav BackStackEntry
             backStackEntry.arguments?.getInt("surahId")?.let { surahId ->
+                val surahViewModel = viewModel<SurahViewModel>(viewModelStoreOwner = LocalContext.current as ComponentActivity)
+                val surah = surahViewModel.getSurah(surahId)
                 /* Load the VersesScreen and when the user clicks the back arrow then navigate up */
-                VersesScreen(surahId = surahId,
+                VersesList(surah,
                     onNavigateBack = { navController.navigateUp() })
             }
         }
 
-        composable(Screen.Search.route) {
-            SearchScreen()
-        }
-
-        composable(Screen.Settings.route) {
-            SettingsScreen()
+        composable(Screen.Stats.route) {
+            StatsScreen(surahViewModel)
         }
     }
 }

@@ -1,4 +1,4 @@
-package ui.quran.components.nav
+package ui.components.nav
 
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Icon
@@ -19,7 +19,7 @@ fun BottomNavBar(navController: NavHostController) {
     BottomAppBar {
         //observe current route to change the icon color,label color when navigated
         val currentRoute = getCurrentRoute(navController)
-        val navItems = listOf(Screen.Quran, Screen.Search, Screen.Settings)
+        val navItems = listOf(Screen.Quran, Screen.Stats)
 
         navItems.forEach { navItem ->
             NavigationBarItem(
