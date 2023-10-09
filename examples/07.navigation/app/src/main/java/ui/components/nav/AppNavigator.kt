@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -19,6 +20,7 @@ import ui.screens.Screen
 import ui.screens.SearchScreen
 import ui.screens.SettingsScreen
 import ui.user.UserDetailsScreen
+import ui.user.UserViewModel
 
 /**
  * It receives navcontroller to navigate between screens,
@@ -30,6 +32,7 @@ fun AppNavigator(
     navController: NavHostController,
     padding: PaddingValues
 ) {
+    val userViewModel = viewModel<UserViewModel>()
     NavHost(
         navController = navController,
         //set the start destination as home
@@ -41,7 +44,7 @@ fun AppNavigator(
            = possible routes a user can take through the app */
 
         composable(Screen.Users.route) {
-            UsersScreen(onNavigateToDetails = { userId ->
+            UsersScreen(userViewModel, onNavigateToDetails = { userId ->
                 navController.navigate( "${Screen.UserDetails.route}/$userId")
             })
         }
@@ -51,7 +54,8 @@ fun AppNavigator(
         ) { backStackEntry ->
             // Extract the Nav arguments from the Nav BackStackEntry
             backStackEntry.arguments?.getInt("userId")?.let { userId ->
-                UserDetailsScreen(userId = userId,
+                val user = userViewModel.getUser(userId)
+                UserDetailsScreen(user,
                     onNavigateBack = { navController.navigate(Screen.Users.route) })
             }
         }

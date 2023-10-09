@@ -26,6 +26,7 @@ import kotlinx.coroutines.launch
 import ui.components.nav.AppNavigator
 import ui.components.nav.BottomNavBar
 import ui.components.nav.NavDrawer
+import ui.theme.AppTheme
 
 fun displayMessage(context: Context, message: String) {
     Toast.makeText(context,message,Toast.LENGTH_SHORT).show()
@@ -39,22 +40,15 @@ fun getCurrentRoute(navController: NavController): String? {
 
 @Composable
 fun MainScreen() {
-    //create a scaffold state
-    //val scaffoldState = rememberScaffoldState()
-
     //Create a coroutine scope. Opening of Drawer and snackbar should happen in background thread without blocking main thread
     val coroutineScope = rememberCoroutineScope()
 
     //remember navController so it does not get recreated on recomposition
     val navController = rememberNavController()
-
-
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
 
     NavDrawer(navController, drawerState) {
         Scaffold(
-            //pass the scaffold state
-            //scaffoldState = scaffoldState,
             topBar = {
                 val currentRoute = getCurrentRoute(navController) ?: ""
                 displayMessage(LocalContext.current, currentRoute)
@@ -64,7 +58,6 @@ fun MainScreen() {
                 }
             },
             bottomBar = { BottomNavBar(navController) },
-            //drawerContent = { NavDrawer(navController, coroutineScope, scaffoldState) },
         ) {
                 paddingValues ->
                     AppNavigator(navController = navController, padding = paddingValues)
@@ -83,6 +76,8 @@ fun TopBar(coroutineScope: CoroutineScope, drawerState: DrawerState) { //, scaff
         //Provide the navigation Icon ( Icon on the left to toggle drawer)
         navigationIcon = {
             IconButton(onClick = {
+                // Open the drawer while avoiding blocking to UI
+                // This is will be studied in depth later
                 coroutineScope.launch {
                     drawerState.open()
                 }
@@ -99,5 +94,7 @@ fun TopBar(coroutineScope: CoroutineScope, drawerState: DrawerState) { //, scaff
 @Preview
 @Composable
 fun MainScreenPreview() {
-    MainScreen()
+    AppTheme {
+        MainScreen()
+    }
 }
