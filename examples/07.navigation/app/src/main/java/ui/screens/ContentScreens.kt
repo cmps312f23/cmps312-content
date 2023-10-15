@@ -10,35 +10,36 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import ui.navigation.NavDestination
 
 @Composable
 fun SearchScreen() {
-    ScreenContent(content = Screen.Search.title, icon = Screen.Search.icon)
+    ScreenContent(content = NavDestination.Search.title, icon = NavDestination.Search.icon)
 }
 
 @Composable
 fun ProfileScreen() {
-    ScreenContent(content = Screen.Profile.title, icon = Screen.Profile.icon)
+    ScreenContent(content = NavDestination.Profile.title, icon = NavDestination.Profile.icon)
 }
 
 @Composable
 fun AddressesScreen() {
-    ScreenContent(content = Screen.Addresses.title, icon = Screen.FAQ.icon)
+    ScreenContent(content = NavDestination.Addresses.title, icon = NavDestination.FAQ.icon)
 }
 
 @Composable
 fun OrdersScreen() {
-    ScreenContent(content = Screen.Orders.title, icon = Screen.Orders.icon)
+    ScreenContent(content = NavDestination.Orders.title, icon = NavDestination.Orders.icon)
 }
 
 @Composable
 fun SettingsScreen() {
-    ScreenContent(content = Screen.Settings.title, icon = Screen.Settings.icon)
+    ScreenContent(content = NavDestination.Settings.title, icon = NavDestination.Settings.icon)
 }
 
 @Composable
 fun FAQScreen() {
-    ScreenContent(content = Screen.FAQ.title, icon = Screen.FAQ.icon)
+    ScreenContent(content = NavDestination.FAQ.title, icon = NavDestination.FAQ.icon)
 }
 
 @Composable

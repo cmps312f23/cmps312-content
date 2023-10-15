@@ -1,9 +1,6 @@
-package ui.components.nav
+package ui.navigation
 
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
@@ -15,7 +12,6 @@ import compose.nav.ui.screens.StatsScreen
 import ui.common.displayMessage
 import ui.components.SurahList
 import ui.components.VersesList
-import ui.screens.Screen
 import ui.viewmodel.SurahViewModel
 
 /**
@@ -25,30 +21,32 @@ import ui.viewmodel.SurahViewModel
  */
 @Composable
 fun AppNavigator(
-    navController: NavHostController,
-    padding: PaddingValues
+    navController: NavHostController
+    //padding: PaddingValues
 ) {
     val surahViewModel = viewModel<SurahViewModel>()
     displayMessage(LocalContext.current, "Surahs count: ${surahViewModel.surahs.size}")
     NavHost(
         navController = navController,
         //set the start destination as home
-        startDestination = Screen.Quran.route,
+        startDestination = NavDestination.Surahs.route,
         //Set the padding provided by scaffold
-        modifier = Modifier.padding(paddingValues = padding)) {
-
+        //modifier = Modifier.padding(paddingValues = padding)) {
+    ) {
         /* Define the app Navigation Graph
            = possible routes a user can take through the app
             "quran" -> SurahScreen
             "settings" -> SettingsScreen
             "search" -> SearchScreen
         */
-        composable(Screen.Quran.route) {
+        composable(NavDestination.Surahs.route) {
             /* Load the SurahScreen and when a surah is click then navigate to the verses
             screen and pass the select surahId as a parameter */
             // verses/2
             SurahList(surahViewModel, onSelectSurah = { surahId ->
-                navController.navigate("${Screen.Verses.route}/$surahId")
+                navController.navigate("${NavDestination.Verses.route}/$surahId") {
+                    popUpTo("settings")
+                }
             })
         }
 
@@ -66,7 +64,7 @@ fun AppNavigator(
             }
         }
 
-        composable(Screen.Stats.route) {
+        composable(NavDestination.Stats.route) {
             StatsScreen(surahViewModel)
         }
     }

@@ -1,4 +1,4 @@
-package ui.components.nav
+package ui.navigation
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
@@ -16,7 +16,6 @@ import ui.screens.ExternalAppScreen
 import ui.screens.FAQScreen
 import ui.screens.OrdersScreen
 import ui.screens.ProfileScreen
-import ui.screens.Screen
 import ui.screens.SearchScreen
 import ui.screens.SettingsScreen
 import ui.user.UserDetailsScreen
@@ -36,56 +35,56 @@ fun AppNavigator(
     NavHost(
         navController = navController,
         //set the start destination as home
-        startDestination = Screen.Users.route,
+        startDestination = NavDestination.Users.route,
         //Set the padding provided by scaffold
         modifier = Modifier.padding(paddingValues = padding)) {
 
         /* Define the app Navigation Graph
            = possible routes a user can take through the app */
 
-        composable(Screen.Users.route) {
+        composable(NavDestination.Users.route) {
             UsersScreen(userViewModel, onNavigateToDetails = { userId ->
-                navController.navigate( "${Screen.UserDetails.route}/$userId")
+                navController.navigate( "${NavDestination.UserDetails.route}/$userId")
             })
         }
 
-        composable("${Screen.UserDetails.route}/{userId}",
+        composable("${NavDestination.UserDetails.route}/{userId}",
             arguments = listOf(navArgument("userId") { type = NavType.IntType })
         ) { backStackEntry ->
             // Extract the Nav arguments from the Nav BackStackEntry
             backStackEntry.arguments?.getInt("userId")?.let { userId ->
                 val user = userViewModel.getUser(userId)
                 UserDetailsScreen(user,
-                    onNavigateBack = { navController.navigate(Screen.Users.route) })
+                    onNavigateBack = { navController.navigate(NavDestination.Users.route) })
             }
         }
 
-        composable(Screen.Search.route) {
+        composable(NavDestination.Search.route) {
             SearchScreen()
         }
 
-        composable(Screen.Apps.route) {
+        composable(NavDestination.Apps.route) {
             // Example screen that demonstrates how to start activities from other apps
             ExternalAppScreen()
         }
 
-        composable(Screen.Profile.route) {
+        composable(NavDestination.Profile.route) {
             ProfileScreen()
         }
 
-        composable(Screen.Addresses.route) {
+        composable(NavDestination.Addresses.route) {
             AddressesScreen()
         }
 
-        composable(Screen.Orders.route) {
+        composable(NavDestination.Orders.route) {
             OrdersScreen()
         }
 
-        composable(Screen.Settings.route) {
+        composable(NavDestination.Settings.route) {
             SettingsScreen()
         }
 
-        composable(Screen.FAQ.route) {
+        composable(NavDestination.FAQ.route) {
             FAQScreen()
         }
     }

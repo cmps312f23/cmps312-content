@@ -2,16 +2,8 @@ package ui.screens
 
 import android.content.Context
 import android.widget.Toast
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -21,11 +13,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
-import ui.components.nav.AppNavigator
-import ui.components.nav.BottomNavBar
-import ui.components.nav.NavDrawer
+import ui.navigation.AppNavigator
+import ui.navigation.BottomNavBar
+import ui.navigation.NavDestination
+import ui.navigation.NavDrawer
+import ui.navigation.TopAppBar
 import ui.theme.AppTheme
 
 fun displayMessage(context: Context, message: String) {
@@ -52,9 +44,9 @@ fun MainScreen() {
             topBar = {
                 val currentRoute = getCurrentRoute(navController) ?: ""
                 displayMessage(LocalContext.current, currentRoute)
-                // Hide the TopBar for the User Details Screen & Verses Screen
-                if (!currentRoute.startsWith(Screen.UserDetails.route)) {
-                    TopBar(coroutineScope, drawerState) //, scaffoldState)
+                // Hide the TopBar for the User Details & Verses Screens
+                if (!currentRoute.startsWith(NavDestination.UserDetails.route)) {
+                    TopAppBar(coroutineScope, drawerState) //, scaffoldState)
                 }
             },
             bottomBar = { BottomNavBar(navController) },
@@ -63,32 +55,6 @@ fun MainScreen() {
                     AppNavigator(navController = navController, padding = paddingValues)
         }
     }
-}
-
-//A function which will receive a callback to trigger to opening the drawer
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun TopBar(coroutineScope: CoroutineScope, drawerState: DrawerState) { //, scaffoldState: ScaffoldState) {
-    TopAppBar(
-        title = {
-            Text(text = "Navigation")
-        },
-        //Provide the navigation Icon ( Icon on the left to toggle drawer)
-        navigationIcon = {
-            IconButton(onClick = {
-                // Open the drawer while avoiding blocking to UI
-                // This is will be studied in depth later
-                coroutineScope.launch {
-                    drawerState.open()
-                }
-            }) {
-                Icon(
-                    imageVector = Icons.Default.Menu,
-                    contentDescription = "Menu"
-                )
-            }
-        }
-    )
 }
 
 @Preview

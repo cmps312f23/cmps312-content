@@ -1,4 +1,4 @@
-package ui.components.nav
+package ui.navigation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -39,18 +39,17 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
-import ui.screens.Screen
 import ui.screens.getCurrentRoute
 
 @Composable
 fun NavDrawer(
     navController: NavController, drawerState: DrawerState,
     drawerContent: @Composable () -> Unit
-) { //, coroutineScope: CoroutineScope) { //, scaffoldState: ScaffoldState) {
+) {
     val navItems = listOf(
-        Screen.Profile,
-        Screen.Addresses, Screen.Orders, Screen.Divider,
-        Screen.Settings, Screen.Divider, Screen.FAQ
+        NavDestination.Profile,
+        NavDestination.Addresses, NavDestination.Orders, NavDestination.Divider,
+        NavDestination.Settings, NavDestination.Divider, NavDestination.FAQ
     )
 
     val currentRoute = getCurrentRoute(navController = navController)
@@ -99,63 +98,11 @@ fun NavDrawer(
     {
         drawerContent()
     }
-
-    /*ModalNavigationDrawer(
-        drawerContent = {
-            ModalDrawerSheet {
-        // Header
-        Image(
-            painter = painterResource(id = R.drawable.img_logo),
-            contentDescription = R.drawable.img_logo.toString(),
-            modifier = Modifier
-                .height(100.dp)
-                .fillMaxWidth()
-                .padding(10.dp)
-        )
-        // Space between
-        Spacer(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(5.dp)
-        )
-
-        // Generate a Row for each navDrawer item
-        navDrawerItems.forEach { item ->
-            NavigationDrawerItem(item = item, selected = currentRoute == item.route, onItemClick = {
-                navController.navigate(item.route) {
-                    // Pop up to the start destination of the graph to
-                    // avoid building up a large stack of destinations
-                    // on the back stack as users select items
-                    navController.graph.startDestinationRoute?.let { route ->
-                        popUpTo(route)
-                    }
-                    // Avoid multiple copies of the same destination when
-                    // reselecting the same item
-                    launchSingleTop = true
-                }
-                // Close drawer
-                coroutineScope.launch {
-                    //scaffoldState.drawerState.close()
-                }
-            })
-        }
-        // Fill the remaining space so as to have the text at the bottom of the nav drawer
-        Spacer(modifier = Modifier.weight(1F))
-        Text(
-            text = "Developed by CMPS 312 Team",
-            textAlign = TextAlign.Center,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier
-                .padding(12.dp)
-                .align(Alignment.CenterHorizontally)
-        )
-    }
-}*/
 }
 
 
 @Composable
-fun DrawerItem(item: Screen, selected: Boolean, onItemClick: (Screen) -> Unit) {
+fun DrawerItem(item: NavDestination, selected: Boolean, onItemClick: (NavDestination) -> Unit) {
     val background = if (selected)
         MaterialTheme.colorScheme.primary
     else
