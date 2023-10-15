@@ -1,6 +1,5 @@
 package ui.components.nav
 
-import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
@@ -54,12 +53,12 @@ fun AppNavigator(
         }
 
         // verses route receives the surahId as a parameter
-        composable("${Screen.Verses.route}/{surahId}",
+        // verses/2
+        composable("verses/{surahId}",
             arguments = listOf(navArgument("surahId") { type = NavType.IntType })
         ) { backStackEntry ->
             // Extract the Nav arguments from the Nav BackStackEntry
             backStackEntry.arguments?.getInt("surahId")?.let { surahId ->
-                val surahViewModel = viewModel<SurahViewModel>(viewModelStoreOwner = LocalContext.current as ComponentActivity)
                 val surah = surahViewModel.getSurah(surahId)
                 /* Load the VersesScreen and when the user clicks the back arrow then navigate up */
                 VersesList(surah,
