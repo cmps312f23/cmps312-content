@@ -11,13 +11,6 @@ import kotlinx.coroutines.flow.flow
 object DataRepository {
     private const val TAG = "LifeCycle->DataRepository"
 
-    // In a real app the Flow will be returned by a database or Web API as we will see later
-    fun getRedCardsCount(): Flow<Int> =
-        flow {
-            emit(2)
-        }
-
-
     fun getNewsList() : List<String> {
         return listOf("news 1", "news 2")
     }

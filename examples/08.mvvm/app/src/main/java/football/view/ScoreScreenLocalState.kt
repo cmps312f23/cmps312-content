@@ -9,8 +9,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -22,8 +24,8 @@ import compose.nav.R
 @Composable
 fun ScoreScreenLocalState() {
     // Ticket from MVVM police => ViewModel (manage state)
-    var team1Score = remember { mutableStateOf(0) }
-    var team2Score = remember { mutableStateOf(0) }
+    var team1Score by remember { mutableStateOf(0) }
+    var team2Score by remember { mutableStateOf(0) }
 
     Column(
         verticalArrangement = Arrangement.Center,
@@ -39,16 +41,16 @@ fun ScoreScreenLocalState() {
             TeamScore(
                 modifier = Modifier.weight(1F),
                 iconId = R.drawable.img_rayyan,
-                score = team1Score.value
+                score = team1Score
             ) {
-                team1Score.value++
+                team1Score++
             }
             TeamScore(
                 modifier = Modifier.weight(1F),
                 iconId = R.drawable.img_alkhor,
-                score = team2Score.value
+                score = team2Score
             ) {
-                team2Score.value++
+                team2Score++
             }
         }
 

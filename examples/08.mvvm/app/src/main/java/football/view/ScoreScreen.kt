@@ -11,7 +11,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -38,9 +37,8 @@ fun ScoreScreen(scoreViewModel : ScoreViewModel) {
 
     //collectAsStateWithLifecycle() collects values from a Flow in a lifecycle-aware
     // manner, allowing the app to save unneeded app resources.
-    // It represents the latest emitted value via Compose State.
-    val redCardsCount = scoreViewModel.redCardsCountFlow.collectAsStateWithLifecycle(0)
-    val newsUpdate = scoreViewModel.newsFlow.collectAsState()//.collectAsStateWithLifecycle("")
+    // It represents the latest emitted value as a Compose State.
+    val newsUpdate = scoreViewModel.newsFlow.collectAsStateWithLifecycle("")
     val timeRemaining = scoreViewModel.timeRemainingFlow.collectAsStateWithLifecycle("")
 
     Column(
@@ -57,15 +55,14 @@ fun ScoreScreen(scoreViewModel : ScoreViewModel) {
             TeamScore(
                 modifier = Modifier.weight(1F),
                 iconId = R.drawable.img_rayyan,
-                score = scoreViewModel.team1Score.value
+                score = scoreViewModel.team1Score
             ) { //team1Score) {
                 scoreViewModel.onIncrementTeam1Score()
-                //team1Score++
             }
             TeamScore(
                 modifier = Modifier.weight(1F),
                 iconId = R.drawable.img_alkhor,
-                score = scoreViewModel.team2Score.value
+                score = scoreViewModel.team2Score
             ) { //team2Score) {
                 scoreViewModel.onIncrementTeam2Score()
                 //team2Score++
@@ -76,11 +73,6 @@ fun ScoreScreen(scoreViewModel : ScoreViewModel) {
             contentAlignment = Alignment.BottomCenter
         ) {
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                // Recomposes whenever redCardsCount changes
-                Text(
-                    textAlign = TextAlign.Center,
-                    text = "Red cards count: ${redCardsCount.value}"
-                )
                 // Recomposes whenever timeRemaining changes
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text(
