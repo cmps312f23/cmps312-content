@@ -25,15 +25,33 @@ class WeatherViewModel : ViewModel() {
     // You can use WhileSubscribed(5000) to keep the upstream flow active for
     // 5 seconds more after the disappearance of the last collector.
     // That avoids restarting the upstream flow after a configuration change
-    val weatherFlow : StateFlow<Weather?> = WeatherRepository.getWeather().map {
-        Weather(it.condition,
-                (it.temperature - 32) * 5/9,
-                "Celsius")
-    }.stateIn(
+    val weatherFlow : StateFlow<Weather?> = WeatherRepository.getWeather().stateIn(
         scope = viewModelScope,
         started = WhileSubscribed(5000),
         initialValue = null
     )
+
+    val weatherCelsiusFlow = weatherFlow.map {
+        it?.let { weather ->
+            Weather(
+                weather.condition,
+                (weather.temperature - 32) * 5 / 9,
+                "Celsius",
+            )
+        }
+    }
+
+    val weatherIconFlow = weatherFlow.map {
+        it?.let { weather ->
+            when(weather.condition) {
+                "Sunny" -> "☀️"
+                "Windy"  -> "\uD83C\uDF43"
+                "Rainy"  -> "⛈️️"
+                "Snowy"  -> "❄️"
+                else -> ""
+            }
+        }
+    }
 
     init {
         Log.d(TAG, "Created")

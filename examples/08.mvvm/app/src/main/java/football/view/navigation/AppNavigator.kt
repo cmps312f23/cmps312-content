@@ -10,8 +10,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import football.view.ScoreScreen
 import football.view.UserScreen
+import football.view.WeatherScreen
 import football.viewmodel.ScoreViewModel
 import football.viewmodel.UserViewModel
+import football.viewmodel.WeatherViewModel
 
 /**
  * It receives navcontroller to navigate between screens,
@@ -25,6 +27,7 @@ fun AppNavigator(
     paddingValues: PaddingValues
 ) {
     val scoreViewModel = viewModel<ScoreViewModel>()
+    val weatherViewModel = viewModel<WeatherViewModel>()
     NavHost(
         navController = navController,
         //set the start destination as home
@@ -43,6 +46,10 @@ fun AppNavigator(
 
         composable(NavDestination.Users.route) {
             UserScreen(userViewModel)
+        }
+
+        composable(NavDestination.Weather.route) {
+            WeatherScreen(weatherViewModel)
         }
     }
 }

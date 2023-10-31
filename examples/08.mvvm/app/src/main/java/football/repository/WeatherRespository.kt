@@ -11,11 +11,11 @@ object WeatherRepository {
     private val weatherConditions = listOf("Sunny", "Windy", "Rainy", "Snowy")
     fun getWeather(): Flow<Weather> = flow {
         while (true) {
-            delay(3000)
             val condition = weatherConditions.shuffled().first()
-            val temp = Random.nextFloat() * 10
+            val temp = (Random.nextFloat() * 10) + (20..60).shuffled().first()
             val weather = Weather(condition, temp)
             emit(weather)
+            delay(3000)
         }
     }
 }
