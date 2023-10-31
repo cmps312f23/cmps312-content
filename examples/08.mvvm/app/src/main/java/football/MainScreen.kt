@@ -34,7 +34,7 @@ fun MainScreen() {
 @Composable
 fun TopBar(userViewModel: UserViewModel) {
     //val userViewModel = viewModel<UserViewModel>(viewModelStoreOwner = LocalContext.current as ComponentActivity)
-    displayMessage(LocalContext.current, "Current user: ${userViewModel.currentUser.value}")
+    displayMessage(LocalContext.current, "Current user: ${userViewModel.currentUser}")
     TopAppBar(
         title = {
             Row(
