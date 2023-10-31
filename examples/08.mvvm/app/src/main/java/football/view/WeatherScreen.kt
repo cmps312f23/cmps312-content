@@ -2,6 +2,7 @@ package football.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -23,15 +24,18 @@ fun WeatherScreen(weatherViewModel : WeatherViewModel) {
     val weatherUpdate = weatherViewModel.weatherFlow.collectAsStateWithLifecycle(null)
 
     Column(
+        modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Recomposes whenever newsUpdate changes
-        Text(
-            modifier = Modifier.padding(bottom = 16.dp),
-            textAlign = TextAlign.Center,
-            text = "\uD83D\uDCE2 ${weatherUpdate?.value}",
-        )
+        weatherUpdate?.value?.let {
+            // Recomposes whenever newsUpdate changes
+            Text(
+                modifier = Modifier.padding(bottom = 16.dp),
+                textAlign = TextAlign.Center,
+                text = "\uD83C\uDF24️ ${it.condition} ${it.temperature} ${it.temperatureUnit}",
+            )
+        }
     }
 }
 

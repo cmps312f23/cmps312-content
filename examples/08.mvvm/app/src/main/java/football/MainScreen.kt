@@ -43,9 +43,9 @@ fun TopBar(userViewModel: UserViewModel) {
             ) {
                 Text(text = "MVVM App")
 
-                if (userViewModel.currentUser.value.isNotEmpty()) {
+                if (userViewModel.currentUser.isNotEmpty()) {
                     Text(
-                        text = " - Welcome ${userViewModel.currentUser.value}",
+                        text = " - Welcome ${userViewModel.currentUser}",
                     )
                 }
             }

@@ -51,7 +51,7 @@ fun UserScreen(userViewModel: UserViewModel) {
                     Text(text = user, modifier  = Modifier.weight(2F))
                     Button(
                         modifier  = Modifier.weight(1F),
-                        onClick = { userViewModel.setCurrentUser(user) }
+                        onClick = { userViewModel.currentUser = user }
                     ) {
                         Text("Switch User")
                     }
