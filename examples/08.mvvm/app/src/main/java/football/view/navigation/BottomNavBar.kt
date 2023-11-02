@@ -1,4 +1,4 @@
-package compose.nav.football.view.navigation
+package football.view.navigation
 
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Icon

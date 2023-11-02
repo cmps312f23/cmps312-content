@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.zip
 import kotlinx.coroutines.runBlocking
 
 fun intFlow(): Flow<Int> = flow {
+    // Producer block
     for (i in 1..9) {
         delay(500)
         emit(i)

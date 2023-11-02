@@ -16,6 +16,7 @@ object DataRepository {
     }
 
     fun getNews(): Flow<String> =
+        // Producer block
         flow {
             while (true) {
                 delay(3000)

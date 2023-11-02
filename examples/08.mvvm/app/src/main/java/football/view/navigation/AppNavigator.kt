@@ -1,4 +1,4 @@
-package compose.nav.football.view.navigation
+package football.view.navigation
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding

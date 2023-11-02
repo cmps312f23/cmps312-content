@@ -42,7 +42,7 @@ fun WeatherScreen(weatherViewModel : WeatherViewModel) {
             modifier = Modifier.padding(bottom = 80.dp).height(80.dp)
         )
 
-        weatherUpdate?.value?.let {
+        weatherUpdate.value?.let {
             // Recomposes whenever newsUpdate changes
             Text(
                 modifier = Modifier.padding(bottom = 16.dp),
@@ -54,7 +54,7 @@ fun WeatherScreen(weatherViewModel : WeatherViewModel) {
             Text(
                 modifier = Modifier.padding(bottom = 16.dp),
                 textAlign = TextAlign.Center,
-                text = "️${weatherIcon.value} ${weatherCelsiusUpdate?.value?.condition} ${weatherCelsiusUpdate?.value?.temperature} ${weatherCelsiusUpdate?.value?.temperatureUnit}",
+                text = "️${weatherIcon.value} ${weatherCelsiusUpdate.value?.condition} ${weatherCelsiusUpdate.value?.temperature} ${weatherCelsiusUpdate.value?.temperatureUnit}",
                 fontWeight = FontWeight.Bold,
                 color = Color.Blue
             )

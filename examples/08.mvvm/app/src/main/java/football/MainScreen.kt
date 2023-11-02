@@ -12,9 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
-import compose.nav.football.view.navigation.AppNavigator
-import compose.nav.football.view.navigation.BottomNavBar
 import football.view.common.displayMessage
+import football.view.navigation.AppNavigator
+import football.view.navigation.BottomNavBar
 import football.viewmodel.UserViewModel
 
 @Composable

@@ -10,6 +10,7 @@ data class Weather (val condition: String, val temperature: Float, val temperatu
 object WeatherRepository {
     private val weatherConditions = listOf("Sunny", "Windy", "Rainy", "Snowy")
     fun getWeather(): Flow<Weather> = flow {
+        // Producer block
         while (true) {
             val condition = weatherConditions.shuffled().first()
             val temp = (Random.nextFloat() * 10) + (20..60).shuffled().first()

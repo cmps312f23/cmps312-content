@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 
 class UserViewModel : ViewModel() {
     var currentUser by mutableStateOf("")
-        //private set
+        private set
 
     val users = mutableStateListOf<String>()
 
@@ -16,7 +16,7 @@ class UserViewModel : ViewModel() {
         users.add(username)
     }
 
-    /*fun setCurrentUser(username: String) {
+    fun onAuthChange(username: String) {
         currentUser = username
-    }*/
+    }
 }
