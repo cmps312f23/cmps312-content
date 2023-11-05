@@ -1,4 +1,4 @@
-package football.view
+package weather.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -20,7 +20,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import compose.nav.R
 import football.view.theme.AppTheme
-import football.viewmodel.WeatherViewModel
+import weather.viewmodel.WeatherViewModel
 
 @Composable
 fun WeatherScreen(weatherViewModel : WeatherViewModel) {

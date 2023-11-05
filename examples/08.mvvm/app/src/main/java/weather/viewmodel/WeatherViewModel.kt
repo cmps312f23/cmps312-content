@@ -1,20 +1,20 @@
-package football.viewmodel
+package weather.viewmodel
 
 import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import football.repository.Weather
-import football.repository.WeatherRepository
 import kotlinx.coroutines.flow.SharingStarted.Companion.WhileSubscribed
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
+import weather.repository.Weather
+import weather.repository.WeatherRepository
 
 @SuppressLint("LongLogTag")
 class WeatherViewModel : ViewModel() {
-     private val TAG = "LifeCycle->WeatherViewModel ✔"
+     private val TAG = "WeatherViewModel"
     /*
      - Trigger the flow and start listening for values.
      - Note that this happens when lifecycle is STARTED
@@ -55,6 +55,7 @@ class WeatherViewModel : ViewModel() {
 
     init {
         Log.d(TAG, "Created")
+        //weatherFlow.onEach { println("$TAG  ${it?.condition ?: "" }") }
         weatherFlow.onEach { Log.d(TAG, it?.condition ?: "") }
     }
 }

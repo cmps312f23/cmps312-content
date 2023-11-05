@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import football.repository.DataRepository
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.SharingStarted.Companion.WhileSubscribed
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
@@ -46,12 +47,12 @@ class ScoreViewModel : ViewModel() {
     // You can use WhileSubscribed(5000) to keep the upstream flow active for
     // 5 seconds more after the disappearance of the last collector.
     // That avoids restarting the upstream flow after a configuration change
-    val newsFlow = DataRepository.getNews()
-    /*val newsFlow: StateFlow<String> = DataRepository.getNews().stateIn(
+    //val newsFlow = DataRepository.getNews()
+    val newsFlow: StateFlow<String> = DataRepository.getNews().stateIn(
         scope = viewModelScope,
         started = WhileSubscribed(5000),
         initialValue = ""
-    )*/
+    )
 
     /*val timeRemainingFlow: Flow<String> =
         DataRepository.countDownTimer(5) */

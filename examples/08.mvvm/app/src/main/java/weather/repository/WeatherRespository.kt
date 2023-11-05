@@ -1,4 +1,4 @@
-package football.repository
+package weather.repository
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow

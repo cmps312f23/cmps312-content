@@ -41,22 +41,23 @@ suspend fun combineExample() {
 }
 
 fun main() = runBlocking {
-    //intFlow().collect { println(it) }
-    //intFlow().filter { it % 2 == 0 }.collect { println(it) }
-    intFlow().filter { it % 2 == 0 }.map { Char(it) }.collect { println(it) }
+    intFlow() //.collect { println(it) }
 
-    intFlow()
-        .filter {
-            println("Filter $it")
-            it % 2 == 0
-        }
-        .map {
-            println("Map $it")
-            "string $it"
-        }.collect {
-            println("Collect $it")
-        }
+    intFlow().filter { it % 2 == 0 }.map { it * 1 }.collect { println(it) }
+    //intFlow().filter { it % 2 == 0 }.map { Char(it) }.collect { println(it) }
 
-    zipExample()
-    combineExample()
+//    intFlow()
+//        .filter {
+//            println("Filter $it")
+//            it % 2 == 0
+//        }
+//        .map {
+//            println("Map $it")
+//            "string $it"
+//        }.collect {
+//            println("Collect $it")
+//        }
+//
+      //zipExample()
+       //combineExample()
 }

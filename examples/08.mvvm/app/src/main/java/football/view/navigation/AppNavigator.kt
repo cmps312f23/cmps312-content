@@ -10,10 +10,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import football.view.ScoreScreen
 import football.view.UserScreen
-import football.view.WeatherScreen
+import weather.view.WeatherScreen
 import football.viewmodel.ScoreViewModel
 import football.viewmodel.UserViewModel
-import football.viewmodel.WeatherViewModel
+import weather.viewmodel.WeatherViewModel
 
 /**
  * It receives navcontroller to navigate between screens,

@@ -80,13 +80,8 @@ dependencies {
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
     // Logging plugin to provide the capability to log HTTP calls
     implementation("io.ktor:ktor-client-logging:$ktorVersion")
-    implementation("ch.qos.logback:logback-classic:1.4.11")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:1.7.3")
-
-    /*implementation("io.ktor:ktor-client-android:$ktor_version")
-    implementation("io.ktor:ktor-client-serialization:$ktor_version")
-    implementation("io.ktor:ktor-client-logging:$ktor_version")
-    implementation("ch.qos.logback:logback-classic:1.3.0-alpha10")*/
+    implementation("org.slf4j:slf4j-simple:2.0.9")
 
     // Kotlin Datetime
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
