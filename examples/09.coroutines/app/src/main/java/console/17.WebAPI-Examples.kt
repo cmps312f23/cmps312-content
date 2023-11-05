@@ -2,6 +2,7 @@ package coroutines.console
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import coroutines.webapi.StockQuoteService
 import coroutines.webapi.ToDo
 import coroutines.webapi.ToDoService
 import kotlinx.coroutines.CoroutineScope
@@ -23,6 +24,9 @@ suspend fun main() {
 
         val isOk = ToDoService.deleteToDo(1)
         println(">> Was delete Ok \n: $isOk")
+
+        val stockQuote = StockQuoteService.getStockQuote("TSLA")
+        println(stockQuote)
     }
 
     // Wait for the job to finish otherwise main will exit

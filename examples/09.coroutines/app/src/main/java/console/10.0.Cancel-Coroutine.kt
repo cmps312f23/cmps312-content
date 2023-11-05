@@ -1,8 +1,11 @@
 package coroutines.console
 
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.yield
 
 
 suspend fun main() {
@@ -37,7 +40,7 @@ fun fibonacci() = flow {
         yield()  // check - if job cancelled exit the loop
         emit(terms.first)
         terms = Pair(terms.second, terms.first + terms.second)
-        // Suspend the function for 400ms
+        // Suspend the function for 1000ms
         delay(1000)
     }
 }

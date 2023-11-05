@@ -25,18 +25,8 @@ object StockQuoteService {
                 }
             )
         }
-        //This will auto-parse from/to json when sending and receiving data from the Web API
-        /*/install(JsonFeature) {
-            serializer = KotlinxSerializer(
-                json = kotlinx.serialization.json.Json {
-                    ignoreUnknownKeys = true
-                    prettyPrint = true
-                }
-            )
-        }*/
         //Log HTTP request/response details for debugging
-        //Log HTTP request/response details for debugging
-        install(Logging) { level = LogLevel.ALL }
+        install(Logging) { level = LogLevel.BODY }
     }
 
     /* This method will be used to get a Stock Quote from

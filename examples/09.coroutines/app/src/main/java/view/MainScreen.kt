@@ -25,7 +25,7 @@ fun MainScreen() {
 
 /**
  * It receives navcontroller to navigate between screens
- */
+*/
 @Composable
 fun BottomNavBar(navController: NavHostController) {
     BottomAppBar {
