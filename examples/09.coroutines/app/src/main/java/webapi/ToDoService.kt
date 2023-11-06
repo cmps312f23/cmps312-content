@@ -55,18 +55,20 @@ object ToDoService {
     }
 
     suspend fun addToDo(toDo: ToDo): ToDo {
-        return client.post(BASE_URL) {
+        val response = client.post(BASE_URL) {
             contentType(ContentType.Application.Json)
             setBody(toDo)
-        }.body()
+        }
+        return response.body()
     }
 
     suspend fun updateToDo(toDo: ToDo): ToDo {
         val url = "$BASE_URL/${toDo.id}"
-        return client.put(url) {
+        val response = client.put(url) {
             contentType(ContentType.Application.Json)
             setBody(toDo)
-        }.body()
+        }
+        return response.body()
     }
 
     suspend fun deleteToDo(toDoId: Int): Boolean {
