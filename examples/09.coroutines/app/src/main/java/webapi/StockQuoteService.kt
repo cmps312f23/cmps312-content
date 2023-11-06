@@ -49,6 +49,7 @@ object StockQuoteService {
 
         val url = "$BASE_URL/$symbol/$date?apiKey=$API_KEY"
         println(">>> Debug: getStockQuote.url: $url")
-        return client.get(url).body()
+        val response = client.get(url)
+        return response.body()
     }
 }
