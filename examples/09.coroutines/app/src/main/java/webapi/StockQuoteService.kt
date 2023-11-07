@@ -17,6 +17,8 @@ object StockQuoteService {
     const val BASE_URL = "https://api.polygon.io/v1/open-close"
     const val API_KEY = "Jjtxe7HOP_ZjzWK3kwYQu2ovpzxTPEIp"
     private val client = HttpClient(OkHttp) {
+        //Json Plugin auto-parse from/to json when sending
+        // and receiving data from the Web API
         install(ContentNegotiation) {
             json(
                 json = Json {
@@ -26,7 +28,7 @@ object StockQuoteService {
             )
         }
         //Log HTTP request/response details for debugging
-        install(Logging) { level = LogLevel.BODY }
+        install(Logging) { level = LogLevel.BODY } // or .Headers or .Body
     }
 
     /* This method will be used to get a Stock Quote from
