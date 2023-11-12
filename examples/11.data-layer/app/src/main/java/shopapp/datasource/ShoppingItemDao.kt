@@ -1,4 +1,4 @@
-package shopapp.db
+package shopapp.datasource
 
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow

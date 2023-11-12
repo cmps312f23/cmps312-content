@@ -1,4 +1,4 @@
-package shopapp.db
+package shopapp.datasource
 
 import android.content.Context
 import androidx.room.Database
@@ -19,30 +19,30 @@ import shopapp.repository.ShoppingRepository
    When the version changes the DB will be dropped and recreated
  */
 @Database(entities = [Product::class, Category::class, ShoppingItem::class, User::class],
-    version = 3, exportSchema = true)
+    version = 1)
 @TypeConverters(DateConverter::class)
 abstract class ShoppingDB : RoomDatabase() {
-    abstract fun getShoppingItemDao(): ShoppingItemDao
-    abstract fun getProductDao(): ProductDao
+    abstract fun shoppingItemDao(): ShoppingItemDao
+    abstract fun productDao(): ProductDao
 
     // Create a singleton dbInstance
     companion object {
-        private var dbInstance: ShoppingDB? = null
+        private var db: ShoppingDB? = null
 
         fun getInstance(context: Context): ShoppingDB {
-            if (dbInstance == null) {
+            if (db == null) {
                 // Use Room.databaseBuilder to open( or create) the database
-                dbInstance = Room.databaseBuilder(
+                db = Room.databaseBuilder(
                     context,
-                    ShoppingDB::class.java, "shopping.db"
+                    ShoppingDB::class.java, "shoppingDB"
                 ).fallbackToDestructiveMigration().build()
             }
             // After the DB instance is created load the data from json files
             // into the Category and Product tables if the Category table is empty
             CoroutineScope(Dispatchers.IO).launch {
-                 ShoppingRepository.initDB(dbInstance, context)
+                 ShoppingRepository.initDB(db, context)
             }
-            return dbInstance as ShoppingDB
+            return db as ShoppingDB
         }
     }
 }

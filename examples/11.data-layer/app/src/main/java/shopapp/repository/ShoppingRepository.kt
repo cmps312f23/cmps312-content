@@ -2,7 +2,7 @@ package shopapp.repository
 
 import android.content.Context
 import kotlinx.serialization.json.Json
-import shopapp.db.ShoppingDB
+import shopapp.datasource.ShoppingDB
 import shopapp.entity.Category
 import shopapp.entity.Product
 import shopapp.entity.ShoppingItem
@@ -14,11 +14,11 @@ class ShoppingRepository(private val context: Context) {
     }
 
     private val shoppingItemDao by lazy {
-        shoppingDB.getShoppingItemDao()
+        shoppingDB.shoppingItemDao()
     }
 
     private val productDao by lazy {
-        shoppingDB.getProductDao()
+        shoppingDB.productDao()
     }
 
     fun observeItems() = shoppingItemDao.observeItems()
@@ -70,7 +70,7 @@ class ShoppingRepository(private val context: Context) {
         suspend fun initDB(shoppingDB: ShoppingDB?, context: Context) {
             if (shoppingDB == null) return
 
-            val productDao = shoppingDB.getProductDao()
+            val productDao = shoppingDB.productDao()
             val categoryCount = productDao.getCategoryCount()
             // If categoryCount = 0 then means the DB is empty
             if (categoryCount == 0) {
