@@ -1,0 +1,317 @@
+[
+  {
+    "name": "Grapes",
+    "icon": "🍇",
+    "category": "Fruits"
+  },
+  {
+    "name": "Melon",
+    "icon": "🍈",
+    "category": "Fruits"
+  },
+  {
+    "name": "Watermelon",
+    "icon": "🍉",
+    "category": "Fruits"
+  },
+  {
+    "name": "Banana",
+    "icon": "🍌",
+    "category": "Fruits"
+  },
+  {
+    "name": "Pineapple",
+    "icon": "🍍",
+    "category": "Fruits"
+  },
+  {
+    "name": "Mango",
+    "icon": "🥭",
+    "category": "Fruits"
+  },
+  {
+    "name": "Red Apple",
+    "icon": "🍎",
+    "category": "Fruits"
+  },
+  {
+    "name": "Green Apple",
+    "icon": "🍏",
+    "category": "Fruits"
+  },
+  {
+    "name": "Pear",
+    "icon": "🍐",
+    "category": "Fruits"
+  },
+  {
+    "name": "Peach",
+    "icon": "🍑",
+    "category": "Fruits"
+  },
+  {
+    "name": "Cherries",
+    "icon": "🍒",
+    "category": "Fruits"
+  },
+  {
+    "name": "Strawberry",
+    "icon": "🍓",
+    "category": "Fruits"
+  },
+  {
+    "name": "Kiwi Fruit",
+    "icon": "🥝",
+    "category": "Fruits"
+  },
+  {
+    "name": "Coconut",
+    "icon": "🥥",
+    "category": "Fruits"
+  },
+  {
+    "name": "Avocado",
+    "icon": "🥑",
+    "category": "Fruits"
+  },
+  {
+    "name": "Eggplant",
+    "icon": "🍆",
+    "category": "Vegetables"
+  },
+  {
+    "name": "Potato",
+    "icon": "🥔",
+    "category": "Vegetables"
+  },
+  {
+    "name": "Carrot",
+    "icon": "🥕",
+    "category": "Vegetables"
+  },
+  {
+    "name": "Corn",
+    "icon": "🌽",
+    "category": "Vegetables"
+  },
+  {
+    "name": "️ Hot Pepper",
+    "icon": "🌶",
+    "category": "Vegetables"
+  },
+  {
+    "name": "Cucumber",
+    "icon": "🥒",
+    "category": "Vegetables"
+  },
+  {
+    "name": "Leafy Green",
+    "icon": "🥬",
+    "category": "Vegetables"
+  },
+  {
+    "name": "Broccoli",
+    "icon": "🥦",
+    "category": "Vegetables"
+  },
+  {
+    "name": "Garlic",
+    "icon": "🧄",
+    "category": "Vegetables"
+  },
+  {
+    "name": "Onion",
+    "icon": "🧅",
+    "category": "Vegetables"
+  },
+  {
+    "name": "Mushroom",
+    "icon": "🍄",
+    "category": "Vegetables"
+  },
+  {
+    "name": "Lemon",
+    "icon": "🍋",
+    "category": "Vegetables"
+  },
+  {
+    "name": "Tomato",
+    "icon": "🍅",
+    "category": "Vegetables"
+  },
+  {
+    "name": "Bread",
+    "icon": "🍞",
+    "category": "Bakery"
+  },
+  {
+    "name": "Croissant",
+    "icon": "🥐",
+    "category": "Bakery"
+  },
+  {
+    "name": "Baguette Bread",
+    "icon": "🥖",
+    "category": "Bakery"
+  },
+  {
+    "name": "Pretzel",
+    "icon": "🥨",
+    "category": "Bakery"
+  },
+  {
+    "name": "Bagel",
+    "icon": "🥯",
+    "category": "Bakery"
+  },
+  {
+    "name": "Pancakes",
+    "icon": "🥞",
+    "category": "Bakery"
+  },
+  {
+    "name": "Waffle",
+    "icon": "🧇",
+    "category": "Bakery"
+  },
+  {
+    "name": "Doughnut",
+    "icon": "🍩",
+    "category": "Bakery"
+  },
+  {
+    "name": "Cookie",
+    "icon": "🍪",
+    "category": "Bakery"
+  },
+  {
+    "name": "Cake",
+    "icon": "🎂",
+    "category": "Bakery"
+  },
+  {
+    "name": "Shortcake",
+    "icon": "🍰",
+    "category": "Bakery"
+  },
+  {
+    "name": "Cupcake",
+    "icon": "🧁",
+    "category": "Bakery"
+  },
+  {
+    "name": "Hamburger",
+    "icon": "🍔",
+    "category": "Sandwiches"
+  },
+  {
+    "name": "Fries",
+    "icon": "🍟",
+    "category": "Sandwiches"
+  },
+  {
+    "name": "Pizza",
+    "icon": "🍕",
+    "category": "Sandwiches"
+  },
+  {
+    "name": "Hot Dog",
+    "icon": "🌭",
+    "category": "Sandwiches"
+  },
+  {
+    "name": "Sandwich",
+    "icon": "🥪",
+    "category": "Sandwiches"
+  },
+  {
+    "name": "Taco",
+    "icon": "🌮",
+    "category": "Sandwiches"
+  },
+  {
+    "name": "Burrito",
+    "icon": "🌯",
+    "category": "Sandwiches"
+  },
+  {
+    "name": "Stuffed Flatbread",
+    "icon": "🥙",
+    "category": "Sandwiches"
+  },
+  {
+    "name": "Falafel",
+    "icon": "🧆",
+    "category": "Sandwiches"
+  },
+  {
+    "name": "Fried Eggs",
+    "icon": "🍳",
+    "category": "Sandwiches"
+  },
+  {
+    "name": "Green Salad",
+    "icon": "🥗",
+    "category": "Sandwiches"
+  },
+  {
+    "name": "Curry Rice",
+    "icon": "🍛",
+    "category": "Meals"
+  },
+  {
+    "name": "Noodles",
+    "icon": "🍜",
+    "category": "Meals"
+  },
+  {
+    "name": "Spaghetti",
+    "icon": "🍝",
+    "category": "Meals"
+  },
+  {
+    "name": "Roasted Sweet Potato",
+    "icon": "🍠",
+    "category": "Meals"
+  },
+  {
+    "name": "Sushi",
+    "icon": "🍣",
+    "category": "Meals"
+  },
+  {
+    "name": "Fried Shrimp",
+    "icon": "🍤",
+    "category": "Meals"
+  },
+  {
+    "name": "Soop",
+    "icon": "🥣",
+    "category": "Meals"
+  },
+  {
+    "name": "Chocolate Bar",
+    "icon": "🍫",
+    "category": "Snacks"
+  },
+  {
+    "name": "Candy",
+    "icon": "🍬",
+    "category": "Snacks"
+  },
+  {
+    "name": "Lollipop",
+    "icon": "🍭",
+    "category": "Snacks"
+  },
+  {
+    "name": "Soft Ice Cream",
+    "icon": "🍦",
+    "category": "Snacks"
+  },
+  {
+    "name": "Shaved Ice",
+    "icon": "🍧",
+    "category": "Snacks"
+  }
+]

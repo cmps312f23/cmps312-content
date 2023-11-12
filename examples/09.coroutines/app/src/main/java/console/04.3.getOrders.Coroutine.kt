@@ -1,8 +1,12 @@
 package coroutines.console.coroutine
 
-import kotlinx.coroutines.*
 import coroutines.console.Order
 import coroutines.console.User
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /*
 Coroutines allow us to write asynchronous code
@@ -22,7 +26,7 @@ suspend fun main() {
     job.join()
 }
 
-suspend fun getUserOrders(username: String, password: String) = withContext(Dispatchers.IO) {
+ suspend fun getUserOrders(username: String, password: String) = withContext(Dispatchers.IO) {
     val user = login(username, password)
     fetchOrders(user.userId)
 }

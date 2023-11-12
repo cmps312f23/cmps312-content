@@ -2,10 +2,11 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     kotlin("plugin.serialization") version "1.9.10"
+    id ("com.google.devtools.ksp") version "1.9.10-1.0.13"
 }
 
 android {
-    namespace = "shopapp"
+    namespace = "shop.app"
     compileSdk = 34
 
     defaultConfig {
@@ -54,8 +55,8 @@ dependencies {
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
-    implementation("androidx.activity:activity-compose:1.7.2")
-    implementation(platform("androidx.compose:compose-bom:2023.09.02"))
+    implementation("androidx.activity:activity-compose:1.8.0")
+    implementation(platform("androidx.compose:compose-bom:2023.10.01"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
@@ -63,15 +64,26 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation(platform("androidx.compose:compose-bom:2023.09.02"))
+    androidTestImplementation(platform("androidx.compose:compose-bom:2023.10.01"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 
-    implementation("io.coil-kt:coil-compose:2.4.0")
-    val nav_version = "2.7.4"
-    implementation("androidx.navigation:navigation-compose:$nav_version")
+    val navVersion = "2.7.5"
+    implementation("androidx.navigation:navigation-compose:$navVersion")
+
+    // Room
+    val roomVersion = "2.6.0"
+    implementation("androidx.room:room-runtime:$roomVersion")
+    annotationProcessor("androidx.room:room-compiler:$roomVersion")
+    // Kotlin Symbol Processing (KSP) - for processing annotations
+    ksp("androidx.room:room-compiler:$roomVersion")
+    // Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$roomVersion")
+
+    // Kotlin Datetime
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.1")
 
     // Required to be able to use collectAsStateWithLifecycle
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.2")
