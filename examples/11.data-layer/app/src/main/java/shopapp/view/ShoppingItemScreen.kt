@@ -114,7 +114,7 @@ fun ShoppingItemScreen(onNavigateBack: () -> Unit) {
                 label = "Select a Product",
                 options = products,
                 selectedOptionId = productId,
-                onSelectionChange = { productId = it.toLong() })
+                onSelectionChange = { productId = it })
 
             OutlinedTextField(
                 value = if (quantity > 0) quantity.toString() else "",

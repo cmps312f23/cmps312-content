@@ -5,6 +5,7 @@ import kotlinx.serialization.json.Json
 import shopapp.datasource.ShoppingDB
 import shopapp.entity.Category
 import shopapp.entity.Product
+import shopapp.entity.ProductEntity
 import shopapp.entity.ShoppingItem
 
 // Repository, abstracts access to multiple data sources
@@ -91,12 +92,12 @@ class ShoppingRepository(private val context: Context) {
                 var products = json.decodeFromString<List<Product>>(data)
                 println(">> Debug: initDB products $products")
 
-                products = products.map {
+                val productEntities = products.map {
                     // Lookup the category id
-                    val category = productDao.getCategory(it.category!!)
-                    Product(it.name, it.icon, category!!.id)
+                    val category = productDao.getCategory(it.category)
+                    ProductEntity(it.name, it.icon, category!!.id)
                 }
-                val productIds = productDao.insertProducts(products)
+                val productIds = productDao.insertProducts(productEntities)
                 println(">> Debug: productIds = productDao.insertProducts(products) $productIds")
             }
         }

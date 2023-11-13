@@ -1,9 +1,11 @@
-package shopapp.view
+package shopapp.view.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import shopapp.view.ShoppingItemScreen
+import shopapp.view.ShoppingListScreen
 
 /**╗
  * It receives navController to navigate between screens
@@ -15,26 +17,26 @@ fun AppNavigator(
     NavHost(
         navController = navController,
         //set the start destination as home
-        startDestination = Screen.ShoppingList.route
+        startDestination = NavDestination.ShoppingList.route
     ) {
 
         /* Define the app Navigation Graph
            = possible routes a user can take through the app
         */
-        composable(Screen.ShoppingList.route) {
+        composable(NavDestination.ShoppingList.route) {
             /* Load the ShoppingListScreen and when add/edit item is clicked
             then navigate to the ShoppingItem screen */
             ShoppingListScreen(
                 onAddItem = {
-                    navController.navigate(Screen.ShoppingItem.route)
+                    navController.navigate(NavDestination.ShoppingItem.route)
                 },
                 onEditItem = {
-                    navController.navigate(Screen.ShoppingItem.route)
+                    navController.navigate(NavDestination.ShoppingItem.route)
                 }
             )
         }
 
-        composable(Screen.ShoppingItem.route) {
+        composable(NavDestination.ShoppingItem.route) {
             /* Load the ShoppingListScreen and when edit item is clicked
             then navigate to the ShoppingItem screen and pass the select itemId as a parameter */
             ShoppingItemScreen(onNavigateBack = { navController.navigateUp() })

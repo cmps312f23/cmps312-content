@@ -7,6 +7,7 @@ import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 import shopapp.entity.Category
 import shopapp.entity.Product
+import shopapp.entity.ProductEntity
 
 @Dao
 interface ProductDao {
@@ -27,7 +28,7 @@ interface ProductDao {
                                                     @MapColumn(columnName = "name") String>>
 
     @Insert
-    suspend fun insertProducts(products: List<Product>) : List<Long>
+    suspend fun insertProducts(products: List<ProductEntity>) : List<Long>
 
     // Category related methods
     @Query("select * from Category order by categoryName")
@@ -44,11 +45,22 @@ interface ProductDao {
     @Query("select count(*) from Category")
     suspend fun getCategoryCount() : Int
 
+    // Deletes rows in the db matching the specified [ids]
+    @Query(
+        value = """
+            DELETE FROM Product
+            WHERE id in (:ids)
+        """,
+    )
+    suspend fun deleteProducts(ids: List<String>)
+
+
+    //@Upsert // Or you can use Upsert to insert or update if already exists
     @Insert
     suspend fun addCategories(categories: List<Category>) : List<Long>
 
     @Query("""
-       Select c.*, p.*
+       Select c.*, p.*, c.categoryName category
        From Category c join Product p on c.categoryId = p.categoryId
        """)
     suspend fun getCategoriesAndProducts(): Map<Category, List<Product>>

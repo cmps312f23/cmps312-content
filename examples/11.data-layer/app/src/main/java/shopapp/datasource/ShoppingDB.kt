@@ -9,7 +9,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import shopapp.entity.Category
-import shopapp.entity.Product
+import shopapp.entity.ProductEntity
 import shopapp.entity.ShoppingItem
 import shopapp.entity.User
 import shopapp.repository.ShoppingRepository
@@ -18,8 +18,8 @@ import shopapp.repository.ShoppingRepository
    otherwise you will get an exception.
    When the version changes the DB will be dropped and recreated
  */
-@Database(entities = [Product::class, Category::class, ShoppingItem::class, User::class],
-    version = 1)
+@Database(entities = [ProductEntity::class, Category::class, ShoppingItem::class, User::class],
+    version = 3, exportSchema = false)
 @TypeConverters(DateConverter::class)
 abstract class ShoppingDB : RoomDatabase() {
     abstract fun shoppingItemDao(): ShoppingItemDao
@@ -31,7 +31,8 @@ abstract class ShoppingDB : RoomDatabase() {
 
         fun getInstance(context: Context): ShoppingDB {
             if (db == null) {
-                // Use Room.databaseBuilder to open( or create) the database
+                // Use Room.databaseBuilder to open the database
+                // (DB will be created if it does NOT exist)
                 db = Room.databaseBuilder(
                     context,
                     ShoppingDB::class.java, "shoppingDB"
