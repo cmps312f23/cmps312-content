@@ -6,7 +6,6 @@ import shopapp.view.navigation.AppNavigator
 
 @Composable
 fun MainScreen() {
-
     val navController = rememberNavController()
     AppNavigator(navController)
 }

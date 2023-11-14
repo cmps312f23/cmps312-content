@@ -13,8 +13,8 @@ import shopapp.entity.ProductEntity
 interface ProductDao {
     // Product related methods
     @Query("""
-        Select p.id, p.name, p.icon, p.categoryId, c.categoryName category 
-        From Product p join Category c on p.categoryId = c.categoryId 
+        Select p.id, p.name, p.icon, p.categoryId, c.category 
+        From Product p join Category c on p.categoryId = c.id 
         Where p.categoryId = :categoryId order by p.name 
         """)
     suspend fun getProducts(categoryId: Long): List<Product>
@@ -31,15 +31,15 @@ interface ProductDao {
     suspend fun insertProducts(products: List<ProductEntity>) : List<Long>
 
     // Category related methods
-    @Query("select * from Category order by categoryName")
+    @Query("select * from Category order by category")
     fun observeCategories() : Flow<List<Category>>
 
     // Returns a map needed to fill a Categories Dropdown
-    @Query("select c.categoryId, c.categoryName from Category c order by categoryName")
-    fun observeCategoriesMap() : Flow<Map<@MapColumn(columnName = "categoryId") Long,
-                                      @MapColumn(columnName = "categoryName") String>>
+    @Query("select c.id, c.category from Category c order by category")
+    fun observeCategoriesMap() : Flow<Map<@MapColumn(columnName = "id") Long,
+                                      @MapColumn(columnName = "category") String>>
 
-    @Query("select * from Category where categoryName = :name")
+    @Query("select * from Category where category = :name")
     suspend fun getCategory(name: String) : Category?
 
     @Query("select count(*) from Category")
@@ -60,8 +60,8 @@ interface ProductDao {
     suspend fun addCategories(categories: List<Category>) : List<Long>
 
     @Query("""
-       Select c.*, p.*, c.categoryName category
-       From Category c join Product p on c.categoryId = p.categoryId
+       Select c.*, p.*, c.category
+       From Category c join Product p on p.categoryId = c.id
        """)
     suspend fun getCategoriesAndProducts(): Map<Category, List<Product>>
 
@@ -69,17 +69,17 @@ interface ProductDao {
     // the map are from a single column
     @Query("""
        Select c.*, count(p.id) as productCount
-       From Category c join Product p on c.categoryId = p.categoryId
-       Group by c.categoryId
+       From Category c join Product p on c.id = p.categoryId
+       Group by c.id
        """)
     suspend fun getCategoriesAndProductCounts(): Map<Category,
                                                    @MapColumn(columnName = "productCount") Int>
 
     @Query("""
-       Select c.categoryName, count(p.id) as productCount
-       From Category c join Product p on c.categoryId = p.categoryId
-       Group by c.categoryName
+       Select c.category, count(p.id) as productCount
+       From Category c join Product p on c.id = p.categoryId
+       Group by c.category
        """)
-    suspend fun getCategoryNamesAndProductCounts(): Map<@MapColumn(columnName = "categoryName") String,
+    suspend fun getProductCountsPerCategory(): Map<@MapColumn(columnName = "category") String,
                                                         @MapColumn(columnName = "productCount") Long>
 }

@@ -16,12 +16,27 @@ import androidx.compose.ui.tooling.preview.Preview
 fun Dropdown(
     label: String = "Options",
     options: Map<Long, String>?,
-    selectedOptionId: Long, onSelectionChange: (Long)-> Unit,
+    selectedOptionId: Long, onSelectionChange: (Pair<Long, String>) -> Unit,
     modifier: Modifier = Modifier
 ) {
     var expanded by remember { mutableStateOf(false) }
-    val selectedOption = options?.get(selectedOptionId) ?: ""
-    var selectedOptionText by remember { mutableStateOf(selectedOption) }
+    var selectedOptionText by remember { mutableStateOf("") }
+
+    // Execute only when selectedOptionId changes
+    LaunchedEffect(selectedOptionId) {
+        /*println("Dropdown -> label: $label")
+        println("Dropdown -> selectedOptionId: $selectedOptionId")
+        println("Dropdown -> options: ${options?.values}")*/
+        val selectedOption = options?.get(selectedOptionId) ?: ""
+        //println("Dropdown -> selectedOption: $selectedOption")
+        selectedOptionText = selectedOption
+    }
+
+    // Execute only when options change
+    LaunchedEffect(options) {
+        val selectedOption = options?.get(selectedOptionId) ?: ""
+        selectedOptionText = selectedOption
+    }
 
     // We want to react on tap/press on TextField to show menu
     ExposedDropdownMenuBox(
@@ -47,7 +62,7 @@ fun Dropdown(
                 DropdownMenuItem(
                     text = { Text(option.value) },
                     onClick = {
-                        onSelectionChange(option.key)
+                        onSelectionChange(option.key to option.value)
                         selectedOptionText = option.value
                         expanded = false
                     },
@@ -64,5 +79,5 @@ fun DropdownPreview() {
     val options = mapOf( 1L to "Option 1",
         2L to "Option 2", 3L to "Option 3",
         4L to "Option 4", 5L to "Option 5")
-    Dropdown(options = options, selectedOptionId = 2, onSelectionChange = { println(it) })
+    Dropdown(options = options, selectedOptionId = 2, onSelectionChange = { println(it.first) })
 }

@@ -1,20 +1,20 @@
 [
   {
-    "name": "Fruits"
+    "category": "Fruits"
   },
   {
-    "name": "Vegetables"
+    "category": "Vegetables"
   },
   {
-    "name": "Bakery"
+    "category": "Bakery"
   },
   {
-    "name": "Sandwiches"
+    "category": "Sandwiches"
   },
   {
-    "name": "Meals"
+    "category": "Meals"
   },
   {
-    "name": "Snacks"
+    "category": "Snacks"
   }
 ]

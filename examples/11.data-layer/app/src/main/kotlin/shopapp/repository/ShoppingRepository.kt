@@ -6,7 +6,7 @@ import shopapp.datasource.ShoppingDB
 import shopapp.entity.Category
 import shopapp.entity.Product
 import shopapp.entity.ProductEntity
-import shopapp.entity.ShoppingItem
+import shopapp.entity.ShoppingItemEntity
 
 // Repository, abstracts access to multiple data sources
 class ShoppingRepository(private val context: Context) {
@@ -26,12 +26,9 @@ class ShoppingRepository(private val context: Context) {
     suspend fun getItem(itemId: Long) = shoppingItemDao.getItem(itemId)
 
     // If item already exists just increase the quantity otherwise insert a new Item
-    suspend fun addItem(item: ShoppingItem) : Long {
+    suspend fun addItem(item: ShoppingItemEntity) : Long {
         val dbItem = shoppingItemDao.getItemByProductId(item.productId)
         return if (dbItem == null) {
-            // Ensure that the productName and categoryId are set to null
-            item.productName = null
-            item.categoryId = null
             shoppingItemDao.addItem(item)
         } else {
             val quantity = dbItem.quantity + item.quantity
@@ -42,14 +39,11 @@ class ShoppingRepository(private val context: Context) {
 
     suspend fun updateQuantity(id: Long, quantity: Int) = shoppingItemDao.updateQuantity(id,quantity)
 
-    suspend fun updateItem(item: ShoppingItem) {
-        // Ensure that the productName and categoryId are set to null
-        item.productName = null
-        item.categoryId = null
+    suspend fun updateItem(item: ShoppingItemEntity) {
         shoppingItemDao.updateItem(item)
     }
 
-    suspend fun deleteItem(item: ShoppingItem) = shoppingItemDao.deleteItem(item)
+    suspend fun deleteItem(itemId: Long) = shoppingItemDao.deleteItem(itemId)
     fun observeItemsCount() = shoppingItemDao.observeItemsCount()
 
     suspend fun getProducts(categoryId: Long) = productDao.getProducts(categoryId)
@@ -60,7 +54,7 @@ class ShoppingRepository(private val context: Context) {
 
     suspend fun getCategoriesAndProductCounts() = productDao.getCategoriesAndProductCounts()
     suspend fun getCategoriesAndProducts() = productDao.getCategoriesAndProducts()
-    suspend fun getCategoryNamesAndProductCounts() = productDao.getCategoryNamesAndProductCounts()
+    suspend fun getProductCountsPerCategory() = productDao.getProductCountsPerCategory()
 
     // Used for database initialization
     companion object {

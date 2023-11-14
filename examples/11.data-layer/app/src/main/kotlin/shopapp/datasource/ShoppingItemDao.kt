@@ -1,8 +1,12 @@
 package shopapp.datasource
 
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
+import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 import shopapp.entity.ShoppingItem
+import shopapp.entity.ShoppingItemEntity
 
 @Dao
 interface ShoppingItemDao {
@@ -14,24 +18,27 @@ interface ShoppingItemDao {
     // suspend fun getAll() : List<Item>
     // p.name || ' ' || p.image : means concatenate name and image
     @Query("""
-        Select i.id, i.quantity, i.updatedDate, i.productId, p.categoryId, 
+        Select i.id, i.quantity, i.updatedDate, i.productId, p.categoryId, c.category category, 
             (p.name || ' ' || p.icon) as productName 
         From ShoppingItem i join Product p on i.productId = p.id
+                            join Category c on p.categoryId = c.id 
         """)
     fun observeItems() : Flow<List<ShoppingItem>>
 
     @Query("""
-        Select i.id, i.quantity, i.updatedDate, i.productId, p.categoryId, 
-            (p.name || ' ' || p.icon) as productName 
-        From ShoppingItem i join Product p on i.productId = p.id 
+        Select i.id, i.quantity, i.updatedDate, i.productId, p.categoryId, c.category category, 
+            (p.name || ' ' || p.icon) as productName
+        From ShoppingItem i join Product p on i.productId = p.id
+                            join Category c on p.categoryId = c.category 
         Where i.id = :itemId
         """)
     suspend fun getItem(itemId: Long) : ShoppingItem?
 
     @Query("""
-        Select i.id, i.quantity, i.updatedDate, i.productId, p.categoryId, 
-            (p.name || ' ' || p.icon) as productName 
-        From ShoppingItem i join Product p on i.productId = p.id 
+        Select i.id, i.quantity, i.updatedDate, i.productId, p.categoryId, c.category, 
+            (p.name || ' ' || p.icon) as productName
+        From ShoppingItem i join Product p on i.productId = p.id
+                            join Category c on p.categoryId = c.id
         Where i.productId = :productId
         """)
     suspend fun getItemByProductId(productId: Long) : ShoppingItem?
@@ -44,15 +51,15 @@ interface ShoppingItemDao {
 
     // Returns id of newly added item
     @Insert
-    suspend fun addItem(item: ShoppingItem): Long
+    suspend fun addItem(item: ShoppingItemEntity): Long
 
     // Return ids of newly added item
     @Insert
-    suspend fun addItems(items: List<ShoppingItem>) : List<Long>
+    suspend fun addItems(items: List<ShoppingItemEntity>) : List<Long>
 
     @Update
-    suspend fun updateItem(item: ShoppingItem)
+    suspend fun updateItem(item: ShoppingItemEntity)
 
-    @Delete
-    suspend fun deleteItem(item: ShoppingItem)
+    @Query("delete from ShoppingItem where id = :itemId")
+    suspend fun deleteItem(itemId: Long)
 }

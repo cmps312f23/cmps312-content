@@ -1,5 +1,6 @@
 package shopapp.view
 
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -27,8 +28,9 @@ import kotlinx.coroutines.launch
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
-import shopapp.entity.ShoppingItem
+import shopapp.entity.ShoppingItemEntity
 import shopapp.view.components.Datepicker
+import shopapp.view.components.DialogBox
 import shopapp.view.components.Dropdown
 import shopapp.view.components.TopBar
 import shopapp.viewmodel.ShoppingViewModel
@@ -39,6 +41,10 @@ enum class FormMode { ADD, EDIT }
 @Composable
 //fun ShoppingItemScreen(shoppingItemId: Long? = null, onNavigateBack: () -> Unit) {
 fun ShoppingItemScreen(onNavigateBack: () -> Unit) {
+    var openDialogBox by remember { mutableStateOf(false) }
+    var dialogText by remember { mutableStateOf("") }
+
+    val context = LocalContext.current
     var formMode = FormMode.ADD
     var screenTitle = "Add Shopping Item"
     var confirmButtonLabel = "Add"
@@ -48,22 +54,12 @@ fun ShoppingItemScreen(onNavigateBack: () -> Unit) {
 
     var categoryId by remember { mutableStateOf(viewModel.selectedShoppingItem?.categoryId ?: 0) }
     var productId by remember { mutableStateOf(viewModel.selectedShoppingItem?.productId ?: 0) }
+    var productName by remember { mutableStateOf(viewModel.selectedShoppingItem?.productName ?: "") }
     var quantity by remember { mutableStateOf( viewModel.selectedShoppingItem?.quantity ?:0) }
 
     val coroutineScope = rememberCoroutineScope()
-
-/*
-    val datePickerState = rememberDatePickerState(
-        initialSelectedDateMillis = Clock.System.now().toEpochMilliseconds()
-    )
-
-    var showDatePicker by remember {
-        mutableStateOf(false)
-    }*/
-
     val today = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault()).date
     var updatedDate by remember { mutableStateOf( viewModel.selectedShoppingItem?.updatedDate ?: today) }
-
 
     // In case of Edit Mode get the Shopping Item to edit
     if (viewModel.selectedShoppingItem != null) {
@@ -73,31 +69,17 @@ fun ShoppingItemScreen(onNavigateBack: () -> Unit) {
     }
 
     val categories = viewModel.categoriesMapFlow.collectAsStateWithLifecycle(initialValue = mapOf(0L to "")).value
-    // Every time categories change ->
-    //      Convert a list to a map needed to fill the categories dropdown
-    /*val categoryOptions by remember {
-        derivedStateOf {
-            categories.value?.associate {
-                Pair(it.id, it.name)
-            }
-        }
-    }*/
-
-    // Every time categoryId change get the products of the selected category
-    var products = viewModel.observeProducts(categoryId).collectAsStateWithLifecycle(initialValue = mapOf(0L to "")).value
-    // Every time products change ->
-    //      Convert a list to a map needed to fill the products dropdown
-    /*val productOptions by remember {
-        derivedStateOf {
-            products.value?.associate {
-                Pair(it.id, "${it.name} ${it.icon}")
-            }
-        }
-    }*/
+    val products = viewModel.observeProducts(categoryId).collectAsStateWithLifecycle(initialValue = mapOf(0L to "")).value
 
     Scaffold(
         topBar = { TopBar( title = screenTitle, onNavigateBack) }
     ) {
+        if (openDialogBox) {
+            DialogBox(dialogText = dialogText) {
+                openDialogBox = false
+            }
+        }
+
         Column(
             verticalArrangement = Arrangement.spacedBy(8.dp),
             modifier = Modifier.padding(it)
@@ -107,14 +89,19 @@ fun ShoppingItemScreen(onNavigateBack: () -> Unit) {
                 options = categories,
                 selectedOptionId = categoryId,
                 onSelectionChange = {
-                    categoryId = it
+                    categoryId = it.first
+                    productId = 0
+                    productName = ""
                 })
 
             Dropdown(
                 label = "Select a Product",
                 options = products,
                 selectedOptionId = productId,
-                onSelectionChange = { productId = it })
+                onSelectionChange = {
+                    productId = it.first
+                    productName = it.second
+                })
 
             OutlinedTextField(
                 value = if (quantity > 0) quantity.toString() else "",
@@ -125,28 +112,6 @@ fun ShoppingItemScreen(onNavigateBack: () -> Unit) {
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
             )
 
-            /*updatedDate = datePickerState.selectedDateMillis?.let {
-                millisecondsToLocalDate(it).date
-            } ?: today
-
-            // Second, you simply have to add the DatePicker component to your layout.
-            DatePicker(state = datePickerState,
-                showModeToggle = true, // allow input mode or picker
-                title = { Text(text = "Select Updated Date") },
-                headline = {
-                    // You need to look the datePickerState value
-                    Text(
-                        text = datePickerState.displayMode.toString()
-                    )
-                },
-
-            )
-
-            //val formattedDate = "${updatedDate.dayOfMonth}/${updatedDate.month}.${updatedDate.year}"
-
-            // Finally, to get the user value you could do something like this:
-            //Text("Selected: $formattedDate")
-*/
             Datepicker("Select Updated Date", initialDate = updatedDate,
                 onDateSelected = {  updatedDate = it }
             )
@@ -156,21 +121,26 @@ fun ShoppingItemScreen(onNavigateBack: () -> Unit) {
             Button(
                 onClick = {
                     if (formMode == FormMode.ADD) {
-                        val item = ShoppingItem(
-                            productId = productId,
-                            quantity = quantity,
-                            updatedDate = updatedDate
+                        val item = ShoppingItemEntity(
+                            productId,
+                            quantity,
+                            updatedDate
                         )
                         viewModel.addItem(item)
+                        Toast.makeText(context,
+                            "$productName ($quantity) added successfully to the shopping cart",
+                            Toast.LENGTH_SHORT).show()
+
                         // Reset the productId and quantity to enter them again
                         productId = 0L
                         quantity = 0
                     } else {
                         viewModel.selectedShoppingItem?.let {
-                            it.productId = productId
-                            it.quantity = quantity
-                            it.updatedDate = updatedDate
-                            viewModel.updateItem(it)
+                            val item = ShoppingItemEntity(
+                                it.id, productId,
+                                quantity, updatedDate
+                            )
+                            viewModel.updateItem(item)
                             onNavigateBack()
                         }
                     }
@@ -184,9 +154,10 @@ fun ShoppingItemScreen(onNavigateBack: () -> Unit) {
                 onClick = {
                     coroutineScope.launch {
                         val categories = viewModel.getCategoriesAndProductCounts()
-                        categories.entries.forEach {
-                            println("${it.key.name} -> ${it.value}")
+                        dialogText = categories.entries.joinToString(separator = "\n") {
+                            "${it.key.id} - ${it.key.category} -> ${it.value}"
                         }
+                        openDialogBox = true
                     }
 
                 }) {
@@ -196,23 +167,25 @@ fun ShoppingItemScreen(onNavigateBack: () -> Unit) {
             Button(
                 onClick = {
                     coroutineScope.launch {
-                        val categories = viewModel.getCategoryNamesAndProductCounts()
-                        categories.entries.forEach {
-                            println("${it.key} -> ${it.value}")
+                        val categories = viewModel.getProductCountsPerCategory()
+                        dialogText = categories.entries.joinToString(separator = "\n") {
+                            "${it.key} -> ${it.value}"
                         }
+                        openDialogBox = true
                     }
 
                 }) {
-                Text(text = "Get Category names - Product Count")
+                Text(text = "Get Products Count per Category")
             }
 
             Button(
                 onClick = {
                     coroutineScope.launch {
                         val categories = viewModel.getCategoriesAndProducts()
-                        categories.entries.forEach {
-                            println("${it.key.name} -> ${it.value}")
+                        dialogText = categories.entries.joinToString(separator = "\n\n") {
+                            "${it.key.category} -> ${it.value.joinToString(prefix = "[", postfix = "]") { "${it.name} ${it.icon}" }}"
                         }
+                        openDialogBox = true
                     }
 
                 }) {

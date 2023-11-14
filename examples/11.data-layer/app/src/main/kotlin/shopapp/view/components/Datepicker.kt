@@ -1,5 +1,6 @@
 package shopapp.view.components
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.DatePicker
 import androidx.compose.material3.DatePickerDialog
@@ -12,18 +13,21 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import kotlinx.datetime.LocalDate
 import shopapp.datasource.DateConverter
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Datepicker(dateLabel: String, initialDate: LocalDate,
-               onDateSelected: (LocalDate) -> Unit){
+               onDateSelected: (LocalDate) -> Unit) {
 
     val dateConverter = DateConverter()
     // First you need to remember a datePickerState
     // This state is where you get the user selection from
-    val datePickerState = rememberDatePickerState(initialSelectedDateMillis = dateConverter.fromDate(initialDate))
+    val datePickerState =
+        rememberDatePickerState(initialSelectedDateMillis = dateConverter.fromDate(initialDate))
 
     var showDatePicker by remember {
         mutableStateOf(false)
@@ -59,7 +63,8 @@ fun Datepicker(dateLabel: String, initialDate: LocalDate,
         ) {
             DatePicker(
                 state = datePickerState,
-                title = { Text(text = dateLabel) }
+                title = { Text(text = dateLabel,
+                    modifier = Modifier.padding(start = 24.dp)) }
             )
         }
     }
@@ -75,28 +80,4 @@ fun Datepicker(dateLabel: String, initialDate: LocalDate,
     Text(
         text = "Selected date: ${selectedDate.dayOfMonth}/${selectedDate.monthNumber}/${selectedDate.year}"
     )
-
-   /* val selectedDate = remember { mutableStateOf( "${initialDate.dayOfMonth}/${initialDate.monthNumber}/${initialDate.year}" ) }
-    val datePickerDialog = DatePickerDialog(
-        context,
-        { _: DatePicker, year: Int, month: Int, dayOfMonth: Int ->
-            // Month is 0 based so add 1
-            selectedDate.value = "$dayOfMonth/${month+1}/$year"
-            onDateSelected( LocalDate(year, month+1, dayOfMonth) )
-        },
-        initialDate.year, initialDate.monthNumber-1, initialDate.dayOfMonth
-    )
-
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-        Button(onClick = {
-            datePickerDialog.show()
-        }) {
-            Text(text = dateLabel)
-        }
-        if (selectedDate.value.isNotEmpty())
-            Text(text = "Selected Date: ${selectedDate.value}")
-    }*/
 }

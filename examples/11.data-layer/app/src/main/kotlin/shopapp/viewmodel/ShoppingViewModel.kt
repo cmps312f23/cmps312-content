@@ -7,6 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
 import shopapp.entity.ShoppingItem
+import shopapp.entity.ShoppingItemEntity
 import shopapp.repository.ShoppingRepository
 
 class ShoppingViewModel(appContext: Application) : AndroidViewModel(appContext) {
@@ -17,11 +18,11 @@ class ShoppingViewModel(appContext: Application) : AndroidViewModel(appContext) 
     val shoppingListFlow = shoppingRepository.observeItems()
     val shoppingItemsCountFlow = shoppingRepository.observeItemsCount()
 
-    fun addItem(item: ShoppingItem) = viewModelScope.launch(Dispatchers.IO) {
+    fun addItem(item: ShoppingItemEntity) = viewModelScope.launch(Dispatchers.IO) {
         shoppingRepository.addItem(item)
     }
 
-    fun updateItem(item: ShoppingItem) = viewModelScope.launch(Dispatchers.IO) {
+    fun updateItem(item: ShoppingItemEntity) = viewModelScope.launch(Dispatchers.IO) {
         shoppingRepository.updateItem(item)
     }
 
@@ -29,8 +30,8 @@ class ShoppingViewModel(appContext: Application) : AndroidViewModel(appContext) 
         shoppingRepository.updateQuantity(item.id, item.quantity)
     }
 
-    fun deleteItem(item: ShoppingItem) = viewModelScope.launch(Dispatchers.IO) {
-        shoppingRepository.deleteItem(item)
+    fun deleteItem(itemId: Long) = viewModelScope.launch(Dispatchers.IO) {
+        shoppingRepository.deleteItem(itemId)
     }
 
     val categoriesFlow = shoppingRepository.observeCategories()
@@ -44,5 +45,5 @@ class ShoppingViewModel(appContext: Application) : AndroidViewModel(appContext) 
 
     suspend fun getCategoriesAndProductCounts() = shoppingRepository.getCategoriesAndProductCounts()
     suspend fun getCategoriesAndProducts() = shoppingRepository.getCategoriesAndProducts()
-    suspend fun getCategoryNamesAndProductCounts() = shoppingRepository.getCategoryNamesAndProductCounts()
+    suspend fun getProductCountsPerCategory() = shoppingRepository.getProductCountsPerCategory()
 }
