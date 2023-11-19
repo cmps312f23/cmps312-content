@@ -1,0 +1,51 @@
+[
+  {
+    "packageId": "ENG01",
+    "comment": "Nice package",
+    "doneOn": "2020/10/17",
+    "doneBy": "s1@test.com",
+    "rating": 4.5
+  },
+  {
+    "packageId": "ENG01",
+    "comment": "Maybe too easy for beginners",
+    "doneOn": "2020/09/10",
+    "doneBy": "s1@test.com",
+    "rating": 3.5
+  },
+  {
+    "packageId": "ENG01",
+    "comment": "Just like the previous package, on the spot",
+    "doneOn": "2020/03/03",
+    "doneBy": "s2@test.com",
+    "rating": 5
+  },
+  {
+    "packageId": "ENG02",
+    "comment" : "Covered words that are used quite frequently. Will be waiting for the next package!",
+    "doneOn" : "2020/05/01",
+    "doneBy" : "s3@test.com",
+    "rating" : 4.5
+  },
+  {
+    "packageId": "ENG03",
+    "comment": "Yummy, delicious package:)",
+    "doneOn":"2020/10/9",
+    "doneBy": "s1@test.com",
+    "rating": 3.5
+  },
+  {
+    "packageId": "ENG03",
+    "comment": "Nice",
+    "doneOn":"2020/10/9",
+    "doneBy": "s2@test.com",
+    "rating": 4.5
+  },
+  {
+    "packageId": "ENG04",
+    "comment": "Good package",
+    "doneOn":"2020/10/9",
+    "doneBy": "s3@test.com",
+    "rating": 4.5
+  }
+]
