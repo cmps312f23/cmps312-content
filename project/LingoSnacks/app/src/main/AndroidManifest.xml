@@ -14,7 +14,7 @@
         android:theme="@style/Theme.LingoSnacks"
         tools:targetApi="31">
         <activity
-            android:name="qu.lingosnacks.ui.MainActivity"
+            android:name="qu.lingosnacks.view.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.LingoSnacks">

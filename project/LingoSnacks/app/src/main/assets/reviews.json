@@ -1,0 +1,58 @@
+[
+  {
+    "reviewId": "1",
+    "packageId": "p1",
+    "comment": "Nice package",
+    "doneOn": "2023-10-17",
+    "doneBy": "m1@test.com",
+    "rating": 4.5
+  },
+  {
+    "reviewId": "2",
+    "packageId": "p1",
+    "comment": "Maybe too easy for beginners",
+    "doneOn": "2023-09-10",
+    "doneBy": "m2@test.com",
+    "rating": 3.5
+  },
+  {
+    "reviewId": "3",
+    "packageId": "p1",
+    "comment": "Just like the previous package, on the spot",
+    "doneOn": "2023-03-03",
+    "doneBy": "m3@test.com",
+    "rating": 5
+  },
+  {
+    "reviewId": "4",
+    "packageId": "p2",
+    "comment" : "Covered words that are used quite frequently. Will be waiting for the next package!",
+    "doneOn" : "2023-05-01",
+    "doneBy" : "m1@test.com",
+    "rating" : 4.5
+  },
+  {
+    "reviewId": "5",
+    "packageId": "p3",
+    "comment": "Yummy, delicious package:)",
+    "doneOn":"2023-10-9",
+    "doneBy": "m1@test.com",
+    "rating": 3.5
+  },
+  {
+    "reviewId": "6",
+    "packageId": "p3",
+    "comment": "Nice",
+    "doneOn":"2023-10-9",
+    "doneBy": "m2@test.com",
+    "rating": 4.5
+  },
+  {
+    "reviewId": "7",
+    "packageId": "p4",
+    "comment": "Good package",
+    "doneOn":"2023-10-9",
+    "doneBy": "m3@test.com",
+    "rating": 4.5
+  }
+]

@@ -25,9 +25,6 @@ class ShoppingRepository(private val context: Context) {
     fun getShoppingListItems() : Query? {
         val uid = Firebase.auth.currentUser?.uid ?: return null
         return shoppingItemCollectionRef.whereEqualTo("uid", uid) //.get().await()
-
-
-
     }
 
     suspend fun getItem(itemId: String) : ShoppingItem? {

@@ -5,7 +5,6 @@ import androidx.lifecycle.AndroidViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import qu.lingosnacks.entity.User
-import qu.lingosnacks.entity.UserInfo
 import qu.lingosnacks.repository.AuthRepository
 
 class AuthViewModel(appContext: Application) : AndroidViewModel(appContext) {
@@ -37,15 +36,6 @@ class AuthViewModel(appContext: Application) : AndroidViewModel(appContext) {
         _currentUser.value = null
     }
 
-    fun getCurrentUserInfo(): UserInfo {
-        var userInfo = UserInfo()
-        currentUser.value?.let {
-            userInfo = UserInfo(
-                currentUser.value!!.uid,
-                currentUser.value!!.email,
-                currentUser.value!!.role
-            )
-        }
-        return userInfo
-    }
+    // Hardcoded for simplicity. In real app data should come from a DB
+    fun getRoles() = listOf("Member", "Author")
 }

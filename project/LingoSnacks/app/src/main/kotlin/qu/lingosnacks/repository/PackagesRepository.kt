@@ -1,15 +1,15 @@
 package qu.lingosnacks.repository
 
 import android.content.Context
+import kotlinx.datetime.Clock
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.todayIn
+import kotlinx.serialization.json.Json
 import qu.lingosnacks.entity.Definition
 import qu.lingosnacks.entity.LearningPackage
 import qu.lingosnacks.entity.Resource
 import qu.lingosnacks.entity.Sentence
 import qu.lingosnacks.entity.Word
-import kotlinx.datetime.Clock
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.todayIn
-import kotlinx.serialization.json.Json
 
 object PackagesRepository {
     var packages = mutableListOf<LearningPackage>()
@@ -23,10 +23,6 @@ object PackagesRepository {
         return packages
     }
 
-    fun generatePackageId(): Int {
-        return (packages.asSequence().map { it.packageId }.maxOrNull() ?: 0) + 1
-    }
-
     fun addPackage(
         author: String,
         category: String,
@@ -37,9 +33,9 @@ object PackagesRepository {
         title: String,
         words: MutableList<Word> = mutableListOf<Word>()
     ): Boolean {
-        return packages.add(
+        return true /*packages.add(
             LearningPackage(
-                generatePackageId(),
+                getRandomId(),
                 author,
                 category,
                 description,
@@ -49,7 +45,7 @@ object PackagesRepository {
                 title = title,
                 words = words
             )
-        )
+        )*/
     }
 
     fun addPackage(packageObj: LearningPackage): Boolean {
@@ -86,7 +82,7 @@ object PackagesRepository {
         return deletePackage(packageObj)
     }
 
-    fun getPackageById(id: Int): LearningPackage? {
+    fun getPackageById(id: String): LearningPackage? {
         return packages.find { it.packageId == id }
     }
 
@@ -111,10 +107,10 @@ object PackagesRepository {
     fun getUserRating(authorEmail: String): Double {
         val packagesByAuthor = getPackagesByAuthor(authorEmail)
         if (packagesByAuthor.isEmpty()) return 0.0
-        return packagesByAuthor.map { it.avgRating }.average()
+        return 0.0 //packagesByAuthor.map { it.avgRating }.average()
     }
 
-    fun getWordTotals(word: String, packageId: Int): Map<String, Int> {
+    fun getWordTotals(word: String, packageId: String): Map<String, Int> {
         val packageObj = getPackageById(packageId)
             ?: return mapOf(
                 "definitions" to 0, "sentences" to 0,
@@ -127,7 +123,7 @@ object PackagesRepository {
         return packages.filter {
             it.title.contains(searchText, ignoreCase = true) ||
                     it.description.contains(searchText, ignoreCase = true) ||
-                    it.keywords.contains(searchText, ignoreCase = true) ||
+                    //it.keywords.contains(searchText, ignoreCase = true) ||
                     /*it.keywords.any { keyword ->
                         keyword.contains(
                             searchText,
@@ -139,13 +135,13 @@ object PackagesRepository {
     }
 
     //Add, update, delete words
-    fun addWord(packageId: Int, word: Word): Boolean {
+    fun addWord(packageId: String, word: Word): Boolean {
         val packageObj = getPackageById(packageId) ?: return false
         if (packageObj.words.any { it.text == word.text }) return false
         return packageObj.words.add(word)
     }
 
-    fun updateWord(packageId: Int, oldWord: Word, newWord: Word): Boolean {
+    fun updateWord(packageId: String, oldWord: Word, newWord: Word): Boolean {
         val packageObj = getPackageById(packageId) ?: return false
         val index = packageObj.words.indexOfFirst { it.text == oldWord.text }
         if (index == -1) return false
@@ -153,12 +149,12 @@ object PackagesRepository {
         return true
     }
 
-    fun deleteWord(packageId: Int, word: Word): Boolean {
+    fun deleteWord(packageId: String, word: Word): Boolean {
         val packageObj = getPackageById(packageId) ?: return false
         return packageObj.words.remove(word)
     }
 
-    fun deleteWord(packageId: Int, word: String): Boolean {
+    fun deleteWord(packageId: String, word: String): Boolean {
         val packageObj = getPackageById(packageId) ?: return false
         val index = packageObj.words.indexOfFirst { it.text == word }
         if (index == -1) return false
@@ -167,19 +163,19 @@ object PackagesRepository {
     }
 
     //Add, update, delete definitions
-    fun addDefinition(packageId: Int, word: String, definition: Definition): Boolean {
+    fun addDefinition(packageId: String, word: String, definition: Definition): Boolean {
         val packageObj = getPackageById(packageId) ?: return false
         val index = packageObj.words.indexOfFirst { it.text == word }
         if (index == -1) return false
         return packageObj.words[index].definitions.add(definition)
     }
 
-    fun addDefinition(packageId: Int, word: Word, definition: Definition): Boolean {
+    fun addDefinition(packageId: String, word: Word, definition: Definition): Boolean {
         return addDefinition(packageId, word.text, definition)
     }
 
     fun updateDefinition(
-        packageId: Int,
+        packageId: String,
         word: String,
         oldDefinition: Definition,
         newDefinition: Definition
@@ -195,7 +191,7 @@ object PackagesRepository {
     }
 
     fun updateDefinition(
-        packageId: Int,
+        packageId: String,
         word: Word,
         oldDefinition: Definition,
         newDefinition: Definition
@@ -203,31 +199,31 @@ object PackagesRepository {
         return updateDefinition(packageId, word.text, oldDefinition, newDefinition)
     }
 
-    fun deleteDefinition(packageId: Int, word: String, definition: Definition): Boolean {
+    fun deleteDefinition(packageId: String, word: String, definition: Definition): Boolean {
         val packageObj = getPackageById(packageId) ?: return false
         val index = packageObj.words.indexOfFirst { it.text == word }
         if (index == -1) return false
         return packageObj.words[index].definitions.remove(definition)
     }
 
-    fun deleteDefinition(packageId: Int, word: Word, definition: Definition): Boolean {
+    fun deleteDefinition(packageId: String, word: Word, definition: Definition): Boolean {
         return deleteDefinition(packageId, word.text, definition)
     }
 
     //Add, update, delete sentences
-    fun addSentence(packageId: Int, word: String, sentence: Sentence): Boolean {
+    fun addSentence(packageId: String, word: String, sentence: Sentence): Boolean {
         val packageObj = getPackageById(packageId) ?: return false
         val index = packageObj.words.indexOfFirst { it.text == word }
         if (index == -1) return false
         return packageObj.words[index].sentences.add(sentence)
     }
 
-    fun addSentence(packageId: Int, word: Word, sentence: Sentence): Boolean {
+    fun addSentence(packageId: String, word: Word, sentence: Sentence): Boolean {
         return addSentence(packageId, word.text, sentence)
     }
 
     fun updateSentence(
-        packageId: Int,
+        packageId: String,
         word: String,
         oldSentence: Sentence,
         newSentence: Sentence
@@ -243,7 +239,7 @@ object PackagesRepository {
     }
 
     fun updateSentence(
-        packageId: Int,
+        packageId: String,
         word: Word,
         oldSentence: Sentence,
         newSentence: Sentence
@@ -251,19 +247,19 @@ object PackagesRepository {
         return updateSentence(packageId, word.text, oldSentence, newSentence)
     }
 
-    fun deleteSentence(packageId: Int, word: String, sentence: Sentence): Boolean {
+    fun deleteSentence(packageId: String, word: String, sentence: Sentence): Boolean {
         val packageObj = getPackageById(packageId) ?: return false
         val index = packageObj.words.indexOfFirst { it.text == word }
         if (index == -1) return false
         return packageObj.words[index].sentences.remove(sentence)
     }
 
-    fun deleteSentence(packageId: Int, word: Word, sentence: Sentence): Boolean {
+    fun deleteSentence(packageId: String, word: Word, sentence: Sentence): Boolean {
         return deleteSentence(packageId, word.text, sentence)
     }
 
     //Add, update, delete resources
-    fun addResource(packageId: Int, word: String, sentence: String, resource: Resource): Boolean {
+    fun addResource(packageId: String, word: String, sentence: String, resource: Resource): Boolean {
         val packageObj = getPackageById(packageId) ?: return false
         val wordIndex = packageObj.words.indexOfFirst { it.text == word }
         if (wordIndex == -1) return false
@@ -272,12 +268,12 @@ object PackagesRepository {
         return packageObj.words[wordIndex].sentences[sentIndex].resources.add(resource)
     }
 
-    fun addResource(packageId: Int, word: Word, sentence: Sentence, resource: Resource): Boolean {
+    fun addResource(packageId: String, word: Word, sentence: Sentence, resource: Resource): Boolean {
         return addResource(packageId, word.text, sentence.text, resource)
     }
 
     fun updateResource(
-        packageId: Int,
+        packageId: String,
         word: String,
         sentence: String,
         oldResource: Resource,
@@ -295,7 +291,7 @@ object PackagesRepository {
     }
 
     fun updateResource(
-        packageId: Int,
+        packageId: String,
         word: Word,
         sentence: Sentence,
         oldResource: Resource,
@@ -305,7 +301,7 @@ object PackagesRepository {
     }
 
     fun deleteResource(
-        packageId: Int,
+        packageId: String,
         word: String,
         sentence: String,
         resource: Resource
@@ -319,7 +315,7 @@ object PackagesRepository {
     }
 
     fun deleteResource(
-        packageId: Int,
+        packageId: String,
         word: Word,
         sentence: Sentence,
         resource: Resource
@@ -328,7 +324,7 @@ object PackagesRepository {
     }
 
     //Uniqueness checks
-    fun isUniquePackage(title: String, description: String, packageId: Int): Boolean {
+    fun isUniquePackage(title: String, description: String, packageId: String): Boolean {
         return packages.filterNot { it.packageId == packageId }.none {
             it.title.equals(title.trim(), true) || it.description.equals(description.trim(), true)
         }

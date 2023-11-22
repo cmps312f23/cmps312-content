@@ -26,7 +26,7 @@ class AuthRepository(val context: Context) {
     }
 
     // ToDo: Get the user details from Firstore.users collection
-    private fun getUser(id: String) {
+    private fun getUser(uid: String) {
 
     }
 

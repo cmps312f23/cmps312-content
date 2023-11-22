@@ -1,7 +1,7 @@
 package qu.lingosnacks.entity
 
 import kotlinx.serialization.Serializable
-import java.util.UUID
+import qu.lingosnacks.utils.getRandomId
 
 @Serializable
 data class User(
@@ -10,9 +10,15 @@ data class User(
     var email: String,
     var password: String,
     val role: String,
-    var photoUri: String = ""
+    var photoUrl: String = ""
 ) {
-    val uid: String = UUID.randomUUID().toString().split("-")[0]
+    constructor(uid : String) : this(firstName = "",
+        lastName = "", email = "",
+        password = "", role = "") {
+        this.uid = uid
+    }
+
+    var uid: String = getRandomId()
 
     val fullName: String
         get() = "$firstName $lastName"

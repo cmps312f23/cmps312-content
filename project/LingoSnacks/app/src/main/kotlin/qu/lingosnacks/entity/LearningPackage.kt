@@ -8,41 +8,29 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class LearningPackage(
-    //ToDo: make this property type String
-    val packageId: Int,
-    val author: String,
-    var category: String,
-    var description: String,
-    var iconUrl: String? = null,
-    var keywords: String = "", //MutableList<String> = mutableListOf(),
-    var language: String,
-    var lastUpdatedDate: LocalDate = Clock.System.todayIn(TimeZone.currentSystemDefault()),
-    var level: String,
+    var packageId: String,
     var title: String,
+    var description: String,
+    var category: String,
+    var level: String,
+    var language: String,
+    var iconUrl: String,
+    val author: String,
+    var lastUpdatedDate: LocalDate = Clock.System.todayIn(TimeZone.currentSystemDefault()),
     var version: Int = 1,
-    var avgRating: Double = 0.0,
-    internal var numRatings: Int = 0,
+    // ToDo: Do NOT store this property in the online DB
+    // ToDo: When you get packages, you should set it to true for packages that were downloaded to the local DB
+    var isDownloaded : Boolean = false,
+    //var avgRating: Double = 0.0,
+    //internal var numRatings: Int = 0,
     var words: MutableList<Word> = mutableListOf(),
-    //ToDo: consider removing and keep it separate from the package
-    var ratings: MutableList<Rating> = mutableListOf(),
 ) {
-    constructor() : this(0,author = "",
-        category = "", description = "",
-        iconUrl = "", keywords = "", language = "",
-        level = "", title="")
-    /*val avgRating: Float
-        get() {
-            if (ratings.isEmpty()) return 0f
-            return ratings.map { it.rating }.average().toFloat()
-        }*/
-
-    fun getRatingCount(): Int {
-        return ratings.size
-    }
-
-    fun getRatingByUser(userId: String): Rating? {
-        return ratings.find { it.doneBy == userId }
-    }
+    constructor() : this(packageId = "0",
+        title="", description = "",
+        category = "", level = "",
+        language = "", iconUrl = "",
+        author = "",
+    )
 
     // ToDo: not clear why this is needed
     fun getWordTotals(word: String): Map<String, Int> {
@@ -52,11 +40,6 @@ data class LearningPackage(
             "def" to 0, "sent" to 0
         )
     }
-
-    fun checkAuthorship(userId: String): Boolean {
-        return author == userId
-    }
-
-    fun isOwner(userInfo: UserInfo) = userInfo.email.equals(author, true)
-    fun isTeacher(userInfo: UserInfo) = userInfo.role.equals("Teacher", true)
 }
+
+fun LearningPackage.isAuthor(user: User?) = user?.email.equals(this.author, true)

@@ -6,8 +6,9 @@ import kotlinx.serialization.Serializable
 data class Resource(
     var title: String,
     var url: String,
-    var type: ResourceTypeEnum
+    var type: String
 ) {
+    constructor(): this("", "", "")
     val extension: String
         get() {
             val temp = url.substringAfterLast(".")
