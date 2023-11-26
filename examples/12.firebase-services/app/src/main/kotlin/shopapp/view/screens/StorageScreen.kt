@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import coil.compose.rememberImagePainter
-import shopapp.viewmodel.StorageViewModel
+import coil.compose.rememberAsyncImagePainter
 import shopapp.view.components.StorageToolBar
 import shopapp.view.components.displayMessage
+import shopapp.viewmodel.StorageViewModel
 
 @ExperimentalFoundationApi
 @Composable
@@ -112,7 +112,7 @@ fun StorageScreen() {
 
             if (storageViewModel.imageUrl != null) {
                 Image(
-                    painter = rememberImagePainter(storageViewModel.imageUrl),
+                    painter = rememberAsyncImagePainter(storageViewModel.imageUrl),
                     contentDescription = null,
                     modifier = Modifier
                         .size(200.dp)
@@ -129,7 +129,7 @@ fun StorageScreen() {
                     //val imageUri = "https://firebasestorage.googleapis.com/v0/b/cmp312-fall2020.appspot.com/o/images%2FFirebase-Cloud-Storage.png?alt=media&token=9ee1d523-c459-4e73-b7f4-8ef70ca57d49"
                     Column() {
                         Image(
-                            painter = rememberImagePainter(imageUrl),
+                            painter = rememberAsyncImagePainter(imageUrl),
                             contentDescription = null,
                             modifier = Modifier.size(200.dp)
                                 .combinedClickable(
