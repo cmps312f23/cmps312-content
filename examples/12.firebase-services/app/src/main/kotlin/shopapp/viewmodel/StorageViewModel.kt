@@ -1,12 +1,12 @@
 package shopapp.viewmodel
 
 import android.app.Application
-import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
-import android.os.Build
-import androidx.annotation.RequiresApi
-import androidx.compose.runtime.*
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.ktx.Firebase
@@ -15,8 +15,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import java.io.ByteArrayOutputStream
-import java.io.IOException
-import java.util.*
+import java.util.UUID
 
 class StorageViewModel(private val appContext: Application) : AndroidViewModel(appContext) {
     private val imagesPath = "images/"
@@ -68,7 +67,6 @@ class StorageViewModel(private val appContext: Application) : AndroidViewModel(a
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
     fun deleteImage(filePath: Uri) = viewModelScope.launch(Dispatchers.IO) {
         try {
             val filename = filePath.lastPathSegment!!
@@ -86,8 +84,7 @@ class StorageViewModel(private val appContext: Application) : AndroidViewModel(a
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val filename =
-                    if (filename.isEmpty()) UUID.randomUUID().toString() + ".jpg"
-                    else filename
+                    filename.ifEmpty { UUID.randomUUID().toString() + ".jpg" }
 
                 imagesStorageRef.child(filename).putFile(imageUri).await()
                 val downloadUrl = imagesStorageRef.child(filename).downloadUrl.await()
@@ -103,8 +100,7 @@ class StorageViewModel(private val appContext: Application) : AndroidViewModel(a
         try {
             // Assign a unique identifier is the filename is empty
             val filename =
-                if (filename.isEmpty()) UUID.randomUUID().toString() + ".jpg"
-                else filename
+                filename.ifEmpty { UUID.randomUUID().toString() + ".jpg" }
 
             imagesStorageRef.child(filename).putBytes(imageToBitmap(bitmap)).await()
             val downloadUrl = imagesStorageRef.child(filename).downloadUrl.await()
