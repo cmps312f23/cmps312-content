@@ -102,7 +102,7 @@ class StorageViewModel(private val appContext: Application) : AndroidViewModel(a
             val filename =
                 filename.ifEmpty { UUID.randomUUID().toString() + ".jpg" }
 
-            imagesStorageRef.child(filename).putBytes(imageToBitmap(bitmap)).await()
+            imagesStorageRef.child(filename).putBytes(bitmapToByteArray(bitmap)).await()
             val downloadUrl = imagesStorageRef.child(filename).downloadUrl.await()
             imageURLs.add(0, downloadUrl)
         } catch (e: Exception) {
@@ -111,7 +111,7 @@ class StorageViewModel(private val appContext: Application) : AndroidViewModel(a
         }
     }
 
-    private fun imageToBitmap(bitmap: Bitmap): ByteArray
+    private fun bitmapToByteArray(bitmap: Bitmap): ByteArray
     {
         val stream = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream)
