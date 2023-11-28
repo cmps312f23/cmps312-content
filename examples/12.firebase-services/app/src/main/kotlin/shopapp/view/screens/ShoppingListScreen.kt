@@ -25,9 +25,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import kotlinx.coroutines.launch
-import shopapp.view.screens.ShoppingListItem
 import shopapp.viewmodel.ShoppingViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -39,8 +39,8 @@ fun ShoppingListScreen(onAddItem: () -> Unit, onEditItem: () -> Unit) {
     */
     val viewModel =
         viewModel<ShoppingViewModel>(viewModelStoreOwner = LocalContext.current as ComponentActivity)
-    val shoppingList = viewModel.shoppingList //.observeAsState()
-    //val shoppingItemsCount = viewModel.shoppingItemsCount.observeAsState()
+
+    val shoppingList = viewModel.shoppingItemsFlow.collectAsStateWithLifecycle().value
 
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }

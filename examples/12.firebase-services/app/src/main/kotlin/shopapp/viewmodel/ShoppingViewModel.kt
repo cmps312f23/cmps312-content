@@ -1,12 +1,12 @@
 package shopapp.viewmodel
 
 import android.app.Application
-import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.firebase.firestore.ListenerRegistration
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import shopapp.entity.ShoppingItem
 import shopapp.repository.ShoppingRepository
@@ -16,39 +16,13 @@ class ShoppingViewModel(appContext: Application) : AndroidViewModel(appContext) 
     private val shoppingRepository = ShoppingRepository(appContext)
 
     var selectedShoppingItem : ShoppingItem? = null
-    private var shoppingListUpdateListener : ListenerRegistration? = null
-
-    //val shoppingList = shoppingRepository.getItems()
-    val shoppingList = mutableStateListOf<ShoppingItem>()
-
-    init {
-        getShoppingListItems()
-    }
 
     // Observe Firestore ShoppingList collection and get notified of changes
-    private fun getShoppingListItems() {
-        shoppingListUpdateListener?.remove()
-
-        val query = shoppingRepository.getShoppingListItems()
-        if (query == null) {
-             shoppingList.clear()
-             return
-        }
-        shoppingListUpdateListener = query.addSnapshotListener { snapshot, e ->
-            if (e != null) {
-                println(">> Debug: Shopping List Update Listener failed. ${e.message}")
-                return@addSnapshotListener
-            }
-            val results = snapshot?.toObjects(ShoppingItem::class.java)
-            shoppingList.clear()
-            results?.let {
-                shoppingList.addAll( it )
-            }
-        }
-    }
-
-    // ToDo
-    //val shoppingItemsCount = shoppingRepository.getCount()
+    val shoppingItemsFlow = shoppingRepository.observeShoppingListItems().stateIn(
+        viewModelScope,
+        started = SharingStarted.WhileSubscribed(5000),
+        initialValue = emptyList()
+    )
 
     fun addItem(item: ShoppingItem) = viewModelScope.launch(Dispatchers.IO) {
         shoppingRepository.addItem(item)
@@ -75,10 +49,5 @@ class ShoppingViewModel(appContext: Application) : AndroidViewModel(appContext) 
     fun initDB() = flow {
         val result = shoppingRepository.initDB()
         emit(result)
-    }
-
-    override fun onCleared() {
-        shoppingListUpdateListener?.remove()
-        super.onCleared()
     }
 }

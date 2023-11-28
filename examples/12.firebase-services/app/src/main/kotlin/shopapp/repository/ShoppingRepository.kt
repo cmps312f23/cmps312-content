@@ -5,7 +5,9 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
 import kotlinx.serialization.json.Json
@@ -22,9 +24,24 @@ class ShoppingRepository(private val context: Context) {
         Firebase.firestore.collection("categories")
     }
 
-    fun getShoppingListItems() : Query? {
-        val uid = Firebase.auth.currentUser?.uid ?: return null
-        return shoppingItemCollectionRef.whereEqualTo("uid", uid) //.get().await()
+    fun observeShoppingListItems() : Flow<List<ShoppingItem>> = callbackFlow {
+        val uid = Firebase.auth.currentUser?.uid
+
+        if (uid == null) {
+            trySend(emptyList())
+            return@callbackFlow
+        }
+
+        val query = shoppingItemCollectionRef.whereEqualTo("uid", uid) //.get().await()
+        val snapShotListener = query.addSnapshotListener { items, error ->
+            if (error != null) {
+                println(">> Debug: Shopping List Update Listener failed. ${error.message}")
+                return@addSnapshotListener
+            }
+            val itemObjects = items?.toObjects(ShoppingItem::class.java)?.toList().orEmpty()
+            trySend(itemObjects)
+        }
+        awaitClose { snapShotListener.remove() }
     }
 
     suspend fun getItem(itemId: String) : ShoppingItem? {
