@@ -14,7 +14,7 @@ class MyApp: Application() {
 
     private fun createNotificationChannel() {
         val channel = NotificationChannel(
-            CounterNotificationService.COUNTER_CHANNEL_ID,
+            NotificationService.COUNTER_CHANNEL_ID,
             "Counter",
             NotificationManager.IMPORTANCE_DEFAULT
         )

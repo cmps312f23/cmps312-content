@@ -24,10 +24,15 @@
             android:theme="@style/Theme.App">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="notification.SecondActivity" />
         <receiver android:name="notification.CounterNotificationReceiver" />
+        <receiver android:name="notification.GreetingReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="work.manager.GREETING_EVENT" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>

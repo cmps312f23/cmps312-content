@@ -6,7 +6,7 @@ import android.content.Intent
 
 class CounterNotificationReceiver: BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent?) {
-        val service = CounterNotificationService(context)
-        service.showNotification(++Counter.value)
+        val service = NotificationService(context)
+        service.showCounterNotification(++Counter.value)
     }
 }

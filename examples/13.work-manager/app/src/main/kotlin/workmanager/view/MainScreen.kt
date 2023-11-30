@@ -1,5 +1,7 @@
 package workmanager.view
 
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -21,13 +23,17 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.work.WorkInfo
 import kotlinx.coroutines.launch
 import notification.Counter
-import notification.CounterNotificationService
+import notification.GreetingReceiver
+import notification.NotificationService
+import notification.SecondActivity
 import workmanager.viewmodel.WorkerViewModel
 import workmanager.workers.Constants
 
+
 @Composable
 fun MainScreen() {
-    val notificationService = CounterNotificationService(LocalContext.current)
+    val context = LocalContext.current
+    val notificationService = NotificationService(LocalContext.current)
 
     //val context = LocalContext.current
     var jobState by remember { mutableStateOf("") }
@@ -79,9 +85,56 @@ fun MainScreen() {
             }
 
             Button(onClick = {
-                notificationService.showNotification(Counter.value)
+                notificationService.showCounterNotification(Counter.value)
             }) {
                 Text(text = "Show notification")
+            }
+
+            /*
+            These examples highlight how intents can be used to navigate between activities,
+            interact with other apps, and trigger various functionalities within an Android app
+             */
+            Button(onClick = {
+                // Sending data from one activity to another
+                val intent = Intent(context, SecondActivity::class.java)
+                intent.putExtra("GREETING", "Hello from FirstActivity!")
+                context.startActivity(intent)
+            }) {
+                Text(text = "Open second activity")
+            }
+
+            Button(onClick = {
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.qu.edu.qa"))
+                context.startActivity(intent)
+            }) {
+                Text(text = "Open QU Website")
+            }
+
+            Button(onClick = {
+                val intent = Intent(Intent.ACTION_DIAL)
+                intent.data = Uri.parse("tel:1234567890")
+                context.startActivity(intent)
+            }) {
+                Text(text = "Making a Phone Call")
+            }
+
+            Button(onClick = {
+                val intent = Intent(Intent.ACTION_SENDTO)
+                intent.data = Uri.parse("mailto:contact@example.com")
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Subject")
+                intent.putExtra(Intent.EXTRA_TEXT, "Message body")
+                context.startActivity(intent)
+            }) {
+                Text(text = "Send an email")
+            }
+
+            Button(onClick = {
+                //val intent = Intent("work.manager.GREETING_EVENT")
+                val intent = Intent(context, GreetingReceiver::class.java)
+                intent.putExtra("GREETING", "Hello from WorkManager App!")
+                context.sendBroadcast(intent)
+            }) {
+                Text(text = "Send a Broadcast")
             }
         }
     }
