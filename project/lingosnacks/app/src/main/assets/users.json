@@ -1,0 +1,50 @@
+[
+  {
+    "firstName": "Homer",
+    "lastName": "Simpson",
+    "email": "a1@test.com",
+    "password": "pass123",
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png",
+    "role": "Author"
+  },
+  {
+    "firstName": "Donald",
+    "lastName": "Duck",
+    "email": "a2@test.com",
+    "password": "pass123",
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Donald_Duck.svg/440px-Donald_Duck.svg.png",
+    "role": "Author"
+  },
+  {
+    "firstName": "Tom",
+    "lastName": "Cat",
+    "email": "a3@test.com",
+    "password": "pass123",
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/en/f/f6/Tom_Tom_and_Jerry.png",
+    "role": "Author"
+  },
+  {
+    "firstName": "Sponge",
+    "lastName": "Bob",
+    "email": "m1@test.com",
+    "password": "pass123",
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/440px-SpongeBob_SquarePants_character.svg.png",
+    "role": "Member"
+  },
+  {
+    "firstName": "Bart",
+    "lastName": "Simpson",
+    "email": "m2@test.com",
+    "password": "pass123",
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png",
+    "role": "Member"
+  },
+  {
+    "firstName": "Bugs",
+    "lastName": "Bunny",
+    "email": "m3@test.com",
+    "password": "pass123",
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Bugs_Bunny.svg/360px-Bugs_Bunny.svg.png",
+    "role": "Member"
+  }
+]

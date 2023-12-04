@@ -1,12 +1,12 @@
 [
   {
-    "packageId": 1,
-    "author": "t1@test.com",
-    "category": "Places",
+    "packageId": "p1",
+    "author": "a1@test.com",
+    "category": "Travel",
     "description": "A list of 6 places that we can find in town",
-    "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/2538/2538872.svg",
+    "iconUrl": "https://cdn.icon-icons.com/icons2/1948/PNG/512/free-30-instagram-stories-icons02_122549.png",
     "language": "English",
-    "lastUpdatedDate": "2020/09/17",
+    "lastUpdatedDate": "2023-09-17",
     "level": "Beginner",
     "title": "Places In Town",
     "version": 2,
@@ -16,7 +16,7 @@
         "definitions": [
           {
             "text": "Place to go shopping",
-            "source": "Merriam-Webster"
+            "source": "Wikipedia"
           }
         ],
         "sentences": [
@@ -46,7 +46,7 @@
           },
           {
             "text": "Place where kids receive their education",
-            "source": "Oxford Dictionary"
+            "source": "Wikipedia"
           }
         ],
         "sentences": [
@@ -72,11 +72,11 @@
         "definitions": [
           {
             "text": "Place to play and have fun",
-            "source": "Collins English Dictionary"
+            "source": "Wikipedia"
           },
           {
             "text": "Small natural areas in the middle of the town",
-            "source": "The Chambers Dictionary"
+            "source": "Wikipedia"
           }
         ],
         "sentences": [
@@ -102,11 +102,11 @@
         "definitions": [
           {
             "text": "Place where sick people go to get cured",
-            "source": "The Urban Dictionary"
+            "source": "Wikipedia"
           },
           {
             "text": "Place where doctors treat patients",
-            "source": "The Hacker’s Dictionary"
+            "source": "Wikipedia"
           }
         ],
         "sentences": [
@@ -163,7 +163,7 @@
         "definitions": [
           {
             "text": "Place to go to cure pain in your teeth",
-            "source": "QU Dictionary"
+            "source": "Wikipedia"
           }
         ],
         "sentences": [
@@ -184,7 +184,7 @@
         "definitions": [
           {
             "text": "Place to get higher education",
-            "source": "QU Dictionary"
+            "source": "Wikipedia"
           }
         ],
         "sentences": [
@@ -209,14 +209,14 @@
   },
 
   {
-    "packageId": 2,
-    "author": "t2@test.com",
-    "category": "Places",
+    "packageId": "p2",
+    "author": "a2@test.com",
+    "category": "Travel",
     "description": "Continuing on the previous package, here is a list of 6 more places that we can find in town",
-    "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1838/1838458.svg",
+    "iconUrl": "https://cdn.icon-icons.com/icons2/1792/PNG/96/commercialbusiness_114691.png",
     "language": "English",
-    "lastUpdatedDate": "2019/02/09",
-    "level": "Beginner",
+    "lastUpdatedDate": "2019-09-02",
+    "level": "Intermediate",
     "title": "Places In Town 2",
     "version": 1,
     "words": [
@@ -225,7 +225,7 @@
         "definitions": [
           {
             "text": "Place to buy grocery items",
-            "source": "Dictionary"
+            "source": "Wikipedia"
           }
         ],
         "sentences": [
@@ -246,7 +246,7 @@
         "definitions": [
           {
             "text": "Place to get your car fixed when it is not working properly",
-            "source": "Dictionary"
+            "source": "Wikipedia"
           }
         ],
         "sentences": [
@@ -271,11 +271,11 @@
         "definitions": [
           {
             "text": "Place to buy a meal and eat it",
-            "source": "Dictionary"
+            "source": "Wikipedia"
           },
           {
             "text": "Place to eat",
-            "source": "Dictionary2"
+            "source": "Wikipedia"
           }
         ],
         "sentences": [
@@ -296,7 +296,7 @@
         "definitions": [
           {
             "text": "Place where police men work",
-            "source": "Dictionary"
+            "source": "Wikipedia"
           }
         ],
         "sentences": [
@@ -322,7 +322,7 @@
         "definitions": [
           {
             "text": "Place that is responsible of delivering items that you want to send to someone",
-            "source": "Dictionary"
+            "source": "Wikipedia"
           }
         ],
         "sentences": [
@@ -343,11 +343,11 @@
         "definitions": [
           {
             "text": "Place to borrow books",
-            "source": "Dictionary"
+            "source": "Wikipedia"
           },
           {
             "text": "Place to study and read books",
-            "source": "Dictionary2"
+            "source": "Wikipedia"
           }
         ],
         "sentences": [
@@ -372,14 +372,14 @@
   },
 
   {
-    "packageId": 3,
-    "author": "t3@test.com",
-    "category": "Food",
+    "packageId": "p3",
+    "author": "a3@test.com",
+    "category": "Health and Fitness",
     "description": "Fruit Vocabulary Word List",
     "iconUrl": "https://cdn.icon-icons.com/icons2/1832/PNG/512/iconfinderfoodandrestaurantorganicveganhealthyfooddietvegetarianbananafoodapplefruit4394827-115907_115874.png",
     "language": "English",
-    "lastUpdatedDate": "2020-27-9",
-    "level": "Easy",
+    "lastUpdatedDate": "2023-09-27",
+    "level": "Beginner",
     "title": "Fruits Package",
     "version": 3,
     "words":
@@ -390,11 +390,11 @@
         [
           {
             "text": "A small juicy red fruit that has small brown seeds on its surface, or the plant with white flowers on which this fruit grows",
-            "source":"Cambridge Dictionary"
+            "source":"Wikipedia"
           },
           {
             "text": "A sweet soft red fruit with a seed-studded surface",
-            "source":"OXFORD Dictionary"
+            "source":"Wikipedia"
           }
         ],
         "sentences":
@@ -433,12 +433,12 @@
         "definitions":
         [
           {
-            "text": "the round fruit of a tree of the rose family, which typically has thin green or red skin and crisp flesh",
-            "source":"Cambridge Dictionary"
+            "text": "Round fruit of a tree of the rose family, which typically has thin green or red skin and crisp flesh",
+            "source":"Wikipedia"
           },
           {
-            "text": "the tree bearing apples, with hard pale timber that is used in carpentry and to smoke food",
-            "source":"OXFORD Dictionary"
+            "text": "Tree bearing apples, with hard pale timber that is used in carpentry and to smoke food",
+            "source":"Wikipedia"
           }
         ],
         "sentences":
@@ -478,11 +478,11 @@
         [
           {
             "text": "A berry (typically green, purple, or black) growing in clusters on a grapevine, eaten as fruit",
-            "source":"OXFORD Dictionary"
+            "source":"Wikipedia"
           },
           {
             "text": "A small, round, purple or pale green fruit that you can eat",
-            "source":"Cambridge Dictionary"
+            "source":"Wikipedia"
           }
 
         ],
@@ -536,13 +536,14 @@
   },
 
   {
-    "packageId": 4,
-    "author": "t2@test.com",
-    "category": "Health",
+    "packageId": "p4",
+    "author": "a2@test.com",
+    "category": "Health and Fitness",
     "description": "Health domain terminology",
     "language": "English",
-    "lastUpdatedDate": "2020-10-9",
-    "level": "Average",
+    "iconUrl": "https://www.seekpng.com/png/full/134-1349786_science-icon-png.png",
+    "lastUpdatedDate": "2023-09-10",
+    "level": "Advanced",
     "title": "Corona Package",
     "version": 2,
     "words": [
