@@ -12,8 +12,13 @@ import shopapp.entity.ShoppingItem
 import shopapp.repository.ShoppingRepository
 
 class ShoppingViewModel(appContext: Application) : AndroidViewModel(appContext) {
-    //private val shoppingRepository = ShoppingRepository(appContext)
     private val shoppingRepository = ShoppingRepository(appContext)
+
+    init {
+        viewModelScope.launch(Dispatchers.IO) {
+            shoppingRepository.initDB()
+        }
+    }
 
     var selectedShoppingItem : ShoppingItem? = null
 
@@ -44,10 +49,5 @@ class ShoppingViewModel(appContext: Application) : AndroidViewModel(appContext) 
 
     fun getProducts(categoryId: String) = flow {
         emit ( shoppingRepository.getProducts(categoryId) )
-    }
-
-    fun initDB() = flow {
-        val result = shoppingRepository.initDB()
-        emit(result)
     }
 }
