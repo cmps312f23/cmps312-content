@@ -99,43 +99,11 @@ class PackageRepository(val context: Context) {
         }.toMap()
 
         return scoresSummary
-        /*listOf(
-            ScoreSummary("Unscramble Sentence", 90, 100),
-            ScoreSummary("Match Definition", 55, 100)
-        )*/
     }
 
     fun addScore(score: Score) {
         println(">> Debug: PackageRepository.addScore: $score")
     }
-
-    // ToDo: replace this example data with database query to get leader board members
-    /*fun getLeaderBoard(): List<LeaderBoardMember> =
-        listOf(
-            LeaderBoardMember(1, "123", "Sponge Bob",
-                "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/440px-SpongeBob_SquarePants_character.svg.png",
-                "Unscramble Sentence", 90, 120),
-
-            LeaderBoardMember(2, "234", "Bart Simpson",
-                "https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png",
-                "Unscramble Sentence", 60, 100),
-
-            LeaderBoardMember(3, "345", "Bugs Bunny",
-                "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Bugs_Bunny.svg/360px-Bugs_Bunny.svg.png",
-                "Unscramble Sentence", 50, 120),
-
-            LeaderBoardMember(1, "123", "Sponge Bob",
-                "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/440px-SpongeBob_SquarePants_character.svg.png",
-                "Match Definition", 100, 120),
-
-            LeaderBoardMember(2, "234", "Bart Simpson",
-                "https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png",
-                "Match Definition", 70, 100),
-
-            LeaderBoardMember(3, "345", "Bugs Bunny",
-                "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Bugs_Bunny.svg/360px-Bugs_Bunny.svg.png",
-                "Match Definition", 60, 120)
-        )*/
 
     // ToDo initialize Firestore db with data from packages.json and users.json
     fun initFirestoreDB() {}
