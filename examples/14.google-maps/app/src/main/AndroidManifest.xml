@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.App"
+        tools:targetApi="31">
+<!--        <activity
+            android:name="MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>-->
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC6f0scDza_L8lgaePCQyZ-d3OU6YXWrmk" />
+
+        <activity
+            android:name="maps.view.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="maps.view.BasicMapActivity"
+            android:exported="false" />
+        <activity
+            android:name="maps.view.AdvancedMarkersActivity"
+            android:exported="false"/>
+        <activity
+            android:name="maps.view.MapInColumnActivity"
+            android:exported="false"/>
+        <activity
+            android:name="maps.view.MarkerClusteringActivity"
+            android:exported="false"/>
+        <activity
+            android:name="maps.view.LocationTrackingActivity"
+            android:exported="false"/>
+        <activity
+            android:name="maps.view.ScaleBarActivity"
+            android:exported="false"/>
+        <activity
+            android:name="maps.view.StreetViewActivity"
+            android:exported="false"/>
+        <activity
+            android:name="maps.view.CustomControlsActivity"
+            android:exported="false"/>
+        <activity
+            android:name="maps.view.AccessibilityActivity"
+            android:exported="false"/>
+    </application>
+</manifest>
