@@ -28,16 +28,20 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyC6f0scDza_L8lgaePCQyZ-d3OU6YXWrmk" />
+            android:value="" />
 
         <activity
-            android:name="maps.view.MainActivity"
+            android:name="maps.view.screens.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="maps.view.MainActivity"
+            android:exported="false" />
         <activity
             android:name="maps.view.BasicMapActivity"
             android:exported="false" />

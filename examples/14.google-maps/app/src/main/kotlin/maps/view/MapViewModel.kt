@@ -83,7 +83,8 @@ class MapViewModel(private val appContext: Application) : AndroidViewModel(appCo
             // Get the user's device current location
             getCurrentLocation()
             // Subscribe to location updates
-            startLocationUpdates()
+            // ToDo: User locationFlow
+            //startLocationUpdates()
         }
     }
 
@@ -157,7 +158,7 @@ class MapViewModel(private val appContext: Application) : AndroidViewModel(appCo
         }?.showInfoWindow()
     }
 
-    fun addOverlayImage(location: Location, overlaySize: Float = 100f, resourceId: Int = R.drawable.qu_logo) {
+    fun addOverlayImage(location: Location, overlaySize: Float = 100f, resourceId: Int = R.drawable.ic_qu_logo) {
         val latLng = LatLng(location.latitude, location.longitude)
         // Add overlay image at the specified location
         googleMap?.addGroundOverlay {
@@ -213,8 +214,8 @@ class MapViewModel(private val appContext: Application) : AndroidViewModel(appCo
     @SuppressLint("MissingPermission")
     suspend fun FusedLocationProviderClient.locationFlow(): Flow<Location> = callbackFlow {
         val locationRequest = LocationRequest.create().apply {
-            interval = TimeUnit.SECONDS.toMillis(Constants.UPDATE_INTERVAL_SECS)
-            fastestInterval = TimeUnit.SECONDS.toMillis(Constants.FASTEST_UPDATE_INTERVAL_SECS)
+            interval = TimeUnit.SECONDS.toMillis(30)
+            fastestInterval = TimeUnit.SECONDS.toMillis(20)
             priority = LocationRequest.PRIORITY_HIGH_ACCURACY
         }
         val callBack = object : LocationCallback() {
@@ -313,6 +314,6 @@ class MapViewModel(private val appContext: Application) : AndroidViewModel(appCo
     override fun onCleared() {
         super.onCleared()
         googleMap?.clear()
-        fusedLocationClient.removeLocationUpdates(locationCallback)
+        //fusedLocationClient.removeLocationUpdates(locationCallback)
     }
 }

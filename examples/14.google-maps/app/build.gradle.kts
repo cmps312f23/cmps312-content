@@ -88,4 +88,7 @@ dependencies {
 
     implementation("com.google.android.gms:play-services-location:21.0.1")
     runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.8.0-RC")
+
+    // Used to display images from Web Urls
+    implementation("io.coil-kt:coil-compose:2.5.0")
 }
