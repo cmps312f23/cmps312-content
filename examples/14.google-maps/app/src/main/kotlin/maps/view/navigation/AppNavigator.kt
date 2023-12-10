@@ -8,8 +8,10 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import maps.view.screens.BasicMap
+import maps.view.screens.BasicMapScreen
+import maps.view.screens.LocationPermissionScreen
 import maps.view.screens.MapMarkersClustering
+import maps.view.screens.MapTypeScreen
 
 /**
  * It receives navController to navigate between screens
@@ -32,11 +34,19 @@ fun AppNavigator(
            = possible routes a user can take through the app
         */
         composable(NavDestination.BasicMap.route) {
-            BasicMap()
+            BasicMapScreen()
         }
 
         composable(NavDestination.MarkersClustering.route) {
             MapMarkersClustering()
+        }
+
+        composable(NavDestination.MapType.route) {
+            MapTypeScreen()
+        }
+
+        composable(NavDestination.LocationPermission.route) {
+            LocationPermissionScreen()
         }
     }
 }

@@ -34,7 +34,7 @@ import com.google.maps.android.compose.rememberCameraPositionState
 import google.maps.R
 
 @Composable
-fun BasicMap() {
+fun BasicMapScreen() {
     val quPosition = LatLng(25.37727951601785, 51.49117112159729)
     val zoomLevel = 20f // Buildings
     val cameraPositionState = rememberCameraPositionState {
@@ -44,7 +44,7 @@ fun BasicMap() {
     // Set properties using MapProperties which you can use to recompose the map
     val mapProperties by remember {
         mutableStateOf(
-            MapProperties(mapType = MapType.HYBRID) //  isMyLocationEnabled = true
+            MapProperties(mapType = MapType.HYBRID)
         )
     }
     val mapUiSettings by remember {
@@ -61,7 +61,7 @@ fun BasicMap() {
         // A Snippet is a text displayed below the title
         val snippetText = "Lat: ${quPosition.latitude}, Long: ${quPosition.longitude}"
         /*Marker(
-            state = MarkerState(position = quLocation),
+            state = MarkerState(position = quPosition),
             title = "Qatar University",
             snippet = snippetText
         )*/

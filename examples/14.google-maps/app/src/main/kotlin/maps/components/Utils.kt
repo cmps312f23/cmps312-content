@@ -1,4 +1,4 @@
-package qu.cmps312.maps.components
+package maps.components
 
 import android.content.Context
 import android.widget.Toast

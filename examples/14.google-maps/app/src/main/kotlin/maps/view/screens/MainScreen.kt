@@ -44,7 +44,8 @@ fun BottomNavBar(navController: NavHostController) {
     BottomAppBar {
         //observe current route to change the icon color,label color when navigated
         val currentRoute = getCurrentRoute(navController)
-        val navItems = listOf(NavDestination.BasicMap, NavDestination.MarkersClustering)
+        val navItems = listOf(NavDestination.BasicMap,
+                    NavDestination.MarkersClustering, NavDestination.MapType)
 
         navItems.forEach { navItem ->
             NavigationBarItem(

@@ -1,4 +1,4 @@
-package maps.view
+package maps.viewmodel
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -17,30 +17,19 @@ import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
-import com.google.maps.android.ktx.addGroundOverlay
-import com.google.maps.android.ktx.addMarker
-import google.maps.R
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.launch
-import maps.components.MaxZoom
-import maps.components.MinZoom
-import maps.components.setZoom
+import maps.components.displayMessage
 import maps.entity.Location
 import maps.entity.MenuOption
-import qu.cmps312.maps.components.displayMessage
 import java.util.*
 import java.util.concurrent.TimeUnit
 
 class MapViewModel(private val appContext: Application) : AndroidViewModel(appContext) {
-    var googleMap : GoogleMap? = null
-
     private val initialZoom = 15f // Street Level
     var zoom by mutableStateOf(initialZoom)
 
@@ -52,21 +41,6 @@ class MapViewModel(private val appContext: Application) : AndroidViewModel(appCo
 
     var poiMarker : Marker? = null
 
-    /**
-     * Manipulates the map once available.
-     * This function is called when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners
-     * or zoom to a location.
-     */
-    fun onMapReady(location: Location) {
-        zoomToLocation(location)
-        addMarker(location)
-        addOverlayImage(location)
-
-        setOnPoiClick()
-        setOnMapLongClick()
-    }
-
     // Checks that users have given permission to access the user's device current location
     fun isLocationPermissionGranted() =
         ContextCompat.checkSelfPermission(
@@ -74,103 +48,11 @@ class MapViewModel(private val appContext: Application) : AndroidViewModel(appCo
             Manifest.permission.ACCESS_FINE_LOCATION
         ) == PackageManager.PERMISSION_GRANTED
 
-    // Checks if users have given their location and sets location enabled if so.
-    @SuppressLint("MissingPermission")
-    fun enableMyLocation() {
-        if (isLocationPermissionGranted()) {
-            googleMap?.isMyLocationEnabled = true
-
-            // Get the user's device current location
-            getCurrentLocation()
-            // Subscribe to location updates
-            // ToDo: User locationFlow
-            //startLocationUpdates()
-        }
-    }
-
-    // Called when user makes a long press gesture on the googleMap.
-    fun setOnMapLongClick() {
-        googleMap?.setOnMapLongClickListener { latLng ->
-            // A Snippet is Additional text that's displayed below the title
-            val snippet = String.format(
-                Locale.getDefault(),
-                "Lat: %1$.5f, Long: %2$.5f",
-                latLng.latitude,
-                latLng.longitude
-            )
-            googleMap?.addMarker {
-                position(latLng)
-                title("Dropped Pin")
-                snippet(snippet)
-                icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
-            }
-        }
-    }
-
-    // Places a marker on the map and displays an info window that contains POI name.
-    fun setOnPoiClick() {
-        googleMap?.setOnPoiClickListener { poi ->
-            // A Snippet is Additional text that's displayed below the title.
-            val snippet = "Lat:${poi.latLng.latitude}, Long: ${poi.latLng.longitude}"
-            println(">> Debug. Clicked PoI placeId: ${poi.placeId}. Name: ${poi.name}. latLng: $snippet")
-
-            // Remove previous poiMarker before creating a new one
-            poiMarker?.remove()
-
-            poiMarker = googleMap?.addMarker {
-                position(poi.latLng)
-                title(poi.name)
-                snippet(snippet)
-                icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW))
-            }
-            poiMarker?.showInfoWindow()
-        }
-    }
-
-    fun onZoomChange(zoomFactor: Float) {
-        zoom *= zoomFactor
-        // Ensures that the zoom value lies in the specified range
-        zoom = zoom.coerceIn(MinZoom, MaxZoom)
-        googleMap?.setZoom(zoom)
-    }
-
-    fun zoomToLocation(location: Location, zoomLevel: Float = initialZoom) {
-        /* zoomLevel:
-            1: World
-            5: Continent
-            10: City
-            15: Streets
-            20: Buildings
-        */
-        val latLng = LatLng(location.latitude, location.longitude)
-        val cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, zoomLevel)
-        googleMap?.moveCamera(cameraUpdate)
-    }
-
-    fun addMarker(location: Location) {
-        // A Snippet is a text displayed below the title
-        val snippetText = "Lat: ${location.latitude}, Long: ${location.longitude}"
-        val latLng = LatLng(location.latitude, location.longitude)
-        googleMap?.addMarker {
-            position(latLng)
-            title(location.name)
-            snippet(snippetText)
-        }?.showInfoWindow()
-    }
-
-    fun addOverlayImage(location: Location, overlaySize: Float = 100f, resourceId: Int = R.drawable.ic_qu_logo) {
-        val latLng = LatLng(location.latitude, location.longitude)
-        // Add overlay image at the specified location
-        googleMap?.addGroundOverlay {
-            position(latLng, overlaySize)
-            image(BitmapDescriptorFactory.fromResource(resourceId))
-        }
-    }
 
     // Called whenever an item in the dropdown menu is clicked
     fun onMenuItemClick(menuOption: MenuOption) = when (menuOption) {
         // Change the map type based on the user's selection.
-        MenuOption.MAP_NORMAL -> {
+        /*MenuOption.MAP_NORMAL -> {
             googleMap?.mapType = GoogleMap.MAP_TYPE_NORMAL
         }
         MenuOption.MAP_HYBRID -> {
@@ -181,7 +63,7 @@ class MapViewModel(private val appContext: Application) : AndroidViewModel(appCo
         }
         MenuOption.MAP_TERRAIN -> {
             googleMap?.mapType = GoogleMap.MAP_TYPE_TERRAIN
-        }
+        }*/
         MenuOption.REVERSE_GEOCODE -> {
             // Hamad International Airport, Doha, Qatar (25.260 , 51.6138)
             val hiaLat = 25.2609 //25.37727951601785 //-33.8885751183869
@@ -309,11 +191,5 @@ class MapViewModel(private val appContext: Application) : AndroidViewModel(appCo
         } else {
             null
         }
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        googleMap?.clear()
-        //fusedLocationClient.removeLocationUpdates(locationCallback)
     }
 }

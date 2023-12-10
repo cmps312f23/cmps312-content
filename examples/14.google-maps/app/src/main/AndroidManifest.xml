@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -14,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
-        tools:targetApi="31">
+        >
 <!--        <activity
             android:name="MainActivity"
             android:exported="true"
@@ -38,36 +39,5 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name="maps.view.MainActivity"
-            android:exported="false" />
-        <activity
-            android:name="maps.view.BasicMapActivity"
-            android:exported="false" />
-        <activity
-            android:name="maps.view.AdvancedMarkersActivity"
-            android:exported="false"/>
-        <activity
-            android:name="maps.view.MapInColumnActivity"
-            android:exported="false"/>
-        <activity
-            android:name="maps.view.MarkerClusteringActivity"
-            android:exported="false"/>
-        <activity
-            android:name="maps.view.LocationTrackingActivity"
-            android:exported="false"/>
-        <activity
-            android:name="maps.view.ScaleBarActivity"
-            android:exported="false"/>
-        <activity
-            android:name="maps.view.StreetViewActivity"
-            android:exported="false"/>
-        <activity
-            android:name="maps.view.CustomControlsActivity"
-            android:exported="false"/>
-        <activity
-            android:name="maps.view.AccessibilityActivity"
-            android:exported="false"/>
     </application>
 </manifest>

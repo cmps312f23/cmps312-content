@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "google.maps"
-        minSdk = 27
+        minSdk = 33
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
@@ -69,6 +69,10 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.1")
+
+    val composeVersion = "1.5.4"
+    // More material icons
+    implementation("androidx.compose.material:material-icons-extended:$composeVersion")
 
     val navVersion = "2.7.5"
     implementation("androidx.navigation:navigation-compose:$navVersion")
