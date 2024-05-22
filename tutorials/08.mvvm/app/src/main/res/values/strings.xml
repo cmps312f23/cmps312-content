@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Football-MVVM</string>
+    <string name="remaining_time">Remaining Time:</string>
+</resources>
